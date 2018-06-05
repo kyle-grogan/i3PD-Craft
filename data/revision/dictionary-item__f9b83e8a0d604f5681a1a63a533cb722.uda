@@ -1,0 +1,23 @@
+{
+  "ItemKey": "USN Newsletter Form Signup Error",
+  "ParentId": "e293b805-f833-41cc-b44b-44c1bd5763fb",
+  "Translations": [
+    {
+      "Key": "f9b83e8a-0d60-4f56-81a1-a63a533cb722",
+      "Value": "Sorry, an issue has occured and we have been unable to sign you up to our mailing list.",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/f9b83e8a0d604f5681a1a63a533cb722",
+  "Udi": "umb://dictionary-item/f9b83e8a0d604f5681a1a63a533cb722",
+  "Dependencies": [
+    {
+      "Udi": "umb://dictionary-item/e293b805f83341ccb44b44c1bd5763fb",
+      "Ordering": true,
+      "Mode": 1
+    }
+  ],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
