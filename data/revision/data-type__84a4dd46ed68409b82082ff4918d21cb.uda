@@ -1,0 +1,12 @@
+{
+  "EditorAlias": "USN.Label",
+  "DatabaseType": 1,
+  "PreValues": {},
+  "Parent": null,
+  "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+  "Dependencies": [],
+  "Name": "USN Label",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "2.0.14"
+}

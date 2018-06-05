@@ -1,0 +1,15 @@
+{
+  "EditorAlias": "Umbraco.DropDown",
+  "DatabaseType": 1,
+  "PreValues": {
+    "0": "Full width",
+    "1": "Centered"
+  },
+  "Parent": null,
+  "Udi": "umb://data-type/df2e64b1c0f04e528effee527fa070a5",
+  "Dependencies": [],
+  "Name": "USN Standard Component Style",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "2.0.14"
+}

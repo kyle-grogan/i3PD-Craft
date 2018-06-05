@@ -1,0 +1,15 @@
+{
+  "EditorAlias": "Umbraco.DropDown",
+  "DatabaseType": 1,
+  "PreValues": {
+    "0": "Campaign Monitor",
+    "1": "MailChimp"
+  },
+  "Parent": null,
+  "Udi": "umb://data-type/b332155f02564c8f94d6f2ebf7a805d9",
+  "Dependencies": [],
+  "Name": "USN Email Marketing Platform",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "2.0.14"
+}

@@ -1,0 +1,14 @@
+{
+  "EditorAlias": "Umbraco.ImageCropper",
+  "DatabaseType": 0,
+  "PreValues": {
+    "crops": "[\r\n  {\r\n    \"alias\": \"1500x1100\",\r\n    \"width\": 1500,\r\n    \"height\": 1100\r\n  },\r\n  {\r\n    \"alias\": \"1500x550\",\r\n    \"width\": 1500,\r\n    \"height\": 550\r\n  },\r\n  {\r\n    \"alias\": \"1500x400\",\r\n    \"width\": 1500,\r\n    \"height\": 400\r\n  },\r\n  {\r\n    \"alias\": \"1200x1600\",\r\n    \"width\": 1200,\r\n    \"height\": 1600\r\n  },\r\n  {\r\n    \"alias\": \"1200x600\",\r\n    \"width\": 1200,\r\n    \"height\": 600\r\n  },\r\n  {\r\n    \"alias\": \"800x600\",\r\n    \"width\": 800,\r\n    \"height\": 600\r\n  },\r\n  {\r\n    \"alias\": \"400x300\",\r\n    \"width\": 400,\r\n    \"height\": 300\r\n  },\r\n  {\r\n    \"alias\": \"200x200\",\r\n    \"width\": 200,\r\n    \"height\": 200\r\n  }\r\n]"
+  },
+  "Parent": null,
+  "Udi": "umb://data-type/222e59f516514ff5a940763431ccb47b",
+  "Dependencies": [],
+  "Name": "USN Image Cropper",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "2.0.14"
+}

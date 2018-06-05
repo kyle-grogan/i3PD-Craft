@@ -1,0 +1,15 @@
+{
+  "EditorAlias": "Umbraco.DropDown",
+  "DatabaseType": 1,
+  "PreValues": {
+    "0": "Big image first",
+    "1": "Small images first"
+  },
+  "Parent": null,
+  "Udi": "umb://data-type/e26649fc5e2c4ea0a5fff5ac0b93029f",
+  "Dependencies": [],
+  "Name": "USN Window Section Order",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "2.0.14"
+}

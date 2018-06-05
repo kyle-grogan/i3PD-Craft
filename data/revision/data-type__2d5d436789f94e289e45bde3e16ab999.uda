@@ -1,0 +1,14 @@
+{
+  "EditorAlias": "Umbraco.RelatedLinks2",
+  "DatabaseType": 0,
+  "PreValues": {
+    "max": "1"
+  },
+  "Parent": null,
+  "Udi": "umb://data-type/2d5d436789f94e289e45bde3e16ab999",
+  "Dependencies": [],
+  "Name": "USN Single Link Picker",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "2.0.14"
+}

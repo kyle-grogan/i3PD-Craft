@@ -1,0 +1,15 @@
+{
+  "EditorAlias": "Umbraco.DropDown",
+  "DatabaseType": 1,
+  "PreValues": {
+    "0": "Text below image",
+    "1": "Text over image"
+  },
+  "Parent": null,
+  "Udi": "umb://data-type/0aac28c0dbcb4afea433dc045c5b41d3",
+  "Dependencies": [],
+  "Name": "USN Pod Style",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "2.0.14"
+}

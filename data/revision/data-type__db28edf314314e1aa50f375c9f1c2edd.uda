@@ -1,0 +1,15 @@
+{
+  "EditorAlias": "Umbraco.DropDown",
+  "DatabaseType": 1,
+  "PreValues": {
+    "0": "Before",
+    "1": "After"
+  },
+  "Parent": null,
+  "Udi": "umb://data-type/db28edf314314e1aa50f375c9f1c2edd",
+  "Dependencies": [],
+  "Name": "USN Component Alignment",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "2.0.14"
+}

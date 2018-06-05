@@ -1,0 +1,15 @@
+{
+  "EditorAlias": "Umbraco.DropDown",
+  "DatabaseType": 1,
+  "PreValues": {
+    "0": "Vertical",
+    "1": "Grid"
+  },
+  "Parent": null,
+  "Udi": "umb://data-type/f4c650803afe47bdb038fe391e9a437b",
+  "Dependencies": [],
+  "Name": "USN Listing Layout",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "2.0.14"
+}

@@ -1,0 +1,12 @@
+{
+  "EditorAlias": "USN.BackgroundOptions",
+  "DatabaseType": 1,
+  "PreValues": {},
+  "Parent": null,
+  "Udi": "umb://data-type/3f4af8a2fe2f4890bab56a3bf3a07db3",
+  "Dependencies": [],
+  "Name": "USN  Background Options",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "2.0.14"
+}

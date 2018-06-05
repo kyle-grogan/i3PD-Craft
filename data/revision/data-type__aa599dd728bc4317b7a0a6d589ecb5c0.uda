@@ -1,0 +1,12 @@
+{
+  "EditorAlias": "USN.ReadOnly",
+  "DatabaseType": 1,
+  "PreValues": {},
+  "Parent": null,
+  "Udi": "umb://data-type/aa599dd728bc4317b7a0a6d589ecb5c0",
+  "Dependencies": [],
+  "Name": "USN Read Only",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "2.0.14"
+}

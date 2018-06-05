@@ -1,0 +1,16 @@
+{
+  "EditorAlias": "Umbraco.DropDown",
+  "DatabaseType": 1,
+  "PreValues": {
+    "0": "Left",
+    "1": "Center",
+    "2": "Right"
+  },
+  "Parent": null,
+  "Udi": "umb://data-type/d9d02e516287496db16f349c69e62a1e",
+  "Dependencies": [],
+  "Name": "USN Text Alignment",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "2.0.14"
+}

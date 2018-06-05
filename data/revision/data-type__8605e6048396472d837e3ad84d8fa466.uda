@@ -1,0 +1,20 @@
+{
+  "EditorAlias": "Umbraco.ColorPickerAlias",
+  "DatabaseType": 1,
+  "PreValues": {
+    "0": "bc9366",
+    "1": "6f0108",
+    "2": "000000",
+    "3": "f6f2ed",
+    "4": "ffffff",
+    "5": "1e1819",
+    "useLabel": "0"
+  },
+  "Parent": null,
+  "Udi": "umb://data-type/8605e6048396472d837e3ad84d8fa466",
+  "Dependencies": [],
+  "Name": "USN Color",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "2.0.14"
+}

@@ -1,0 +1,16 @@
+{
+  "EditorAlias": "Umbraco.DropDown",
+  "DatabaseType": 1,
+  "PreValues": {
+    "0": "Short",
+    "1": "Medium",
+    "2": "Takeover"
+  },
+  "Parent": null,
+  "Udi": "umb://data-type/9f07a4efe09e42b1826f2a5da5944b53",
+  "Dependencies": [],
+  "Name": "USN Banner Style",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "2.0.14"
+}

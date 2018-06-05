@@ -1,0 +1,21 @@
+{
+  "EditorAlias": "Umbraco.TinyMCEv3",
+  "DatabaseType": 0,
+  "PreValues": {
+    "editor": "{\r\n  \"toolbar\": [\r\n    \"code\",\r\n    \"removeformat\",\r\n    \"undo\",\r\n    \"redo\",\r\n    \"cut\",\r\n    \"copy\",\r\n    \"paste\",\r\n    \"styleselect\",\r\n    \"bold\",\r\n    \"italic\",\r\n    \"underline\",\r\n    \"strikethrough\",\r\n    \"bullist\",\r\n    \"numlist\",\r\n    \"outdent\",\r\n    \"indent\",\r\n    \"link\",\r\n    \"unlink\",\r\n    \"anchor\",\r\n    \"umbmediapicker\",\r\n    \"umbmacro\",\r\n    \"table\",\r\n    \"umbembeddialog\",\r\n    \"subscript\",\r\n    \"superscript\",\r\n    \"charmap\"\r\n  ],\r\n  \"stylesheets\": [\r\n    \"rteditor\"\r\n  ],\r\n  \"dimensions\": {\r\n    \"height\": 500\r\n  },\r\n  \"maxImageSize\": 500\r\n}",
+    "hideLabel": ""
+  },
+  "Parent": null,
+  "Udi": "umb://data-type/797b6d29015c4580aa0065d5013cfbf9",
+  "Dependencies": [
+    {
+      "Udi": "umb://stylesheet/rteditor.css",
+      "Ordering": false,
+      "Mode": 1
+    }
+  ],
+  "Name": "USN Richtext editor",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "2.0.14"
+}

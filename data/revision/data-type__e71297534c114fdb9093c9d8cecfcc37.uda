@@ -1,0 +1,18 @@
+{
+  "EditorAlias": "Umbraco.MultiNodeTreePicker2",
+  "DatabaseType": 0,
+  "PreValues": {
+    "filter": "USNAdvancedPageBlogPost,USNStandardPageBlogPost",
+    "maxNumber": "",
+    "minNumber": "",
+    "showOpenButton": "1",
+    "startNode": "{\r\n  \"type\": \"content\"\r\n}"
+  },
+  "Parent": null,
+  "Udi": "umb://data-type/e71297534c114fdb9093c9d8cecfcc37",
+  "Dependencies": [],
+  "Name": "USN Blog Post Picker",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "2.0.14"
+}

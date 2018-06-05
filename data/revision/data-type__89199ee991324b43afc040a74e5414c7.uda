@@ -1,0 +1,31 @@
+{
+  "EditorAlias": "Umbraco.Slider",
+  "DatabaseType": 1,
+  "PreValues": {
+    "enableRange": "",
+    "handle": "",
+    "initVal1": "",
+    "initVal2": "",
+    "maxVal": "10",
+    "minVal": "0",
+    "orientation": "horizontal",
+    "precision": "",
+    "reversed": "",
+    "step": "0.25",
+    "ticks": "",
+    "ticksLabels": "",
+    "ticksPositions": "",
+    "ticksSnapBounds": "",
+    "tooltip": "show",
+    "tooltipFormat": "{0} seconds",
+    "tooltipPosition": "bottom",
+    "tooltipSplit": ""
+  },
+  "Parent": null,
+  "Udi": "umb://data-type/89199ee991324b43afc040a74e5414c7",
+  "Dependencies": [],
+  "Name": "USN Rotate Speed",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "2.0.14"
+}

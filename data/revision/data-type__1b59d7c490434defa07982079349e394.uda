@@ -1,0 +1,15 @@
+{
+  "EditorAlias": "Umbraco.DropDown",
+  "DatabaseType": 1,
+  "PreValues": {
+    "0": "Accordion",
+    "1": "Tabbed"
+  },
+  "Parent": null,
+  "Udi": "umb://data-type/1b59d7c490434defa07982079349e394",
+  "Dependencies": [],
+  "Name": "USN Repeater Style",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "2.0.14"
+}

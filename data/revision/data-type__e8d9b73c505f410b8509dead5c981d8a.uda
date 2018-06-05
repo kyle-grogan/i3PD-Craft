@@ -1,0 +1,12 @@
+{
+  "EditorAlias": "USN.Heading",
+  "DatabaseType": 1,
+  "PreValues": {},
+  "Parent": null,
+  "Udi": "umb://data-type/e8d9b73c505f410b8509dead5c981d8a",
+  "Dependencies": [],
+  "Name": "USN Heading",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "2.0.14"
+}

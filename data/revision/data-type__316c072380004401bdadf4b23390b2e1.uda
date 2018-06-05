@@ -1,0 +1,18 @@
+{
+  "EditorAlias": "Umbraco.DropDown",
+  "DatabaseType": 1,
+  "PreValues": {
+    "0": "Content left, with sidebar",
+    "1": "Content right, with sidebar",
+    "2": "Content center, pods left, navigation right",
+    "3": "Content center, pods right, navigation left",
+    "4": "Content full width"
+  },
+  "Parent": null,
+  "Udi": "umb://data-type/316c072380004401bdadf4b23390b2e1",
+  "Dependencies": [],
+  "Name": "USN Page Layout",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "2.0.14"
+}

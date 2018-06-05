@@ -1,0 +1,19 @@
+{
+  "EditorAlias": "USN.TrueFalse",
+  "DatabaseType": 2,
+  "PreValues": {
+    "hideLabel": "",
+    "offLabelText": "Off",
+    "onLabelText": "On",
+    "statusLeftRight": "",
+    "switchClass": "",
+    "switchOn": ""
+  },
+  "Parent": null,
+  "Udi": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+  "Dependencies": [],
+  "Name": "USN True False",
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DataTypeArtifact",
+  "__version": "2.0.14"
+}
