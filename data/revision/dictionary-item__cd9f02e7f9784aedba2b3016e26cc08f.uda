@@ -1,0 +1,17 @@
+{
+  "ItemKey": "USN Login Form",
+  "ParentId": null,
+  "Translations": [
+    {
+      "Key": "cd9f02e7-f978-4aed-ba2b-3016e26cc08f",
+      "Value": "THIS IS JUST A CONTAINER TO MANAGE RELATED DICTIONARY ITEMS",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/cd9f02e7f9784aedba2b3016e26cc08f",
+  "Udi": "umb://dictionary-item/cd9f02e7f9784aedba2b3016e26cc08f",
+  "Dependencies": [],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
