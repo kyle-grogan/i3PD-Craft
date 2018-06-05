@@ -1,0 +1,23 @@
+{
+  "ItemKey": "USN New Window Title Tag",
+  "ParentId": "0f73cfcc-5ded-425e-bb3f-b937814e5664",
+  "Translations": [
+    {
+      "Key": "4fb8327e-60ec-4760-abf4-cc26981e208a",
+      "Value": "Link will open in a new window/tab",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/4fb8327e60ec4760abf4cc26981e208a",
+  "Udi": "umb://dictionary-item/4fb8327e60ec4760abf4cc26981e208a",
+  "Dependencies": [
+    {
+      "Udi": "umb://dictionary-item/0f73cfcc5ded425ebb3fb937814e5664",
+      "Ordering": true,
+      "Mode": 1
+    }
+  ],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
