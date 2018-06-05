@@ -1,8 +1,13 @@
 {
   "File": "umb://template-file/USNStandardPageBlogPost.cshtml",
-  "Master": null,
+  "Master": "umb://template/f0d28018e6434183825fec74ba88bf81",
   "Udi": "umb://template/218b41a674644535bdf218278aefef20",
   "Dependencies": [
+    {
+      "Udi": "umb://template/f0d28018e6434183825fec74ba88bf81",
+      "Ordering": true,
+      "Mode": 0
+    },
     {
       "Udi": "umb://template-file/USNStandardPageBlogPost.cshtml",
       "Ordering": true,
