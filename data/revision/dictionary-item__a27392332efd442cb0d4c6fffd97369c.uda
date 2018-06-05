@@ -1,0 +1,23 @@
+{
+  "ItemKey": "USN Form Last Name Label",
+  "ParentId": "1391e0d2-ed64-4558-89f8-268f7f46e353",
+  "Translations": [
+    {
+      "Key": "a2739233-2efd-442c-b0d4-c6fffd97369c",
+      "Value": "Last name",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/a27392332efd442cb0d4c6fffd97369c",
+  "Udi": "umb://dictionary-item/a27392332efd442cb0d4c6fffd97369c",
+  "Dependencies": [
+    {
+      "Udi": "umb://dictionary-item/1391e0d2ed64455889f8268f7f46e353",
+      "Ordering": true,
+      "Mode": 1
+    }
+  ],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
