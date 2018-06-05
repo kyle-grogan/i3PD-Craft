@@ -1,0 +1,23 @@
+{
+  "ItemKey": "USN Form Last Name Validation",
+  "ParentId": "1391e0d2-ed64-4558-89f8-268f7f46e353",
+  "Translations": [
+    {
+      "Key": "6f7d500b-85d6-4310-97c7-c7898e62033e",
+      "Value": "The 'Last name' field is required",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/6f7d500b85d6431097c7c7898e62033e",
+  "Udi": "umb://dictionary-item/6f7d500b85d6431097c7c7898e62033e",
+  "Dependencies": [
+    {
+      "Udi": "umb://dictionary-item/1391e0d2ed64455889f8268f7f46e353",
+      "Ordering": true,
+      "Mode": 1
+    }
+  ],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
