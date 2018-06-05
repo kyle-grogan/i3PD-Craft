@@ -1,0 +1,23 @@
+{
+  "ItemKey": "USN Newsletter Form General Error",
+  "ParentId": "e293b805-f833-41cc-b44b-44c1bd5763fb",
+  "Translations": [
+    {
+      "Key": "792c0fda-8f7c-4e49-821c-fbfc16de8c0e",
+      "Value": "Please complete the required fields and try again.",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/792c0fda8f7c4e49821cfbfc16de8c0e",
+  "Udi": "umb://dictionary-item/792c0fda8f7c4e49821cfbfc16de8c0e",
+  "Dependencies": [
+    {
+      "Udi": "umb://dictionary-item/e293b805f83341ccb44b44c1bd5763fb",
+      "Ordering": true,
+      "Mode": 1
+    }
+  ],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
