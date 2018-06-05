@@ -1,0 +1,110 @@
+{
+  "DefaultTemplate": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+  "AllowedTemplates": [
+    "umb://template/fe4691bda9ec426f9630c9e1163bb8d4"
+  ],
+  "Icon": "icon-picture color-orange",
+  "Thumbnail": "usn_landscape.png",
+  "Description": "Use this item to add a new \"Image\" to this section.",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/659fd64b525f4d908e718b93ff94ebf0",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "3fc89692-08c7-47fe-bbac-0ea744033c27",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "96599289-0121-42d9-826a-ab23505461f6",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Slideshow Image<i class=\"icon sprTree icon-picture color-orange pull-right\"></i></h3></div><div class=\"panel-body\"><p>The node name you enter above is for your reference only and will not appear on the website.</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "5b3cdc67-8a88-40d0-9d1a-623ff29573ef",
+      "Name": "Content",
+      "SortOrder": 1,
+      "PropertyTypes": [
+        {
+          "Key": "84028d99-f4db-4b30-88f1-3edec2afe4df",
+          "Alias": "slideshowImageAltText",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Image alt text",
+          "SortOrder": 1,
+          "Validation": ""
+        },
+        {
+          "Key": "92c343ab-179e-4606-aff5-3ff4cf75f900",
+          "Alias": "slideshowImageCaption",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Image caption",
+          "SortOrder": 2,
+          "Validation": ""
+        },
+        {
+          "Key": "df01303f-b4d8-40a9-9a0a-f3d43be30d05",
+          "Alias": "slideshowImage",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "Image will be cropped to 1200px x 600px.\n\nFocal point of the image is defined within your \"Media\" section.",
+          "Mandatory": true,
+          "Name": "Image",
+          "SortOrder": 0,
+          "Validation": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/0b3f06e6f9a64da5910815c093c62109",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/659fd64b525f4d908e718b93ff94ebf0",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Slideshow Image",
+  "Alias": "USN_SC_SlideshowImage",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

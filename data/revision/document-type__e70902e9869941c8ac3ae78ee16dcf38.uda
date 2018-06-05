@@ -1,0 +1,76 @@
+{
+  "DefaultTemplate": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+  "AllowedTemplates": [
+    "umb://template/fe4691bda9ec426f9630c9e1163bb8d4"
+  ],
+  "Icon": "icon-folder-outline color-orange",
+  "Thumbnail": "folder.png",
+  "Description": "Use this item to organise the\"Blog Posts\".",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/5a03343f7e0149ffa88cfbb83b28f78d",
+  "AllowedChildContentTypes": [
+    "umb://document-type/2ec1adb9156e4e9bb4bb7b0deb84f162",
+    "umb://document-type/8948dc438af84f838639dfdee4784fa6"
+  ],
+  "CompositionContentTypes": [
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "4cda2108-2bcf-4972-8471-38e5b0f852d8",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "c0ef313e-64f0-44ad-b144-1460bd72632e",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Blog Posts Folder<i class=\"icon sprTree icon-folder-outline color-orange pull-right\"></i></h3></div><div class=\"panel-body\"><p>Add your \"Blog Posts\" below this folder. \"Year\" and \"Month\" folders are created automatically based on your \"Blog post date\".</p><p>Your \"Blog Post\" will be moved into the correct folder when saved.</p>\n<p><strong>DO NOT</strong> delete or rename this folder.</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/e70902e9869941c8ac3ae78ee16dcf38",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/2ec1adb9156e4e9bb4bb7b0deb84f162",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/8948dc438af84f838639dfdee4784fa6",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/5a03343f7e0149ffa88cfbb83b28f78d",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Blog Posts Folder",
+  "Alias": "USNBlogPostsFolder",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

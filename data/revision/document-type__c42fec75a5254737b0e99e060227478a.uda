@@ -1,0 +1,123 @@
+{
+  "DefaultTemplate": "umb://template/ac85fda3c2584660bab5362fa1e745fe",
+  "AllowedTemplates": [
+    "umb://template/ac85fda3c2584660bab5362fa1e745fe"
+  ],
+  "Icon": "icon-video color-orange",
+  "Thumbnail": "usn_movie.png",
+  "Description": "Use this item to create a new \"Video Pod\".",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/85441815716e4c04b6cb15416a7252b8",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "d50b97e3-5851-49b1-9861-fda112ef355f",
+      "Name": "Content",
+      "SortOrder": 1,
+      "PropertyTypes": [
+        {
+          "Key": "396cc5e5-7efb-48c4-96f4-33dc615f0e8e",
+          "Alias": "lightWindowTitle",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "This text will be displayed above your video within the light window.",
+          "Mandatory": false,
+          "Name": "Light window title",
+          "SortOrder": 2,
+          "Validation": ""
+        },
+        {
+          "Key": "910ce7d7-adbd-4c62-b60d-43303264c287",
+          "Alias": "thumbnailImageAltText",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Thumbnail image alt text",
+          "SortOrder": 1,
+          "Validation": ""
+        },
+        {
+          "Key": "9e1d808f-a2c0-40b0-a930-f30a54ea33e3",
+          "Alias": "podVideo",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "Copy the full URL for your video from the address bar. (YouTube or Vimeo only)",
+          "Mandatory": true,
+          "Name": "Video",
+          "SortOrder": 4,
+          "Validation": ""
+        },
+        {
+          "Key": "9fad63a6-2b13-4b32-a3f8-3f1973da35ce",
+          "Alias": "podThumbnailImage",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "This image is optional. If you do not upload an image, a thumbnail image will be automatically generated for you from the associated video.\n\nImage will be cropped to 400px x 300px.\n\nFocal point of the image is defined within your \"Media\" section.",
+          "Mandatory": false,
+          "Name": "Thumbnail image",
+          "SortOrder": 0,
+          "Validation": ""
+        },
+        {
+          "Key": "aa8dfebd-ca89-425a-a530-3d0c5c13b0f3",
+          "Alias": "lightWindowFooter",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "This text will be displayed below your video within the light window.",
+          "Mandatory": false,
+          "Name": "Light window footer",
+          "SortOrder": 3,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "f21bd743-dec2-4a21-b4d7-94516e8250a0",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "78fc3344-d8b8-42b7-af66-1d0041baaebb",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Video Pod<i class=\"icon sprTree icon-video color-orange pull-right\"></i></h3></div><div class=\"panel-body\"><p>The node name you enter above is for your reference only and will not appear on the website.</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/c42fec75a5254737b0e99e060227478a",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/85441815716e4c04b6cb15416a7252b8",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/ac85fda3c2584660bab5362fa1e745fe",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Video Pod",
+  "Alias": "USN_SWP_VideoPod",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

@@ -1,0 +1,180 @@
+{
+  "DefaultTemplate": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+  "AllowedTemplates": [
+    "umb://template/fe4691bda9ec426f9630c9e1163bb8d4"
+  ],
+  "Icon": "icon-umb-media color-orange",
+  "Thumbnail": "folder.png",
+  "Description": "Use this item to add a new \"Carousel Section\" to your page.",
+  "AllowedAtRoot": false,
+  "IsContainer": true,
+  "Parent": "umb://document-type-container/165ef6f529a9435ba232170a1e1c7e62",
+  "AllowedChildContentTypes": [
+    "umb://document-type/1a49dd334686414d8636881239bfba55",
+    "umb://document-type/fbb56e5aa23d48cba63822885b2e336f"
+  ],
+  "CompositionContentTypes": [
+    "umb://document-type/71396aae63c04e8da48ec34052018cbf",
+    "umb://document-type/85830e8e6137464f96fd7540f8fc72de",
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "4d4847b4-36aa-449b-9d5e-04dd5bb532f8",
+      "Name": "Component Settings",
+      "SortOrder": 1,
+      "PropertyTypes": [
+        {
+          "Key": "00a85bf5-8bae-408e-b2fc-3957c7a65342",
+          "Alias": "buttonColor",
+          "DataType": "umb://data-type/8605e6048396472d837e3ad84d8fa466",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Button color",
+          "SortOrder": 1,
+          "Validation": null
+        },
+        {
+          "Key": "2a1c5352-e947-4687-b1d4-9d21c6ec8a07",
+          "Alias": "animate",
+          "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Animate",
+          "SortOrder": 5,
+          "Validation": null
+        },
+        {
+          "Key": "70270381-8f68-4185-bbca-4dcfe19817cf",
+          "Alias": "autoRotateSpeed",
+          "DataType": "umb://data-type/89199ee991324b43afc040a74e5414c7",
+          "Description": "A value of 0 will stop auto rotation.",
+          "Mandatory": false,
+          "Name": "Auto rotate speed",
+          "SortOrder": 4,
+          "Validation": null
+        },
+        {
+          "Key": "8a53692e-39a5-454f-95e7-f63bba69b250",
+          "Alias": "backgroundColor",
+          "DataType": "umb://data-type/8605e6048396472d837e3ad84d8fa466",
+          "Description": "Color selected will decide what color is used for any text that appears over the background.\n\nIf a background image is used, use the color that works best for the text over the image.",
+          "Mandatory": false,
+          "Name": "Background color",
+          "SortOrder": 0,
+          "Validation": null
+        },
+        {
+          "Key": "c6f3bf61-cbd5-4a01-87de-880ce1d85302",
+          "Alias": "backgroundImageOptions",
+          "DataType": "umb://data-type/3f4af8a2fe2f4890bab56a3bf3a07db3",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Background image options",
+          "SortOrder": 3,
+          "Validation": null
+        },
+        {
+          "Key": "ea7a69dd-faae-45f1-bfd6-fa3cc1ab250f",
+          "Alias": "backgroundImage",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "No recommended image size.\n\nIf the image will cover the full area of the component, use a large image.\n\nIf the image will repeat, use a small image.",
+          "Mandatory": false,
+          "Name": "Background image",
+          "SortOrder": 2,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "b10bb7d9-1d1d-4dd7-972e-f7f66c5122ad",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "a1db4326-e656-4cf8-ab55-af303f421e2d",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Carousel Section<i class=\"icon sprTree icon-umb-media color-orange pull-right\"></i></h3></div><div class=\"panel-body\"><p>The node name you enter above is for your reference only and will not appear on the website.</p><p>Add multiple \"Image/Video\" to the \"Image/Video\" Tab. </p><p>The sort order of your \"Image/Video\" directly relates to the order your \"Image/Video\" will be displayed on this page. Use  <strong>Actions > Sort</strong> to reorder your \"Image/Video\".</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/17817d36abf94371b9e7fb864ee55e7f",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/3f4af8a2fe2f4890bab56a3bf3a07db3",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/8605e6048396472d837e3ad84d8fa466",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/89199ee991324b43afc040a74e5414c7",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/1a49dd334686414d8636881239bfba55",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/71396aae63c04e8da48ec34052018cbf",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/85830e8e6137464f96fd7540f8fc72de",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/fbb56e5aa23d48cba63822885b2e336f",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/165ef6f529a9435ba232170a1e1c7e62",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Carousel Section",
+  "Alias": "USN_AC_CarouselSection_AN",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

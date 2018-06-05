@@ -1,0 +1,221 @@
+{
+  "DefaultTemplate": "umb://template/c1da4a5c64d748169e69d71a356363f7",
+  "AllowedTemplates": [
+    "umb://template/c1da4a5c64d748169e69d71a356363f7"
+  ],
+  "Icon": "icon-newspaper",
+  "Thumbnail": "usn_newspaper.png",
+  "Description": "Use this item to create a \"Blog Landing Page\".",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/fec78f3a7e9842148a93297cc88ef945",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [
+    "umb://document-type/559f12479d804eecb7e45b44c81ae950",
+    "umb://document-type/602291717c1041fd8bf7a1d7e81b20ed",
+    "umb://document-type/89b91cefb9714c6c8d842bec32bf5582",
+    "umb://document-type/9ea3b81be80a4359a8c6ab48677a6b56",
+    "umb://document-type/a854011482be4818a347e0c469760b57",
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+    "umb://document-type/e703b4009f0f40c48421091b0c3bc907",
+    "umb://document-type/f5c73473e4db4b54b1c09d63d0293a8b"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "68180aca-74a0-4580-a474-43ccb545082c",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "76a8419a-c40d-460c-a78e-5fda713f31a6",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Blog Landing Page<i class=\"icon umb-tree-icon sprTree icon-newspaper pull-right\"></i></h3></div><div class=\"panel-body\"><p>This page will list your \"Blog Posts\". \"Blog Posts\" are added to this section via the \"Posts\" folder directly below this page.</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "86435733-b8c3-4db5-869a-ea6effa6b717",
+      "Name": "Blog Settings",
+      "SortOrder": 4,
+      "PropertyTypes": [
+        {
+          "Key": "9a02345f-b515-4d8b-9cf6-3764c0b94fb0",
+          "Alias": "blogListingPageSize",
+          "DataType": "umb://data-type/2e6d3631066e44b8aec496f09099b2b5",
+          "Description": "Enter the number of articles you would like to appear per page.",
+          "Mandatory": true,
+          "Name": "Blog listing page size",
+          "SortOrder": 0,
+          "Validation": ""
+        },
+        {
+          "Key": "a70acf6c-edb2-4882-8ca4-73a402937d59",
+          "Alias": "blogSummaryTextCharacterCount",
+          "DataType": "umb://data-type/2e6d3631066e44b8aec496f09099b2b5",
+          "Description": "Enter the number of characters of text you would like displayed from the beginning of each blog article. If nothing is entered, no summary text will be displayed.",
+          "Mandatory": false,
+          "Name": "Summary text character count",
+          "SortOrder": 1,
+          "Validation": "^(\\s*|\\d+)$"
+        },
+        {
+          "Key": "b7e115bf-f679-4a71-861f-0fe447550a8a",
+          "Alias": "defaultAuthor",
+          "DataType": "umb://data-type/86ef462a8b844cfeb196df966460feb2",
+          "Description": "Select the default author that will be applied to all blog posts.",
+          "Mandatory": false,
+          "Name": "Default author",
+          "SortOrder": 2,
+          "Validation": ""
+        },
+        {
+          "Key": "c6a3505a-6e92-4285-81e2-4e92781ce12c",
+          "Alias": "disqusUsername",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "If nothing is entered, blog commenting will be disabled.",
+          "Mandatory": false,
+          "Name": "Disqus username",
+          "SortOrder": 3,
+          "Validation": ""
+        }
+      ]
+    },
+    {
+      "Key": "939067c4-e9d4-4b3b-a31c-c47b87aca812",
+      "Name": "Navigation",
+      "SortOrder": 2,
+      "PropertyTypes": [
+        {
+          "Key": "745d5d1c-798b-4211-bc47-c3f2713c4978",
+          "Alias": "sitemapLinkText",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "Node name will be used by default if nothing is entered.",
+          "Mandatory": false,
+          "Name": "Sitemap link text",
+          "SortOrder": 2,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "dd55a1df-8f60-4c03-87de-1a5a35edc2cf",
+      "Name": "Page Settings",
+      "SortOrder": 3,
+      "PropertyTypes": [
+        {
+          "Key": "9430e218-2d16-4818-8169-c86ced433ac2",
+          "Alias": "pageLayout",
+          "DataType": "umb://data-type/316c072380004401bdadf4b23390b2e1",
+          "Description": "Default page layout will be displayed if nothing is selected.\n\nIf 'Content full width' is selected sub navigation will be hidden.",
+          "Mandatory": false,
+          "Name": "Page layout",
+          "SortOrder": 0,
+          "Validation": ""
+        },
+        {
+          "Key": "c69d3b44-5288-4587-8394-ef793e1eb504",
+          "Alias": "blogListingLayout",
+          "DataType": "umb://data-type/f4c650803afe47bdb038fe391e9a437b",
+          "Description": "Layout will default to 'Vertical' if nothing is selected.",
+          "Mandatory": false,
+          "Name": "Blog listing layout",
+          "SortOrder": 1,
+          "Validation": null
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/e9268a268eed4786a94a51a39cf4f338",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/2e6d3631066e44b8aec496f09099b2b5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/316c072380004401bdadf4b23390b2e1",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/86ef462a8b844cfeb196df966460feb2",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/f4c650803afe47bdb038fe391e9a437b",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/559f12479d804eecb7e45b44c81ae950",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/602291717c1041fd8bf7a1d7e81b20ed",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/89b91cefb9714c6c8d842bec32bf5582",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/9ea3b81be80a4359a8c6ab48677a6b56",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/a854011482be4818a347e0c469760b57",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/e703b4009f0f40c48421091b0c3bc907",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/f5c73473e4db4b54b1c09d63d0293a8b",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/fec78f3a7e9842148a93297cc88ef945",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/c1da4a5c64d748169e69d71a356363f7",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Blog Landing Page",
+  "Alias": "USNBlogLandingPage",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

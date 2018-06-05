@@ -1,0 +1,140 @@
+{
+  "DefaultTemplate": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+  "AllowedTemplates": [
+    "umb://template/fe4691bda9ec426f9630c9e1163bb8d4"
+  ],
+  "Icon": "icon-disc color-orange",
+  "Thumbnail": "usn_star_grey.png",
+  "Description": "Use this item to add a new \"Pod\" to this section.",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/165ef6f529a9435ba232170a1e1c7e62",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "58bb7ad4-3395-4981-8d0b-a5c845198681",
+      "Name": "Content",
+      "SortOrder": 1,
+      "PropertyTypes": [
+        {
+          "Key": "2e2ed559-295d-4d24-b33a-31154c0960af",
+          "Alias": "podImageAltText",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Image alt text",
+          "SortOrder": 1,
+          "Validation": ""
+        },
+        {
+          "Key": "abf49a01-3630-43dc-8f12-1ec88a1adf34",
+          "Alias": "podTitle",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Heading",
+          "SortOrder": 2,
+          "Validation": ""
+        },
+        {
+          "Key": "c15def9e-5fda-4e6a-87b7-1c20255ac9b0",
+          "Alias": "podText",
+          "DataType": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+          "Description": "This will only be displayed if the 'Pod style' is set to 'Text below image'.",
+          "Mandatory": false,
+          "Name": "Text",
+          "SortOrder": 3,
+          "Validation": ""
+        },
+        {
+          "Key": "e10f643c-7f96-4ab0-b6eb-454fe8ecd790",
+          "Alias": "podLink",
+          "DataType": "umb://data-type/2d5d436789f94e289e45bde3e16ab999",
+          "Description": "The \"Caption\" field will be used for your link text.",
+          "Mandatory": false,
+          "Name": "Link",
+          "SortOrder": 4,
+          "Validation": null
+        },
+        {
+          "Key": "ee304bb1-8421-4e25-aee5-7094f60c8746",
+          "Alias": "podImage",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "Image will be cropped to 400px x 300px.\n\nFocal point of the image is defined within your \"Media\" section.",
+          "Mandatory": false,
+          "Name": "Image",
+          "SortOrder": 0,
+          "Validation": ""
+        }
+      ]
+    },
+    {
+      "Key": "6facc74d-22f7-47a3-9eb7-df2e67cc0688",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "b39a7ab7-8d75-4d5b-ae5f-669afc0358af",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Pod<i class=\"icon sprTree icon-disc color-orange pull-right\"></i></h3></div><div class=\"panel-body\"><p>The node name you enter above is for your reference only and will not appear on the website.</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/72c87f2a86144bfbb72a2820332db43a",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/2d5d436789f94e289e45bde3e16ab999",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/165ef6f529a9435ba232170a1e1c7e62",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Pod",
+  "Alias": "USN_AC_Pod",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

@@ -1,0 +1,97 @@
+{
+  "DefaultTemplate": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+  "AllowedTemplates": [
+    "umb://template/fe4691bda9ec426f9630c9e1163bb8d4"
+  ],
+  "Icon": "icon-link color-orange",
+  "Thumbnail": "usn_link.png",
+  "Description": "Use this item to add a new \"Links Section\" to your page.",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/659fd64b525f4d908e718b93ff94ebf0",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [
+    "umb://document-type/71396aae63c04e8da48ec34052018cbf",
+    "umb://document-type/b67080e8947d475bb13feb27b76d9c27",
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "a85a5698-f4af-49ca-80e3-9f6ff2002026",
+      "Name": "Content",
+      "SortOrder": 1,
+      "PropertyTypes": [
+        {
+          "Key": "d2bb3042-dd26-46f8-9725-98d3ae5ad674",
+          "Alias": "groupLinks",
+          "DataType": "umb://data-type/b4e3535a175347e28568602cf8cfee6f",
+          "Description": "The 'Caption' field will be used for your link text.",
+          "Mandatory": false,
+          "Name": "Links",
+          "SortOrder": 0,
+          "Validation": ""
+        }
+      ]
+    },
+    {
+      "Key": "be3b74df-4b6a-446f-8144-fb8a35e62736",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "d5834884-3cd6-4b33-ada3-11265705de9e",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Links Section<i class=\"icon sprTree icon-link color-orange pull-right\"></i></h3></div><div class=\"panel-body\"><p>The node name you enter above is for your reference only and will not appear on the website.</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/fc4e1a86342e43e4aadc0be03a74d09b",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/b4e3535a175347e28568602cf8cfee6f",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/71396aae63c04e8da48ec34052018cbf",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/b67080e8947d475bb13feb27b76d9c27",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/659fd64b525f4d908e718b93ff94ebf0",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Links Section",
+  "Alias": "USN_SC_LinksSection_AN",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

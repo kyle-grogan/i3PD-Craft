@@ -1,0 +1,246 @@
+{
+  "DefaultTemplate": "umb://template/218b41a674644535bdf218278aefef20",
+  "AllowedTemplates": [
+    "umb://template/218b41a674644535bdf218278aefef20"
+  ],
+  "Icon": "icon-article",
+  "Thumbnail": "usn_text_rich_colored.png",
+  "Description": "Use this item to add a new \"Standard Page Blog Post\".",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/fec78f3a7e9842148a93297cc88ef945",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [
+    "umb://document-type/559f12479d804eecb7e45b44c81ae950",
+    "umb://document-type/602291717c1041fd8bf7a1d7e81b20ed",
+    "umb://document-type/89b91cefb9714c6c8d842bec32bf5582",
+    "umb://document-type/9ea3b81be80a4359a8c6ab48677a6b56",
+    "umb://document-type/a854011482be4818a347e0c469760b57",
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+    "umb://document-type/e703b4009f0f40c48421091b0c3bc907",
+    "umb://document-type/f5c73473e4db4b54b1c09d63d0293a8b"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "04778560-c72b-4737-ae30-e3e66537761e",
+      "Name": "Post Settings",
+      "SortOrder": 3,
+      "PropertyTypes": [
+        {
+          "Key": "3592f298-404b-43af-bde9-2cb7079e9918",
+          "Alias": "postAuthor",
+          "DataType": "umb://data-type/86ef462a8b844cfeb196df966460feb2",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Author",
+          "SortOrder": 2,
+          "Validation": ""
+        },
+        {
+          "Key": "83e3d3a1-0521-4cf1-adb8-0e3ddee9417c",
+          "Alias": "disableComments",
+          "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+          "Description": "Tick this box to disable commenting for this post. This is only relevant if you have entered a \"Disqus username\" on your \"Blog Landing Page\".",
+          "Mandatory": false,
+          "Name": "Disable comments",
+          "SortOrder": 3,
+          "Validation": ""
+        },
+        {
+          "Key": "987b7b6a-124b-4644-93e8-7eb7314eb600",
+          "Alias": "postDate",
+          "DataType": "umb://data-type/5046194e4237453ca54715db3a07c4e1",
+          "Description": "",
+          "Mandatory": true,
+          "Name": "Post date",
+          "SortOrder": 0,
+          "Validation": ""
+        },
+        {
+          "Key": "da96279a-6c1d-4f6b-840d-92c415d0ec18",
+          "Alias": "postCategories",
+          "DataType": "umb://data-type/68d4cb19f10940a08211ad5e743bd3b6",
+          "Description": "If selecting a child category make sure you also select the parent categories.",
+          "Mandatory": false,
+          "Name": "Categories",
+          "SortOrder": 1,
+          "Validation": ""
+        }
+      ]
+    },
+    {
+      "Key": "51060e0f-c4e8-4d82-845d-9f7b66ccb6d6",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "8baae48b-42bb-4d23-8721-8f1bd6f1a82a",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Standard Page Blog Post<i class=\"icon umb-tree-icon sprTree icon-article pull-right\"></i></h3></div><div class=\"panel-body\"><p>The majority of your content will be added to this page via the \"Content\" tab.</p>\n<p>Additional layout options are available which can be added via the \"Page Components\" folder directly below this page.</p>\n<p>By adding new components you will be able to add more advanced layout options to this page.</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "6c383a9e-4db4-4781-983c-5505879f8d8d",
+      "Name": "Page Settings",
+      "SortOrder": 3,
+      "PropertyTypes": [
+        {
+          "Key": "d9a5e25c-73cd-453d-b27b-387ecee9c73b",
+          "Alias": "pageLayout",
+          "DataType": "umb://data-type/316c072380004401bdadf4b23390b2e1",
+          "Description": "Default page layout will be displayed if nothing is selected. \n\nIf 'Content full width' is selected sub navigation will be hidden.",
+          "Mandatory": false,
+          "Name": "Page layout",
+          "SortOrder": 0,
+          "Validation": ""
+        }
+      ]
+    },
+    {
+      "Key": "81e86b9b-7d11-4395-971f-8cd517d8a857",
+      "Name": "Listing Content",
+      "SortOrder": 4,
+      "PropertyTypes": [
+        {
+          "Key": "4f5b579f-ac29-4aa3-b173-ce9b9a518785",
+          "Alias": "pageListingImageAltText",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Listing image alt text",
+          "SortOrder": 2,
+          "Validation": ""
+        },
+        {
+          "Key": "aad5ad6d-1d52-40b5-81c3-e84768e51add",
+          "Alias": "pageSummary",
+          "DataType": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+          "Description": "If nothing is entered here the summary will be extracted from the beginning of the \"Main Content\" of your post and the character count will be based on the settings defined on your \"Blog Landing Page\".",
+          "Mandatory": false,
+          "Name": "Post summary",
+          "SortOrder": 0,
+          "Validation": ""
+        },
+        {
+          "Key": "abdf381a-c421-46ad-94d5-c21d63d6baaa",
+          "Alias": "pageListingImage",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "Image will be cropped to 1200px x 600px if displayed in a vertical list.\n\nImage will be cropped to 400px x 300px if displayed in a grid list.",
+          "Mandatory": false,
+          "Name": "Listing image",
+          "SortOrder": 1,
+          "Validation": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/8948dc438af84f838639dfdee4784fa6",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/316c072380004401bdadf4b23390b2e1",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/5046194e4237453ca54715db3a07c4e1",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/68d4cb19f10940a08211ad5e743bd3b6",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/86ef462a8b844cfeb196df966460feb2",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/559f12479d804eecb7e45b44c81ae950",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/602291717c1041fd8bf7a1d7e81b20ed",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/89b91cefb9714c6c8d842bec32bf5582",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/9ea3b81be80a4359a8c6ab48677a6b56",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/a854011482be4818a347e0c469760b57",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/e703b4009f0f40c48421091b0c3bc907",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/f5c73473e4db4b54b1c09d63d0293a8b",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/fec78f3a7e9842148a93297cc88ef945",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/218b41a674644535bdf218278aefef20",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Standard Page Blog Post",
+  "Alias": "USNStandardPageBlogPost",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

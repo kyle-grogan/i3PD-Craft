@@ -1,0 +1,526 @@
+{
+  "DefaultTemplate": "umb://template/ac85fda3c2584660bab5362fa1e745fe",
+  "AllowedTemplates": [
+    "umb://template/ac85fda3c2584660bab5362fa1e745fe"
+  ],
+  "Icon": "icon-globe-inverted-europe-africa color-orange",
+  "Thumbnail": "usn_earth.png",
+  "Description": "Use this item to configure your websites \"Global Settings\".",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/b4caa3e05e2341a7b39d5285c0ef4328",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "0360b1f4-630f-42d8-b2e7-7b1d2e9c2c46",
+      "Name": "Default Newsletter Settings",
+      "SortOrder": 2,
+      "PropertyTypes": [
+        {
+          "Key": "277064a1-df5f-49d4-b252-0a6d5d8dd48c",
+          "Alias": "newsletterAPIKey",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "If nothing is entered Newsletter Signup will not be available.",
+          "Mandatory": false,
+          "Name": "API key",
+          "SortOrder": 1,
+          "Validation": ""
+        },
+        {
+          "Key": "42a03071-b6e8-45eb-8012-099ebc0702d8",
+          "Alias": "defaultNewsletterSubscriberListID",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "Newsletter Signup will only be available if a Subscriber List ID is available. Individual signup forms can have their own Subscriber List ID however the one entered here will be used as the default.",
+          "Mandatory": false,
+          "Name": "Subscriber list ID",
+          "SortOrder": 2,
+          "Validation": ""
+        },
+        {
+          "Key": "b0a21c30-814b-476f-8084-64cae5e5118b",
+          "Alias": "emailMarketingPlatform",
+          "DataType": "umb://data-type/b332155f02564c8f94d6f2ebf7a805d9",
+          "Description": "If nothing is selected Newsletter Signup will not be available.",
+          "Mandatory": false,
+          "Name": "Email marketing platform",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "3531f267-f364-4c2a-b4d4-b8ce33fc681d",
+      "Name": "Contact Information",
+      "SortOrder": 4,
+      "PropertyTypes": [
+        {
+          "Key": "1a328f4f-b230-4995-9992-77ff40905ffb",
+          "Alias": "address",
+          "DataType": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Address",
+          "SortOrder": 1,
+          "Validation": ""
+        },
+        {
+          "Key": "474e8190-4e11-4a23-81d1-adf2bead3c6c",
+          "Alias": "emailAddress",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Email address",
+          "SortOrder": 2,
+          "Validation": ""
+        },
+        {
+          "Key": "d7b4ee1e-aea1-42ae-9a8f-819cec368659",
+          "Alias": "telephoneNumber",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Telephone number",
+          "SortOrder": 3,
+          "Validation": null
+        },
+        {
+          "Key": "e1018b2e-0b8e-4a47-9072-220221fdc87b",
+          "Alias": "companyName",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Company name",
+          "SortOrder": 0,
+          "Validation": ""
+        }
+      ]
+    },
+    {
+      "Key": "53709458-d2cb-469d-8e01-b9f2fdd6bad7",
+      "Name": "General Settings",
+      "SortOrder": 1,
+      "PropertyTypes": [
+        {
+          "Key": "1aafac84-3d66-4f20-82ff-65bced5cf61a",
+          "Alias": "googleBusinessLink",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "This must be a business page, not a user page.",
+          "Mandatory": false,
+          "Name": "Google business link",
+          "SortOrder": 6,
+          "Validation": ""
+        },
+        {
+          "Key": "20e9e844-16f5-457f-90c4-bdad1a4f45e5",
+          "Alias": "faviconAndTouchIcons",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "This image will be used for your website favicon and device bookmarks. We suggest that you use an image of at least 310x310 pixels.",
+          "Mandatory": false,
+          "Name": "Favicon and touch icons",
+          "SortOrder": 2,
+          "Validation": ""
+        },
+        {
+          "Key": "55d361da-7e1b-444e-98e3-56cb033c1540",
+          "Alias": "websiteName",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "The text entered here will be be added to the default Meta title of your webpages and used for the hidden text behind your website logo.",
+          "Mandatory": true,
+          "Name": "Website name",
+          "SortOrder": 0,
+          "Validation": ""
+        },
+        {
+          "Key": "822b3049-dabc-4e26-b115-67e76940ec7f",
+          "Alias": "websiteLogo",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "We suggest that you use an image of at least 240 pixels in height. This is to ensure your logo is ready for both retina and non-retina displays.",
+          "Mandatory": false,
+          "Name": "Website logo",
+          "SortOrder": 1,
+          "Validation": ""
+        },
+        {
+          "Key": "aefa6a93-cee7-4676-ad37-a367942e7622",
+          "Alias": "examineSearchProviderName",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "Enter the name of your Examine search provider defined in /Config/ExamineSettings.config\n\nIf nothing is entered the search form will not appear.",
+          "Mandatory": false,
+          "Name": "Examine search provider name",
+          "SortOrder": 8,
+          "Validation": ""
+        },
+        {
+          "Key": "b029e6fa-8e29-4a73-ad8f-e8bab56fcac2",
+          "Alias": "defaultPageLayout",
+          "DataType": "umb://data-type/316c072380004401bdadf4b23390b2e1",
+          "Description": "If 'Content full width' is selected sub navigation will be hidden.",
+          "Mandatory": false,
+          "Name": "Default standard page layout",
+          "SortOrder": 4,
+          "Validation": ""
+        },
+        {
+          "Key": "b3a6fc25-a15a-459e-a69f-659625984173",
+          "Alias": "searchResultsPage",
+          "DataType": "umb://data-type/fd1e0da556064862b6795d0cf3a52a59",
+          "Description": "If no page is selected the search form will not appear.",
+          "Mandatory": false,
+          "Name": "Search results page",
+          "SortOrder": 7,
+          "Validation": ""
+        },
+        {
+          "Key": "c2e33333-7d46-46a6-94e6-f2c039e32958",
+          "Alias": "openGraphDefaultImage",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "This is the default Open Graph image associated with your media. We suggest that you use an image of at least 1200x630 pixels.",
+          "Mandatory": false,
+          "Name": "Default Open Graph image",
+          "SortOrder": 3,
+          "Validation": ""
+        },
+        {
+          "Key": "dffa43e9-0961-4fc7-af8c-33ca709aeeaf",
+          "Alias": "fixedWidth",
+          "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+          "Description": "If set to yes, this will add a maximum width to the overall site content.",
+          "Mandatory": false,
+          "Name": "Fixed width",
+          "SortOrder": 5,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "62470390-837d-4fd2-9bdc-4bbb32b894a6",
+      "Name": "Scripts",
+      "SortOrder": 7,
+      "PropertyTypes": [
+        {
+          "Key": "0fc23e19-5232-4e96-b804-2fa75e411d3f",
+          "Alias": "headerScripts",
+          "DataType": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+          "Description": "Anything you enter here will be placed before the closing &lt;/head&gt; tag on every page of your website.\n\nExample usage would be for entering Google Analytics Script code.",
+          "Mandatory": false,
+          "Name": "Header scripts",
+          "SortOrder": 0,
+          "Validation": ""
+        },
+        {
+          "Key": "b3a3ab07-a2bc-436d-be3c-9762cb9c31e0",
+          "Alias": "beforeClosingBodyScripts",
+          "DataType": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+          "Description": "Anything you enter here will be placed before the closing &lt;/body&gt; tag on every page of your website.",
+          "Mandatory": false,
+          "Name": "Before closing body scripts",
+          "SortOrder": 2,
+          "Validation": ""
+        },
+        {
+          "Key": "c7c99a81-ac17-4392-bfdf-b30b9e79d73a",
+          "Alias": "afterOpeningBodyScripts",
+          "DataType": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+          "Description": "Anything you enter here will be placed after the opening &lt;body&gt; tag on every page of your website.",
+          "Mandatory": false,
+          "Name": "After opening body scripts",
+          "SortOrder": 1,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "76043d3c-6b9b-4b93-bcfa-04f1fb110d4d",
+      "Name": "Sitewide Pods",
+      "SortOrder": 5,
+      "PropertyTypes": [
+        {
+          "Key": "4cc4ab62-d1a3-468b-87d7-85960bb72f7b",
+          "Alias": "defaultSitewidePods",
+          "DataType": "umb://data-type/37c366bfcfa94663a84c646e49e90fc2",
+          "Description": "Select the default pods you would like to appear on your website.",
+          "Mandatory": false,
+          "Name": "Default sitewide pods",
+          "SortOrder": 0,
+          "Validation": ""
+        }
+      ]
+    },
+    {
+      "Key": "9a17885a-50ff-4fa0-a596-590ce5887000",
+      "Name": "Default Outro Strip",
+      "SortOrder": 3,
+      "PropertyTypes": [
+        {
+          "Key": "144fbb12-bd6b-4ebd-88f3-887fe0a128c8",
+          "Alias": "outroDefaultSecondaryHeading",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "This will appear above the heading in a smaller font.",
+          "Mandatory": false,
+          "Name": "Secondary heading",
+          "SortOrder": 6,
+          "Validation": null
+        },
+        {
+          "Key": "3ed7d25a-5c1e-49e4-98bc-5481fcd79dc9",
+          "Alias": "outroDefaultBackgroundImage",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "No recommended image size.\n\nIf the image will cover the full area of the component, use a large image.\n\nIf the image will repeat, use a small image.",
+          "Mandatory": false,
+          "Name": "Background image",
+          "SortOrder": 3,
+          "Validation": null
+        },
+        {
+          "Key": "479f5c80-f5d4-4515-8a42-f6481d4c4cff",
+          "Alias": "outroDefaultText",
+          "DataType": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Text",
+          "SortOrder": 7,
+          "Validation": ""
+        },
+        {
+          "Key": "4cd3d9be-6223-4c07-98e6-a159c7803e52",
+          "Alias": "outroDefaultBackgroundImageOptions",
+          "DataType": "umb://data-type/3f4af8a2fe2f4890bab56a3bf3a07db3",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Background image options",
+          "SortOrder": 4,
+          "Validation": null
+        },
+        {
+          "Key": "6aaeed38-7340-4164-9de4-2d192a4af016",
+          "Alias": "outroDefaultHeading",
+          "DataType": "umb://data-type/e8d9b73c505f410b8509dead5c981d8a",
+          "Description": "Heading style chosen will not affect font size. This option is purely for setting your heading hierarchy for SEO purposes.",
+          "Mandatory": false,
+          "Name": "Heading",
+          "SortOrder": 5,
+          "Validation": null
+        },
+        {
+          "Key": "7def094e-2af8-4173-b8dc-746efcb973ff",
+          "Alias": "outroDefaultAnimate",
+          "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Animate",
+          "SortOrder": 2,
+          "Validation": null
+        },
+        {
+          "Key": "d04a74bd-04d0-4b13-bf05-5c4300a76a3e",
+          "Alias": "outroDefaultLink",
+          "DataType": "umb://data-type/2d5d436789f94e289e45bde3e16ab999",
+          "Description": "The \"Caption\" field will be used for your link text.",
+          "Mandatory": false,
+          "Name": "Link",
+          "SortOrder": 8,
+          "Validation": null
+        },
+        {
+          "Key": "d3e7d930-2aa3-437e-b4f3-ec1be9733881",
+          "Alias": "outroDefaultButtonColor",
+          "DataType": "umb://data-type/8605e6048396472d837e3ad84d8fa466",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Button color",
+          "SortOrder": 1,
+          "Validation": null
+        },
+        {
+          "Key": "e217abbf-270d-410c-877a-84af01c8d998",
+          "Alias": "outroDefaultBackgroundColor",
+          "DataType": "umb://data-type/8605e6048396472d837e3ad84d8fa466",
+          "Description": "Color selected will decide what color is used for any text that appears over the background.",
+          "Mandatory": false,
+          "Name": "Background color",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "c2520ced-617d-445b-8753-6140909993f5",
+      "Name": "Cookie Notification",
+      "SortOrder": 6,
+      "PropertyTypes": [
+        {
+          "Key": "69010fbc-0406-4a53-ac5f-e7165a132e78",
+          "Alias": "enable",
+          "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Enable",
+          "SortOrder": 0,
+          "Validation": null
+        },
+        {
+          "Key": "be7492f5-8882-4003-8894-d591b734715b",
+          "Alias": "acceptCookiesButtonText",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Accept cookies button text",
+          "SortOrder": 3,
+          "Validation": null
+        },
+        {
+          "Key": "d35391f4-36c9-4cd0-b218-7509fc0d6385",
+          "Alias": "cookieHeading",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Heading",
+          "SortOrder": 1,
+          "Validation": null
+        },
+        {
+          "Key": "de101c62-e4fc-4fcb-984d-95e42703c937",
+          "Alias": "rememberAcceptanceDurationDays",
+          "DataType": "umb://data-type/2e6d3631066e44b8aec496f09099b2b5",
+          "Description": "If nothing is entered this will default to 365 days.",
+          "Mandatory": false,
+          "Name": "Remember acceptance duration (days)",
+          "SortOrder": 4,
+          "Validation": null
+        },
+        {
+          "Key": "e112fd2d-e0d4-4289-b780-4e566824cb0e",
+          "Alias": "cookieText",
+          "DataType": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Text",
+          "SortOrder": 2,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "eddb8a5c-a929-41d1-9b78-135f1f4583ac",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "719a3b9c-ab64-4c51-bec1-55c69e2c88d0",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Global Settings<i class=\"icon sprTree icon-globe-inverted-europe-africa color-orange pull-right\"></i></h3></div><div class=\"panel-body\"><p>This item controls global settings that relate to your website as a whole.</p>\n<p><strong>DO NOT</strong> delete this item.</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [
+    {
+      "Key": "2f5dc90a-9f3e-4396-a4ba-275c34eb5006",
+      "Alias": "disableDelete",
+      "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+      "Description": "If \"Yes\" is selected, when a user attempts to delete this node they will be presented with a warning message indicating that this node cannot be deleted.",
+      "Mandatory": false,
+      "Name": "Disable delete",
+      "SortOrder": 0,
+      "Validation": null
+    }
+  ],
+  "Udi": "umb://document-type/c1d82b8a296d41fdbdd4937e927e5565",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/2d5d436789f94e289e45bde3e16ab999",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/2e6d3631066e44b8aec496f09099b2b5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/316c072380004401bdadf4b23390b2e1",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/37c366bfcfa94663a84c646e49e90fc2",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/3f4af8a2fe2f4890bab56a3bf3a07db3",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/8605e6048396472d837e3ad84d8fa466",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/b332155f02564c8f94d6f2ebf7a805d9",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/e8d9b73c505f410b8509dead5c981d8a",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/fd1e0da556064862b6795d0cf3a52a59",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/b4caa3e05e2341a7b39d5285c0ef4328",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/ac85fda3c2584660bab5362fa1e745fe",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Global Settings",
+  "Alias": "USNGlobalSettings",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

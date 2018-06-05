@@ -1,0 +1,130 @@
+{
+  "DefaultTemplate": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+  "AllowedTemplates": [
+    "umb://template/fe4691bda9ec426f9630c9e1163bb8d4"
+  ],
+  "Icon": "icon-video color-orange",
+  "Thumbnail": "usn_movie.png",
+  "Description": "Use this item to add a new \"YouTube\" or \"Vimeo\" video to this section.",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/659fd64b525f4d908e718b93ff94ebf0",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "62b11f93-63bb-480d-ae1e-809ea200f102",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "40cd5916-d7ea-430c-9a77-56259bbc2ccf",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Gallery Video<i class=\"icon sprTree icon-video color-orange pull-right\"></i></h3></div><div class=\"panel-body\"><p>The node name you enter above is for your reference only and will not appear on the website.</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "ccda62c6-3662-4f1f-a9af-b34602d0012e",
+      "Name": "Content",
+      "SortOrder": 1,
+      "PropertyTypes": [
+        {
+          "Key": "2996addb-fd6e-4a2a-886e-3d055c166ce7",
+          "Alias": "galleryThumbnailImage",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "This image is optional. If you do not upload an image, a thumbnail image will be automatically generated for you from the associated video.\n\nImage will be cropped to 400px x 300px.\n\nFocal point of the image is defined within your \"Media\" section.",
+          "Mandatory": false,
+          "Name": "Thumbnail image",
+          "SortOrder": 0,
+          "Validation": ""
+        },
+        {
+          "Key": "72ef51b9-8a9f-4cc1-b6db-c2cfbefac1f3",
+          "Alias": "thumbnailImageAltText",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Thumbnail image alt text",
+          "SortOrder": 1,
+          "Validation": ""
+        },
+        {
+          "Key": "8f0ce7a6-fdfb-49cb-b7a5-2a5a8aec411a",
+          "Alias": "galleryVideo",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "Copy the full URL for your video from the address bar. (YouTube or Vimeo only)",
+          "Mandatory": true,
+          "Name": "Video",
+          "SortOrder": 4,
+          "Validation": ""
+        },
+        {
+          "Key": "b2a5d590-df78-4ad8-a281-e237d52af039",
+          "Alias": "lightWindowTitle",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "This text will be displayed above your image within the light window.",
+          "Mandatory": false,
+          "Name": "Light window title",
+          "SortOrder": 2,
+          "Validation": ""
+        },
+        {
+          "Key": "d939b77a-199f-4842-873d-68395bbefed7",
+          "Alias": "lightWindowFooter",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "This text will be displayed below your image within the light window.",
+          "Mandatory": false,
+          "Name": "Light window footer",
+          "SortOrder": 3,
+          "Validation": null
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/e22538096e07498e9fec4b06b7303f62",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/659fd64b525f4d908e718b93ff94ebf0",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Gallery Video",
+  "Alias": "USN_SC_GalleryVideo",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

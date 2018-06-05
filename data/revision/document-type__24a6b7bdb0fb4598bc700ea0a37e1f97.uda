@@ -1,0 +1,97 @@
+{
+  "DefaultTemplate": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+  "AllowedTemplates": [
+    "umb://template/fe4691bda9ec426f9630c9e1163bb8d4"
+  ],
+  "Icon": "icon-notepad-alt color-orange",
+  "Thumbnail": "usn_text.png",
+  "Description": "Use this item to add a new \"Text Section\" to your page.",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/659fd64b525f4d908e718b93ff94ebf0",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [
+    "umb://document-type/71396aae63c04e8da48ec34052018cbf",
+    "umb://document-type/b67080e8947d475bb13feb27b76d9c27",
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "7393b308-9f40-4ad8-a17a-53d551504983",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "b6266731-afd7-46ec-b4e1-f6bddfcf995c",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Text Section<i class=\"icon sprTree icon-notepad-alt color-orange pull-right\"></i></h3></div><div class=\"panel-body\"><p>The node name you enter above is for your reference only and will not appear on the website.</p><p>Use this item to add text between other components you have added to the page.</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "bf851deb-22e7-46ee-bc7a-5caaee0bd569",
+      "Name": "Content",
+      "SortOrder": 1,
+      "PropertyTypes": [
+        {
+          "Key": "94f4d7ea-72ad-494c-a3e6-19ae3df9ca37",
+          "Alias": "textSection",
+          "DataType": "umb://data-type/f0a7348e251f4ed9a30fdbd4ffc4fae5",
+          "Description": "",
+          "Mandatory": true,
+          "Name": "Text",
+          "SortOrder": 0,
+          "Validation": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/24a6b7bdb0fb4598bc700ea0a37e1f97",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/f0a7348e251f4ed9a30fdbd4ffc4fae5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/71396aae63c04e8da48ec34052018cbf",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/b67080e8947d475bb13feb27b76d9c27",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/659fd64b525f4d908e718b93ff94ebf0",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Text Section",
+  "Alias": "USN_SC_TextSection_AN",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

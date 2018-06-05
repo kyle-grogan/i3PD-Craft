@@ -1,0 +1,85 @@
+{
+  "DefaultTemplate": "umb://template/ac85fda3c2584660bab5362fa1e745fe",
+  "AllowedTemplates": [
+    "umb://template/ac85fda3c2584660bab5362fa1e745fe"
+  ],
+  "Icon": "icon-code color-orange",
+  "Thumbnail": "usn_code_colored.png",
+  "Description": "Use this item to create a new \"Code Pod\".",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/85441815716e4c04b6cb15416a7252b8",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "62c75f92-72bf-4465-bd16-c22855eb7b82",
+      "Name": "Content",
+      "SortOrder": 1,
+      "PropertyTypes": [
+        {
+          "Key": "4641e99a-2eab-4dc1-8658-fa31bb156616",
+          "Alias": "code",
+          "DataType": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+          "Description": "Enter your raw code here. This can be JavaScript, HTML etc.",
+          "Mandatory": true,
+          "Name": "Code",
+          "SortOrder": 0,
+          "Validation": ""
+        }
+      ]
+    },
+    {
+      "Key": "b8904c66-2960-462d-9e9b-c73cb8d56cfd",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "482083c8-1d9a-48ed-bea5-ae7f3e8e7b7b",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Code Pod<i class=\"icon sprTree icon-code color-orange pull-right\"></i></h3></div><div class=\"panel-body\"><p>The node name you enter above is for your reference only and will not appear on the website.</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/332279adec2240968b417ddbf2a9d17e",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/85441815716e4c04b6cb15416a7252b8",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/ac85fda3c2584660bab5362fa1e745fe",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Code Pod",
+  "Alias": "USN_SWP_CodePod",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

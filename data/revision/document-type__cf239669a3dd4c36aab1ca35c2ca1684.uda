@@ -1,0 +1,42 @@
+{
+  "DefaultTemplate": null,
+  "AllowedTemplates": [],
+  "Icon": "icon-document color-blue",
+  "Thumbnail": "folder.png",
+  "Description": null,
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/6eb4b01a6107460f8a995a99e8ce216f",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [],
+  "PropertyGroups": [],
+  "PropertyTypes": [
+    {
+      "Key": "f126c917-7289-491e-88b6-9d52acb24990",
+      "Alias": "disableDelete",
+      "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+      "Description": "If \"Yes\" is selected, when a user attempts to delete this node they will be presented with a warning message indicating that this node cannot be deleted.",
+      "Mandatory": false,
+      "Name": "Disable delete",
+      "SortOrder": 1,
+      "Validation": null
+    }
+  ],
+  "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/6eb4b01a6107460f8a995a99e8ce216f",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Disable Delete",
+  "Alias": "USN_CMP_DisableDelete",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

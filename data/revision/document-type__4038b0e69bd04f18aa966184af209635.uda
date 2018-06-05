@@ -1,0 +1,134 @@
+{
+  "DefaultTemplate": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+  "AllowedTemplates": [
+    "umb://template/fe4691bda9ec426f9630c9e1163bb8d4"
+  ],
+  "Icon": "icon-alert-alt color-orange",
+  "Thumbnail": "usn_sign_warning.png",
+  "Description": "Use this item to add a new \"Alert Box\" to your page.",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/659fd64b525f4d908e718b93ff94ebf0",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [
+    "umb://document-type/71396aae63c04e8da48ec34052018cbf",
+    "umb://document-type/b67080e8947d475bb13feb27b76d9c27",
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "413603a4-c32a-42b2-a1b1-b53a0d57373d",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "d1a84b34-1234-4057-9842-d6aaf0e6dffb",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Alert Box<i class=\"icon sprTree icon-alert-alt color-orange pull-right\"></i></h3></div><div class=\"panel-body\"><p>The node name you enter above is for your reference only and will not appear on the website.</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "79f84efe-8535-448e-8679-594f50b833cf",
+      "Name": "Content",
+      "SortOrder": 2,
+      "PropertyTypes": [
+        {
+          "Key": "5c41f0ff-a473-4def-b56e-9107eb53bd6a",
+          "Alias": "alertText",
+          "DataType": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+          "Description": "",
+          "Mandatory": true,
+          "Name": "Text",
+          "SortOrder": 0,
+          "Validation": ""
+        }
+      ]
+    },
+    {
+      "Key": "910dfc2b-c358-49f2-8b32-028ecc5db28f",
+      "Name": "Component Settings",
+      "SortOrder": 1,
+      "PropertyTypes": [
+        {
+          "Key": "003d8903-6a12-41d8-a22d-eab4b607aa83",
+          "Alias": "alertColour",
+          "DataType": "umb://data-type/fe42d5c428e049c9869e76ebfd53186f",
+          "Description": "",
+          "Mandatory": true,
+          "Name": "Colour",
+          "SortOrder": 0,
+          "Validation": ""
+        },
+        {
+          "Key": "f08c6b51-bc47-4e05-a3d6-361e719f7f89",
+          "Alias": "hideCloseOption",
+          "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Hide close option",
+          "SortOrder": 1,
+          "Validation": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/4038b0e69bd04f18aa966184af209635",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/fe42d5c428e049c9869e76ebfd53186f",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/71396aae63c04e8da48ec34052018cbf",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/b67080e8947d475bb13feb27b76d9c27",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/659fd64b525f4d908e718b93ff94ebf0",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Alert Box",
+  "Alias": "USN_SC_Alert_AN",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

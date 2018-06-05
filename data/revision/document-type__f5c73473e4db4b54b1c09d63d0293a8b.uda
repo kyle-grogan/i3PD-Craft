@@ -1,0 +1,239 @@
+{
+  "DefaultTemplate": null,
+  "AllowedTemplates": [],
+  "Icon": "icon-document color-blue",
+  "Thumbnail": "folder.png",
+  "Description": null,
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/6eb4b01a6107460f8a995a99e8ce216f",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "a5fff5ef-a41a-427a-ad73-84ca57510f11",
+      "Name": "Header Section",
+      "SortOrder": 7,
+      "PropertyTypes": [
+        {
+          "Key": "0648e211-bc60-4e30-a95c-82c2e52091fd",
+          "Alias": "headerAnimate",
+          "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Animate",
+          "SortOrder": 8,
+          "Validation": null
+        },
+        {
+          "Key": "09bbd3c3-5cac-4ba6-ae61-c900b502eb5c",
+          "Alias": "headerSecondaryHeading",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "This will appear above the heading in a smaller font.",
+          "Mandatory": false,
+          "Name": "Secondary heading",
+          "SortOrder": 13,
+          "Validation": null
+        },
+        {
+          "Key": "188e44cb-a055-47b5-8082-c724b619d1e4",
+          "Alias": "addColorOverlay",
+          "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+          "Description": "The color overlay added to your banner will be decided based on the background color selected.",
+          "Mandatory": false,
+          "Name": "Add color overlay",
+          "SortOrder": 5,
+          "Validation": null
+        },
+        {
+          "Key": "1a22f2ad-e47c-4c7f-a260-784429c3f4e9",
+          "Alias": "headerStyle",
+          "DataType": "umb://data-type/9f07a4efe09e42b1826f2a5da5944b53",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Header style",
+          "SortOrder": 3,
+          "Validation": null
+        },
+        {
+          "Key": "1a2fdcc0-096d-4332-96bb-31d451442669",
+          "Alias": "headerButtonColor",
+          "DataType": "umb://data-type/8605e6048396472d837e3ad84d8fa466",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Button color",
+          "SortOrder": 2,
+          "Validation": null
+        },
+        {
+          "Key": "2e1701ee-0408-4cdb-a9e6-76baedc62de9",
+          "Alias": "headerText",
+          "DataType": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Text",
+          "SortOrder": 14,
+          "Validation": null
+        },
+        {
+          "Key": "3c520f11-2f84-4419-b879-12fde4a5ab7a",
+          "Alias": "headerScrollPrompt",
+          "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Scroll prompt",
+          "SortOrder": 6,
+          "Validation": null
+        },
+        {
+          "Key": "544c6971-a30e-4b61-aa9d-282be1bbe440",
+          "Alias": "headerTextAlignment",
+          "DataType": "umb://data-type/d9d02e516287496db16f349c69e62a1e",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Text alignment",
+          "SortOrder": 4,
+          "Validation": null
+        },
+        {
+          "Key": "65a8d7a1-25a3-43f7-9906-8965711dc428",
+          "Alias": "headerParallax",
+          "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Parallax",
+          "SortOrder": 7,
+          "Validation": null
+        },
+        {
+          "Key": "6e9e078b-1441-48d5-983a-4dfb4a4a06cc",
+          "Alias": "headerLink",
+          "DataType": "umb://data-type/2d5d436789f94e289e45bde3e16ab999",
+          "Description": "The \"Caption\" field will be used for your link text.",
+          "Mandatory": false,
+          "Name": "Link",
+          "SortOrder": 15,
+          "Validation": null
+        },
+        {
+          "Key": "7cf57c9a-9c07-4d9e-877d-8a6a75cd1945",
+          "Alias": "headerImage",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "For all Parallax and Takeover banners, your image will be cropped to 1500px by 1100px.\n\nIf you choose a 'Medium' banner style without the Parallax effect your image will be cropped to 1500px by 550px.\n\nIf you choose a 'Short' banner style without the Parallax effect your image will be cropped to 1500px by 400px.\n\nFocal point of the image is defined within your \"Media\" section.",
+          "Mandatory": false,
+          "Name": "Image",
+          "SortOrder": 9,
+          "Validation": null
+        },
+        {
+          "Key": "95cfc7c1-b5dc-4bbb-82a8-f18dfe328081",
+          "Alias": "displayHeaderImageSection",
+          "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Display header image section",
+          "SortOrder": 0,
+          "Validation": null
+        },
+        {
+          "Key": "acd6e08a-d630-4774-87fd-1b46d5d91a81",
+          "Alias": "headerBackgroundColor",
+          "DataType": "umb://data-type/8605e6048396472d837e3ad84d8fa466",
+          "Description": "Color selected will decide what color is used for any text that appears over the background. \n\nIf the banner contains an image, use the color that works best for the text over the image.",
+          "Mandatory": false,
+          "Name": "Background color",
+          "SortOrder": 1,
+          "Validation": null
+        },
+        {
+          "Key": "b6002f71-726f-4c40-937d-d091b3daec4c",
+          "Alias": "video",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "MP4 format only. The image above will be displayed first before the video is downloaded.\n\nIt is recommended to use the smallest file size possible to enable quick downloads.",
+          "Mandatory": false,
+          "Name": "Video",
+          "SortOrder": 11,
+          "Validation": null
+        },
+        {
+          "Key": "b699adce-fc80-492b-8aa7-92e59a54539c",
+          "Alias": "headerHeading",
+          "DataType": "umb://data-type/e8d9b73c505f410b8509dead5c981d8a",
+          "Description": "Heading style chosen will not affect font size. This option is purely for setting your heading hierarchy for SEO purposes.",
+          "Mandatory": false,
+          "Name": "Heading",
+          "SortOrder": 12,
+          "Validation": null
+        },
+        {
+          "Key": "e5508782-d325-4c80-a6c6-3621e4201f2a",
+          "Alias": "headerImageAltText",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Image alt text",
+          "SortOrder": 10,
+          "Validation": null
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/f5c73473e4db4b54b1c09d63d0293a8b",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/2d5d436789f94e289e45bde3e16ab999",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/8605e6048396472d837e3ad84d8fa466",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/9f07a4efe09e42b1826f2a5da5944b53",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/d9d02e516287496db16f349c69e62a1e",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/e8d9b73c505f410b8509dead5c981d8a",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/6eb4b01a6107460f8a995a99e8ce216f",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Standard Page Header Section",
+  "Alias": "USN_CMP_SP_HeaderSection",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

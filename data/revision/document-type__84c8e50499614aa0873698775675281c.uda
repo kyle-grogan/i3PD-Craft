@@ -1,0 +1,136 @@
+{
+  "DefaultTemplate": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+  "AllowedTemplates": [
+    "umb://template/fe4691bda9ec426f9630c9e1163bb8d4"
+  ],
+  "Icon": "icon-folder-outline color-orange",
+  "Thumbnail": "usn_folder_gear.png",
+  "Description": "This item is added automatically to each \"Standard Page\" to organise your page components.",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/659fd64b525f4d908e718b93ff94ebf0",
+  "AllowedChildContentTypes": [
+    "umb://document-type/04e2c5c3e60c46fda157b84f2b01445a",
+    "umb://document-type/0b68a3a7ff404024b661daef0c29a069",
+    "umb://document-type/1c04e80497cb4ce9a7c199eb36e95a37",
+    "umb://document-type/24a6b7bdb0fb4598bc700ea0a37e1f97",
+    "umb://document-type/4038b0e69bd04f18aa966184af209635",
+    "umb://document-type/4c04a8587a874f78914959b4a742c7b8",
+    "umb://document-type/6209b8010017424d890f066f23ab7eac",
+    "umb://document-type/84e1e0577ada42cfb5abc8f0a78d43d6",
+    "umb://document-type/9098bcceb7ec402294a2bc2853f00796",
+    "umb://document-type/967a2c10bb0546dfaac6fb5915e7b0d3",
+    "umb://document-type/a245f08a63cf4ac7adcc7b16d8d40621",
+    "umb://document-type/fc4e1a86342e43e4aadc0be03a74d09b"
+  ],
+  "CompositionContentTypes": [
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "18016151-9423-4e8e-adc3-5d76ebbe392e",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "f2b7d992-4480-4d0e-aa8a-396c11ee2937",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Page Components<i class=\"icon sprTree icon-folder-outline color-orange pull-right\"></i></h3></div><div class=\"panel-body\"><p>Add components below this folder to organise the layout and content of your page.</p><p>The order of your components within this folder directly relates to the order your components will be displayed on this page. Use <strong>Actions > Sort</strong> to reorder your components.<p><strong>DO NOT</strong> delete or rename this folder.</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/84c8e50499614aa0873698775675281c",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/04e2c5c3e60c46fda157b84f2b01445a",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/0b68a3a7ff404024b661daef0c29a069",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/1c04e80497cb4ce9a7c199eb36e95a37",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/24a6b7bdb0fb4598bc700ea0a37e1f97",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/4038b0e69bd04f18aa966184af209635",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/4c04a8587a874f78914959b4a742c7b8",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/6209b8010017424d890f066f23ab7eac",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/84e1e0577ada42cfb5abc8f0a78d43d6",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/9098bcceb7ec402294a2bc2853f00796",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/967a2c10bb0546dfaac6fb5915e7b0d3",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/a245f08a63cf4ac7adcc7b16d8d40621",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/fc4e1a86342e43e4aadc0be03a74d09b",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/659fd64b525f4d908e718b93ff94ebf0",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Standard Page Components Folder",
+  "Alias": "USNStandardPageComponents",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

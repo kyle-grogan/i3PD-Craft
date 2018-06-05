@@ -1,0 +1,82 @@
+{
+  "DefaultTemplate": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+  "AllowedTemplates": [
+    "umb://template/fe4691bda9ec426f9630c9e1163bb8d4"
+  ],
+  "Icon": "icon-bulleted-list color-orange",
+  "Thumbnail": "usn_folder_resources.png",
+  "Description": "Use this item to add a new \"Resources Section\" to your page.",
+  "AllowedAtRoot": false,
+  "IsContainer": true,
+  "Parent": "umb://document-type-container/659fd64b525f4d908e718b93ff94ebf0",
+  "AllowedChildContentTypes": [
+    "umb://document-type/cf0b983f9d624440adc6dea192f0e8b1"
+  ],
+  "CompositionContentTypes": [
+    "umb://document-type/71396aae63c04e8da48ec34052018cbf",
+    "umb://document-type/b67080e8947d475bb13feb27b76d9c27",
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "d243740a-2820-4504-b279-6345566bcb1c",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "328543cb-8668-4141-8d55-6e4540229ec6",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Resources Section<i class=\"icon sprTree icon-bulleted-list color-orange pull-right\"></i></h3></div><div class=\"panel-body\"><p>The node name you enter above is for your reference only and will not appear on the website.</p><p>Add multiple \"Resource Items\" via the \"Resource Items\" tab. You must add at least one \"Resource Item\" for this section to be displayed.</p><p>The sort order of your \"Resource Items\" directly relates to the order your \"Resource Items\" will be displayed on this page. Use  <strong>Actions > Sort</strong> to reorder your \"Resource Items\".</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/84e1e0577ada42cfb5abc8f0a78d43d6",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/71396aae63c04e8da48ec34052018cbf",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/b67080e8947d475bb13feb27b76d9c27",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf0b983f9d624440adc6dea192f0e8b1",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/659fd64b525f4d908e718b93ff94ebf0",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Resources Section",
+  "Alias": "USN_SC_ResourcesSection_AN",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

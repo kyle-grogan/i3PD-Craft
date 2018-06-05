@@ -1,0 +1,111 @@
+{
+  "DefaultTemplate": null,
+  "AllowedTemplates": [],
+  "Icon": "icon-document color-blue",
+  "Thumbnail": "usn_folder_pods.png",
+  "Description": null,
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/6eb4b01a6107460f8a995a99e8ce216f",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "5df8a9df-247b-4dc6-8cb4-7ff1c6d24b77",
+      "Name": "Outro",
+      "SortOrder": 8,
+      "PropertyTypes": [
+        {
+          "Key": "7ac1c187-a42c-4817-8a2f-ce33d23cf625",
+          "Alias": "outroLinks",
+          "DataType": "umb://data-type/b4e3535a175347e28568602cf8cfee6f",
+          "Description": "Select the links you would like to appear in the \"Outro\" section of this component.\n\nThe \"Caption\" field will be used for your link text.",
+          "Mandatory": false,
+          "Name": "Links",
+          "SortOrder": 1,
+          "Validation": null
+        },
+        {
+          "Key": "fd0e684b-88c3-466e-ab5e-2ad4ce98aba1",
+          "Alias": "outroText",
+          "DataType": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Text",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "85d52b32-7f04-497d-8771-b8e2a29f28b5",
+      "Name": "Introduction",
+      "SortOrder": 3,
+      "PropertyTypes": [
+        {
+          "Key": "09a4a657-6bb5-49db-8cad-7e2f11cf2289",
+          "Alias": "introductionText",
+          "DataType": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Text",
+          "SortOrder": 2,
+          "Validation": null
+        },
+        {
+          "Key": "5bc0e7d9-9f09-4736-a4d6-03cdce7d6f46",
+          "Alias": "introductionHeading",
+          "DataType": "umb://data-type/e8d9b73c505f410b8509dead5c981d8a",
+          "Description": "Heading style chosen will not affect font size. This option is purely for setting your heading hierarchy for SEO purposes.",
+          "Mandatory": false,
+          "Name": "Heading",
+          "SortOrder": 0,
+          "Validation": null
+        },
+        {
+          "Key": "da49ba6b-cc86-4b9a-a0aa-a172aecdb3f2",
+          "Alias": "introductionSecondaryHeading",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "This will appear above the heading in a smaller font.",
+          "Mandatory": false,
+          "Name": "Secondary heading",
+          "SortOrder": 1,
+          "Validation": null
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/85830e8e6137464f96fd7540f8fc72de",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/b4e3535a175347e28568602cf8cfee6f",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/e8d9b73c505f410b8509dead5c981d8a",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/6eb4b01a6107460f8a995a99e8ce216f",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Advanced Component Intro/Outro",
+  "Alias": "USN_CMP_IntroOutro",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

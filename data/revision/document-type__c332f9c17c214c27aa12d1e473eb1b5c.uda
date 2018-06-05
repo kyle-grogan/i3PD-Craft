@@ -1,0 +1,85 @@
+{
+  "DefaultTemplate": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+  "AllowedTemplates": [
+    "umb://template/fe4691bda9ec426f9630c9e1163bb8d4"
+  ],
+  "Icon": "icon-remove color-orange",
+  "Thumbnail": "usn_accordion.png",
+  "Description": "Use this item to add a new \"Accordion/Tab\" to this section.",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/659fd64b525f4d908e718b93ff94ebf0",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "45d74c9a-d999-4fdc-b38d-cda4a9522297",
+      "Name": "Content",
+      "SortOrder": 1,
+      "PropertyTypes": [
+        {
+          "Key": "3b56f4b5-8343-4c47-b070-6508fcba5ef7",
+          "Alias": "repeaterText",
+          "DataType": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+          "Description": "",
+          "Mandatory": true,
+          "Name": "Text",
+          "SortOrder": 0,
+          "Validation": ""
+        }
+      ]
+    },
+    {
+      "Key": "ada11072-d4ea-4947-a57f-34d56850f729",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "3a9d75bc-e4eb-4070-9092-660e756075b9",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Accordion/Tab Item<i class=\"icon sprTree icon-remove color-orange pull-right\"></i></h3></div><div class=\"panel-body\"><p>The node name you enter above will be displayed as the \"Item Heading\".</p><p>For example, if using this for a Question/Answer the name you enter will be displayed as the \"Question\". If you have chosen the \"Tabbed\" style the name will be used as the \"Tab Heading\".</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/c332f9c17c214c27aa12d1e473eb1b5c",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/659fd64b525f4d908e718b93ff94ebf0",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Accordion/Tab Item",
+  "Alias": "USN_SC_AccordionTabItem",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

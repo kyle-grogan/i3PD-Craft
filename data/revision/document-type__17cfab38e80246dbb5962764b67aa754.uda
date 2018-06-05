@@ -1,0 +1,300 @@
+{
+  "DefaultTemplate": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+  "AllowedTemplates": [
+    "umb://template/fe4691bda9ec426f9630c9e1163bb8d4"
+  ],
+  "Icon": "icon-circle-dotted-active color-orange",
+  "Thumbnail": "folder.png",
+  "Description": "Use this item to add a new \"Signup/Subpage Listing Section\" to your page.",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/165ef6f529a9435ba232170a1e1c7e62",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [
+    "umb://document-type/71396aae63c04e8da48ec34052018cbf",
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "1063816d-d178-4830-9db7-a11e88020b03",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "5b464160-bf7e-441d-b936-4c1d18b1375e",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Signup/Subpage Listing Section<i class=\"icon sprTree icon-circle-dotted-active color-orange pull-right\"></i></h3></div><div class=\"panel-body\"><p>The node name you enter above is for your reference only and will not appear on the website.</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "62deaffb-8c72-41e9-85fd-a41f8004d020",
+      "Name": "Listing Section",
+      "SortOrder": 3,
+      "PropertyTypes": [
+        {
+          "Key": "2570d069-0121-4f17-bfb1-d1302d9a8b7e",
+          "Alias": "listingSectionSecondaryHeading",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "This will appear above the heading in a smaller font.",
+          "Mandatory": false,
+          "Name": "Secondary heading",
+          "SortOrder": 1,
+          "Validation": null
+        },
+        {
+          "Key": "4292b0ea-73e1-4c0c-8725-1a3fbfe4e3fc",
+          "Alias": "pagesToDisplay",
+          "DataType": "umb://data-type/2e6d3631066e44b8aec496f09099b2b5",
+          "Description": "If nothing is entered, this section will be hidden.",
+          "Mandatory": false,
+          "Name": "Pages to display",
+          "SortOrder": 2,
+          "Validation": ""
+        },
+        {
+          "Key": "b7ffe2db-39d3-4099-92b6-d9101606bb4f",
+          "Alias": "linkToListing",
+          "DataType": "umb://data-type/2d5d436789f94e289e45bde3e16ab999",
+          "Description": "Link this to an internal page that contains sub pages. Sub pages will be listed.\n\nIf linking to a \"Blog\", either link to the \"Blog Landing Page\" or \"Blog Category Page\".\n\nThe \"Caption\" field will be used for your link text.",
+          "Mandatory": false,
+          "Name": "Link to listing",
+          "SortOrder": 4,
+          "Validation": null
+        },
+        {
+          "Key": "d48f92a6-da9d-4999-b443-90736cf08508",
+          "Alias": "listingSectionHeading",
+          "DataType": "umb://data-type/e8d9b73c505f410b8509dead5c981d8a",
+          "Description": "Heading style chosen will not affect font size. This option is purely for setting your heading hierarchy for SEO purposes.",
+          "Mandatory": false,
+          "Name": "Heading",
+          "SortOrder": 0,
+          "Validation": ""
+        },
+        {
+          "Key": "e71d7dfa-68d4-4c72-a4ff-813ddcd411da",
+          "Alias": "summaryTextCharacterCount",
+          "DataType": "umb://data-type/2e6d3631066e44b8aec496f09099b2b5",
+          "Description": "Enter the number of characters you would like displayed from the beginning of each page.\n\nIf summary text has been entered this will be used instead. Summary text must be entered on Advanced pages for this to be displayed. If nothing is entered, no summary text will be displayed.",
+          "Mandatory": false,
+          "Name": "Summary text character count",
+          "SortOrder": 3,
+          "Validation": "^(\\s*|\\d+)$"
+        }
+      ]
+    },
+    {
+      "Key": "980f2980-c72d-46a9-99e8-f5962a66abc2",
+      "Name": "Component Settings",
+      "SortOrder": 1,
+      "PropertyTypes": [
+        {
+          "Key": "738924d6-df57-4188-9aff-a5cc79a6eb32",
+          "Alias": "backgroundColor",
+          "DataType": "umb://data-type/8605e6048396472d837e3ad84d8fa466",
+          "Description": "Color selected will decide what color is used for any text that appears over the background.\n\nIf a background image is used, use the color that works best for the text over the image.",
+          "Mandatory": false,
+          "Name": "Background color",
+          "SortOrder": 0,
+          "Validation": ""
+        },
+        {
+          "Key": "7407e5c7-14a5-4fe1-ac75-c2b63e9db390",
+          "Alias": "backgroundImageOptions",
+          "DataType": "umb://data-type/3f4af8a2fe2f4890bab56a3bf3a07db3",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Background image options",
+          "SortOrder": 3,
+          "Validation": null
+        },
+        {
+          "Key": "b35aa8ce-1389-41b9-8c92-6f0f35a21541",
+          "Alias": "buttonColor",
+          "DataType": "umb://data-type/8605e6048396472d837e3ad84d8fa466",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Button color",
+          "SortOrder": 1,
+          "Validation": null
+        },
+        {
+          "Key": "d62f501b-2472-454a-b725-869cf1d17120",
+          "Alias": "newsletterSectionPosition",
+          "DataType": "umb://data-type/db28edf314314e1aa50f375c9f1c2edd",
+          "Description": "Display newsletter section before or after the listing section.",
+          "Mandatory": false,
+          "Name": "Newsletter section position",
+          "SortOrder": 4,
+          "Validation": ""
+        },
+        {
+          "Key": "dae4afda-d307-4175-b61a-27372d5cea3c",
+          "Alias": "animate",
+          "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Animate",
+          "SortOrder": 5,
+          "Validation": null
+        },
+        {
+          "Key": "fb155a7a-7a7c-4f51-98e9-6611189ed392",
+          "Alias": "backgroundImage",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "No recommended image size.\n\nIf the image will cover the full area of the component, use a large image.\n\nIf the image will repeat, use a small image.",
+          "Mandatory": false,
+          "Name": "Background image",
+          "SortOrder": 2,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "a2467c1b-1b41-4e12-904b-0d2b914c4545",
+      "Name": "Newsletter Section",
+      "SortOrder": 2,
+      "PropertyTypes": [
+        {
+          "Key": "25ab364b-22f5-415b-a26c-848c57ebb193",
+          "Alias": "newsletterIntroduction",
+          "DataType": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Introduction",
+          "SortOrder": 1,
+          "Validation": ""
+        },
+        {
+          "Key": "32ee908f-f612-41b7-8375-236aaba44ba6",
+          "Alias": "newsletterSubscriberListID",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "Newsletter Signup will only be available if a Subscriber List ID is available.\n\nUse this field to override the default Subscriber List ID in \"Global Settings\" if present.",
+          "Mandatory": false,
+          "Name": "Subscriber list ID",
+          "SortOrder": 4,
+          "Validation": ""
+        },
+        {
+          "Key": "a56f5c03-109f-4518-a1bd-7c631c6051b4",
+          "Alias": "newsletterButtonText",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "Mandatory": true,
+          "Name": "Button text",
+          "SortOrder": 2,
+          "Validation": ""
+        },
+        {
+          "Key": "ab84340d-8e93-45ba-9353-9df8bee641d9",
+          "Alias": "newsletterHeading",
+          "DataType": "umb://data-type/e8d9b73c505f410b8509dead5c981d8a",
+          "Description": "Heading style chosen will not affect font size. This option is purely for setting your heading hierarchy for SEO purposes.",
+          "Mandatory": false,
+          "Name": "Heading",
+          "SortOrder": 0,
+          "Validation": ""
+        },
+        {
+          "Key": "c353d28b-60e5-4c7e-974f-720fb3f6d339",
+          "Alias": "submissionMessage",
+          "DataType": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Submission message",
+          "SortOrder": 3,
+          "Validation": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/17cfab38e80246dbb5962764b67aa754",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/2d5d436789f94e289e45bde3e16ab999",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/2e6d3631066e44b8aec496f09099b2b5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/3f4af8a2fe2f4890bab56a3bf3a07db3",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/8605e6048396472d837e3ad84d8fa466",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/db28edf314314e1aa50f375c9f1c2edd",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/e8d9b73c505f410b8509dead5c981d8a",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/71396aae63c04e8da48ec34052018cbf",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/165ef6f529a9435ba232170a1e1c7e62",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Signup/Subpage Listing Section",
+  "Alias": "USN_AC_SignupSubpageListingSection_AN",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

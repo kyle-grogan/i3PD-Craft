@@ -1,0 +1,295 @@
+{
+  "DefaultTemplate": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+  "AllowedTemplates": [
+    "umb://template/fe4691bda9ec426f9630c9e1163bb8d4"
+  ],
+  "Icon": "icon-article color-orange",
+  "Thumbnail": "folder.png",
+  "Description": "Use this item to add a new \"Text/Video or Image Section\" to your page.",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/165ef6f529a9435ba232170a1e1c7e62",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [
+    "umb://document-type/71396aae63c04e8da48ec34052018cbf",
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "30367a1e-1ef6-42ec-a5ad-e4d4625dd27b",
+      "Name": "Text Section",
+      "SortOrder": 2,
+      "PropertyTypes": [
+        {
+          "Key": "16e015ec-ab5a-4563-9c82-6202dd702c17",
+          "Alias": "heading",
+          "DataType": "umb://data-type/e8d9b73c505f410b8509dead5c981d8a",
+          "Description": "Heading style chosen will not affect font size. This option is purely for setting your heading hierarchy for SEO purposes.",
+          "Mandatory": false,
+          "Name": "Heading",
+          "SortOrder": 0,
+          "Validation": ""
+        },
+        {
+          "Key": "364c59d6-c743-43e2-99e4-28f294f33160",
+          "Alias": "secondaryHeading",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "This will appear above the heading in a smaller font.",
+          "Mandatory": false,
+          "Name": "Secondary heading",
+          "SortOrder": 1,
+          "Validation": null
+        },
+        {
+          "Key": "54f3f5d5-f7ea-4ff6-a3f0-057e520b2b3d",
+          "Alias": "link",
+          "DataType": "umb://data-type/2d5d436789f94e289e45bde3e16ab999",
+          "Description": "The \"Caption\" field will be used for your link text.",
+          "Mandatory": false,
+          "Name": "Link",
+          "SortOrder": 3,
+          "Validation": null
+        },
+        {
+          "Key": "df348e14-5d8f-4012-9753-24c2c4242078",
+          "Alias": "text",
+          "DataType": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Text",
+          "SortOrder": 2,
+          "Validation": ""
+        }
+      ]
+    },
+    {
+      "Key": "73bb30a1-9f8f-4648-81c0-2e3f4de29d8f",
+      "Name": "Component Settings",
+      "SortOrder": 1,
+      "PropertyTypes": [
+        {
+          "Key": "2b9fc102-54a5-4101-bbb2-e3cf5a02be3a",
+          "Alias": "backgroundImage",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "No recommended image size.\n\nIf the image will cover the full area of the component, use a large image.\n\nIf the image will repeat, use a small image.",
+          "Mandatory": false,
+          "Name": "Background image",
+          "SortOrder": 2,
+          "Validation": null
+        },
+        {
+          "Key": "68375ca4-d033-4d5c-880c-82d8c3864ffa",
+          "Alias": "animate",
+          "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Animate",
+          "SortOrder": 5,
+          "Validation": null
+        },
+        {
+          "Key": "7ee263d3-c357-4bbd-8085-f98618da202d",
+          "Alias": "backgroundColor",
+          "DataType": "umb://data-type/8605e6048396472d837e3ad84d8fa466",
+          "Description": "Color selected will decide what color is used for any text that appears over the background.\n\nIf a background image is used, use the color that works best for the text over the image.",
+          "Mandatory": false,
+          "Name": "Background color",
+          "SortOrder": 0,
+          "Validation": ""
+        },
+        {
+          "Key": "a79b42bf-ac5c-4253-8add-abe1848a8b0d",
+          "Alias": "backgroundImageOptions",
+          "DataType": "umb://data-type/3f4af8a2fe2f4890bab56a3bf3a07db3",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Background image options",
+          "SortOrder": 3,
+          "Validation": null
+        },
+        {
+          "Key": "aae78cb5-8d74-40f7-a411-4b8c3d38b19f",
+          "Alias": "buttonColor",
+          "DataType": "umb://data-type/8605e6048396472d837e3ad84d8fa466",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Button color",
+          "SortOrder": 1,
+          "Validation": null
+        },
+        {
+          "Key": "bd6d51a3-e52d-4f93-bf58-6e858cd14b64",
+          "Alias": "textSectionPosition",
+          "DataType": "umb://data-type/db28edf314314e1aa50f375c9f1c2edd",
+          "Description": "Display text section before or after the video or image.",
+          "Mandatory": false,
+          "Name": "Text section position",
+          "SortOrder": 4,
+          "Validation": ""
+        }
+      ]
+    },
+    {
+      "Key": "7658eef0-e8f2-4a40-a12e-1bbb4be8d224",
+      "Name": "Image or Video",
+      "SortOrder": 3,
+      "PropertyTypes": [
+        {
+          "Key": "0a70a46a-b3e5-4bce-ac76-c0cdf5fd287e",
+          "Alias": "video",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "Copy the full URL for your video from the address bar. (YouTube or Vimeo only)",
+          "Mandatory": false,
+          "Name": "Video",
+          "SortOrder": 3,
+          "Validation": ""
+        },
+        {
+          "Key": "68074e57-93be-4ddc-abc7-2fea840a0cc7",
+          "Alias": "image",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "This image is optional. If you do not upload an image and a video URL has been added, a thumbnail image will be automatically generated for you from the associated video.\n\nImage will be cropped to 800px x 600px.\n\nFocal point of the image is defined within your \"Media\" section.",
+          "Mandatory": false,
+          "Name": "Image",
+          "SortOrder": 0,
+          "Validation": ""
+        },
+        {
+          "Key": "7fcb312b-57e2-4d0e-b112-80b51f4ac5fd",
+          "Alias": "lightWindowFooter",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "This text will be displayed below your video within the light window.",
+          "Mandatory": false,
+          "Name": "Light window footer",
+          "SortOrder": 5,
+          "Validation": null
+        },
+        {
+          "Key": "8400a7c1-a002-4ef2-81b4-f81f8d9f78a5",
+          "Alias": "lightWindowTitle",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "This text will be displayed above your video within the light window.",
+          "Mandatory": false,
+          "Name": "Light window title",
+          "SortOrder": 4,
+          "Validation": ""
+        },
+        {
+          "Key": "96ddedc6-c6dd-4467-ac1d-158fd8d52476",
+          "Alias": "imageAltText",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Image alt text",
+          "SortOrder": 1,
+          "Validation": ""
+        },
+        {
+          "Key": "f74180ed-926f-46e2-a828-6bbf7cb2126e",
+          "Alias": "addSpacingAroundImage",
+          "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Add spacing around image",
+          "SortOrder": 2,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "ef6c8a53-70bc-4f19-b6fa-f77708b89e70",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "c5e51d11-e338-485b-a709-d6fcd3e7146d",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Text/Video or Image Section<i class=\"icon sprTree icon-article color-orange pull-right\"></i></h3></div><div class=\"panel-body\"><p>The node name you enter above is for your reference only and will not appear on the website.</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/1c8b546ebc4141acbe0c653acd7c4cc2",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/2d5d436789f94e289e45bde3e16ab999",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/3f4af8a2fe2f4890bab56a3bf3a07db3",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/8605e6048396472d837e3ad84d8fa466",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/db28edf314314e1aa50f375c9f1c2edd",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/e8d9b73c505f410b8509dead5c981d8a",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/71396aae63c04e8da48ec34052018cbf",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/165ef6f529a9435ba232170a1e1c7e62",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Text/Video or Image Section",
+  "Alias": "USN_AC_TextVideoOrImageSection_AN",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

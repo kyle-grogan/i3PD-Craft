@@ -1,0 +1,190 @@
+{
+  "DefaultTemplate": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+  "AllowedTemplates": [
+    "umb://template/fe4691bda9ec426f9630c9e1163bb8d4"
+  ],
+  "Icon": "icon-windows color-orange",
+  "Thumbnail": "folder.png",
+  "Description": "Use this item to add a new \"Window Section\" to your page.",
+  "AllowedAtRoot": false,
+  "IsContainer": true,
+  "Parent": "umb://document-type-container/165ef6f529a9435ba232170a1e1c7e62",
+  "AllowedChildContentTypes": [
+    "umb://document-type/1f2d68fca0134f64bfcd7d7dc970265d",
+    "umb://document-type/482e40b65c59410bb7bd51a66d9fa1c9"
+  ],
+  "CompositionContentTypes": [
+    "umb://document-type/71396aae63c04e8da48ec34052018cbf",
+    "umb://document-type/85830e8e6137464f96fd7540f8fc72de",
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "bfbce96d-24a6-4777-b692-4a08054bfe7c",
+      "Name": "Component Settings",
+      "SortOrder": 1,
+      "PropertyTypes": [
+        {
+          "Key": "48383a1b-e767-44fe-90a5-f4d8e9bdcef3",
+          "Alias": "fixedWidth",
+          "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+          "Description": "If set to yes, this will constrain your 'Window Section' to a maximum width.",
+          "Mandatory": false,
+          "Name": "Fixed width",
+          "SortOrder": 4,
+          "Validation": null
+        },
+        {
+          "Key": "7375aa36-51d6-483e-be19-8ae0b8b9ac56",
+          "Alias": "backgroundColor",
+          "DataType": "umb://data-type/8605e6048396472d837e3ad84d8fa466",
+          "Description": "Color selected will decide what color is used for any text that appears over the background.\n\nIf a background image is used, use the color that works best for the text over the image.",
+          "Mandatory": false,
+          "Name": "Background color",
+          "SortOrder": 0,
+          "Validation": null
+        },
+        {
+          "Key": "805e367f-6e21-4adb-82c8-f58b2f361867",
+          "Alias": "animate",
+          "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Animate",
+          "SortOrder": 6,
+          "Validation": null
+        },
+        {
+          "Key": "a0ead6f4-835c-4a7a-a9be-3d96b7d71217",
+          "Alias": "buttonColor",
+          "DataType": "umb://data-type/8605e6048396472d837e3ad84d8fa466",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Button color",
+          "SortOrder": 1,
+          "Validation": null
+        },
+        {
+          "Key": "c83241c8-9089-4bae-aca3-ea52ca67ea7f",
+          "Alias": "backgroundImage",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "No recommended image size.\n\nIf the image will cover the full area of the component, use a large image.\n\nIf the image will repeat, use a small image.",
+          "Mandatory": false,
+          "Name": "Background image",
+          "SortOrder": 2,
+          "Validation": null
+        },
+        {
+          "Key": "ebe89a9f-9756-4716-9faa-20c3cea644c1",
+          "Alias": "backgroundImageOptions",
+          "DataType": "umb://data-type/3f4af8a2fe2f4890bab56a3bf3a07db3",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Background image options",
+          "SortOrder": 3,
+          "Validation": null
+        },
+        {
+          "Key": "f3249c2f-8a39-4143-bea0-f633563b5d29",
+          "Alias": "imageOrder",
+          "DataType": "umb://data-type/e26649fc5e2c4ea0a5fff5ac0b93029f",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Image order",
+          "SortOrder": 5,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "c70ee8c5-7702-44ac-a062-8d726719083f",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "6c077f07-33a8-4024-82f7-116aa8aee2fa",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Window Section<i class=\"icon sprTree icon-windows color-orange pull-right\"></i></h3></div><div class=\"panel-body\"><p>The node name you enter above is for your reference only and will not appear on the website.</p><p>Add multiple \"Windows\" via the \"Windows\" tab. You must add at least one \"Window\" for this section to be displayed.</p><p>The sort order of your \"Windows\" directly relates to the order your \"Windows\" will be displayed on this page. Use  <strong>Actions > Sort</strong> to reorder your \"Windows\".</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/c97cc4fba5cf49cba17bfafa001c08fd",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/3f4af8a2fe2f4890bab56a3bf3a07db3",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/8605e6048396472d837e3ad84d8fa466",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/e26649fc5e2c4ea0a5fff5ac0b93029f",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/1f2d68fca0134f64bfcd7d7dc970265d",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/482e40b65c59410bb7bd51a66d9fa1c9",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/71396aae63c04e8da48ec34052018cbf",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/85830e8e6137464f96fd7540f8fc72de",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/165ef6f529a9435ba232170a1e1c7e62",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Window Section",
+  "Alias": "USN_AC_WindowSection_AN",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

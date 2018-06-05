@@ -1,0 +1,130 @@
+{
+  "DefaultTemplate": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+  "AllowedTemplates": [
+    "umb://template/fe4691bda9ec426f9630c9e1163bb8d4"
+  ],
+  "Icon": "icon-video color-orange",
+  "Thumbnail": "usn_movie.png",
+  "Description": "Use this item to add a new \"YouTube\" or \"Vimeo\" video to this section.",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/165ef6f529a9435ba232170a1e1c7e62",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "0f4b24f1-1491-431a-8e95-f2f7005c04e7",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "87c35e5f-3636-4ec7-8313-123f051b06d6",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Carousel Video<i class=\"icon sprTree icon-video color-orange pull-right\"></i></h3></div><div class=\"panel-body\"><p>The node name you enter above is for your reference only and will not appear on the website.</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "665609dc-e78d-4f10-980e-a7ae61066140",
+      "Name": "Content",
+      "SortOrder": 1,
+      "PropertyTypes": [
+        {
+          "Key": "7b49ac31-eebe-44d6-8fd8-cce90c0f5036",
+          "Alias": "video",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "Copy the full URL for your video from the address bar. (YouTube or Vimeo only)",
+          "Mandatory": true,
+          "Name": "Video",
+          "SortOrder": 4,
+          "Validation": ""
+        },
+        {
+          "Key": "9a4ee5c9-04a8-4450-a06e-2afcec98de9f",
+          "Alias": "lightWindowFooter",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "This text will be displayed below your image within the light window.",
+          "Mandatory": false,
+          "Name": "Light window footer",
+          "SortOrder": 3,
+          "Validation": null
+        },
+        {
+          "Key": "de176ab3-f15c-4769-97e3-65714220dbb5",
+          "Alias": "thumbnailImage",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "This image is optional. If you do not upload an image, a thumbnail image will be automatically generated for you from the associated video.\n\nImage will be cropped to 400px x 300px.\n\nFocal point of the image is defined within your \"Media\" section.",
+          "Mandatory": false,
+          "Name": "Thumbnail image",
+          "SortOrder": 0,
+          "Validation": ""
+        },
+        {
+          "Key": "ed771a83-d0ec-458b-b17b-05305c33b143",
+          "Alias": "thumbnailImageAltText",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Image alt text",
+          "SortOrder": 1,
+          "Validation": ""
+        },
+        {
+          "Key": "ed98d8c1-ff97-4f57-a6f9-404b2c765c8a",
+          "Alias": "lightWindowTitle",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "This text will be displayed above your image within the light window.",
+          "Mandatory": false,
+          "Name": "Light window title",
+          "SortOrder": 2,
+          "Validation": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/1a49dd334686414d8636881239bfba55",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/165ef6f529a9435ba232170a1e1c7e62",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Carousel Video",
+  "Alias": "USN_AC_CarouselVideo",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

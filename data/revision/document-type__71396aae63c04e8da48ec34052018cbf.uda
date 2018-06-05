@@ -1,0 +1,42 @@
+{
+  "DefaultTemplate": null,
+  "AllowedTemplates": [],
+  "Icon": "icon-document color-blue",
+  "Thumbnail": "folder.png",
+  "Description": null,
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/6eb4b01a6107460f8a995a99e8ce216f",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [],
+  "PropertyGroups": [],
+  "PropertyTypes": [
+    {
+      "Key": "69ae11c6-0973-4281-8266-24e480c42679",
+      "Alias": "customComponentClasses",
+      "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Description": "Override the default styles of this component by adding component specific classes. You should leave a space between each individual class e.g:\n\ncustom-class another-class",
+      "Mandatory": false,
+      "Name": "Custom component classes",
+      "SortOrder": 0,
+      "Validation": null
+    }
+  ],
+  "Udi": "umb://document-type/71396aae63c04e8da48ec34052018cbf",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/6eb4b01a6107460f8a995a99e8ce216f",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Custom Component Classes",
+  "Alias": "USN_CMP_CustomComponentClasses",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

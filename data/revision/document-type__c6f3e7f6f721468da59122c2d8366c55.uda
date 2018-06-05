@@ -1,0 +1,284 @@
+{
+  "DefaultTemplate": "umb://template/a815d08ac5dc450e9e73021b46582343",
+  "AllowedTemplates": [
+    "umb://template/a815d08ac5dc450e9e73021b46582343"
+  ],
+  "Icon": "icon-article",
+  "Thumbnail": "usn_text_rich_colored.png",
+  "Description": "Use this item to add a new \"Standard Page\".",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/fec78f3a7e9842148a93297cc88ef945",
+  "AllowedChildContentTypes": [
+    "umb://document-type/9bc03a50d8864adfa8221c9572bd43bd",
+    "umb://document-type/c6f3e7f6f721468da59122c2d8366c55"
+  ],
+  "CompositionContentTypes": [
+    "umb://document-type/559f12479d804eecb7e45b44c81ae950",
+    "umb://document-type/602291717c1041fd8bf7a1d7e81b20ed",
+    "umb://document-type/89b91cefb9714c6c8d842bec32bf5582",
+    "umb://document-type/9ea3b81be80a4359a8c6ab48677a6b56",
+    "umb://document-type/a854011482be4818a347e0c469760b57",
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+    "umb://document-type/e703b4009f0f40c48421091b0c3bc907",
+    "umb://document-type/f5c73473e4db4b54b1c09d63d0293a8b"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "1c8ae4d8-baea-45d5-8a48-51656e0943ce",
+      "Name": "Listing Content",
+      "SortOrder": 4,
+      "PropertyTypes": [
+        {
+          "Key": "2515046b-3e29-46a9-97f7-1cdff4a462c8",
+          "Alias": "pageSummary",
+          "DataType": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+          "Description": "Summary text is only displayed if this page appears on a \"Subpage Listing\".\n\nIf nothing is entered here the summary will be extracted from the beginning of the \"Main content\" of this page and the character count will be based on the settings defined on this pages parent page.",
+          "Mandatory": false,
+          "Name": "Page summary",
+          "SortOrder": 0,
+          "Validation": null
+        },
+        {
+          "Key": "6597099a-e7a3-4b41-94f8-ee5e0941b47e",
+          "Alias": "pageListingImageAltText",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Listing image alt text",
+          "SortOrder": 2,
+          "Validation": null
+        },
+        {
+          "Key": "798f3d24-c691-418f-9991-6f5458bac1a3",
+          "Alias": "pageListingImage",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "Listing image is only displayed if this page appears on a \"Sub Page Listing\".\n\nImage will be cropped to 400px x 300px.\n\nFocal point of the image is defined within your \"Media\" section.",
+          "Mandatory": false,
+          "Name": "Listing image",
+          "SortOrder": 1,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "45699813-e4f2-4a74-9f37-f8a7c8ffb514",
+      "Name": "Page Settings",
+      "SortOrder": 3,
+      "PropertyTypes": [
+        {
+          "Key": "0be1ad8d-0523-405c-938e-5e87de70fe34",
+          "Alias": "pageSummaryTextCharacterCount",
+          "DataType": "umb://data-type/2e6d3631066e44b8aec496f09099b2b5",
+          "Description": "Enter the number of characters you would like displayed from the beginning of each page.\n\nIf summary text has been entered this will be used instead. Summary text must be entered on Advanced pages for this to be displayed. If nothing is entered, no summary text will be displayed.",
+          "Mandatory": false,
+          "Name": "Summary text character count",
+          "SortOrder": 3,
+          "Validation": ""
+        },
+        {
+          "Key": "3027ebc1-23b7-40b8-bea1-d52af552f4d1",
+          "Alias": "pageLayout",
+          "DataType": "umb://data-type/316c072380004401bdadf4b23390b2e1",
+          "Description": "Default page layout will be displayed if nothing is selected.\n\nIf \"Content full width\" is selected sub navigation will be hidden.",
+          "Mandatory": false,
+          "Name": "Page layout",
+          "SortOrder": 0,
+          "Validation": ""
+        },
+        {
+          "Key": "97073fbe-1c20-4218-aa8f-cf4632a0b7b7",
+          "Alias": "subpageListingLayout",
+          "DataType": "umb://data-type/f4c650803afe47bdb038fe391e9a437b",
+          "Description": "Layout will default to 'Vertical' if nothing is selected.",
+          "Mandatory": false,
+          "Name": "Subpage listing layout",
+          "SortOrder": 2,
+          "Validation": ""
+        },
+        {
+          "Key": "b7156cd4-c3bd-472c-aead-b38b43d04710",
+          "Alias": "displaySubpageListing",
+          "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+          "Description": "Select \"Yes\" to display a listing of any subpages that sit below this page.",
+          "Mandatory": false,
+          "Name": "Display subpage listing",
+          "SortOrder": 1,
+          "Validation": ""
+        },
+        {
+          "Key": "f5618410-228d-4145-9757-70171aebcfab",
+          "Alias": "hideSubNavigation",
+          "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+          "Description": "Select \"Yes\" to hide the sub navigation menu from this page.",
+          "Mandatory": false,
+          "Name": "Hide sub navigation",
+          "SortOrder": 4,
+          "Validation": ""
+        }
+      ]
+    },
+    {
+      "Key": "931f1860-bde4-4488-af05-e8d597f67f53",
+      "Name": "Navigation",
+      "SortOrder": 2,
+      "PropertyTypes": [
+        {
+          "Key": "04876189-bf7c-41e1-827d-6b943d80cb24",
+          "Alias": "subNavigationLinkText",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "Node name will be used by default if nothing is entered.",
+          "Mandatory": false,
+          "Name": "Sub navigation link text",
+          "SortOrder": 2,
+          "Validation": ""
+        },
+        {
+          "Key": "c7a5adfd-99e1-49b4-b24a-43caadf294bc",
+          "Alias": "sitemapLinkText",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "Node name will be used by default if nothing is entered.",
+          "Mandatory": false,
+          "Name": "Sitemap link text",
+          "SortOrder": 4,
+          "Validation": null
+        },
+        {
+          "Key": "e5f98f90-682e-4570-ae5d-1f6e1116de8e",
+          "Alias": "subpageListingLinkText",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "Node name will be used by default if nothing is entered.",
+          "Mandatory": false,
+          "Name": "Subpage listing link text",
+          "SortOrder": 3,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "e535428c-c279-437f-a4ef-0f5729f27974",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "5fbaa93f-c2e6-4b46-a32c-5c7f0165b215",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Standard Page<i class=\"icon umb-tree-icon sprTree icon-article pull-right\"></i></h3></div><div class=\"panel-body\"><p>The majority of your content will be added to this page via the \"Content\" tab.<p>Additional layout options are available which can be added via  the \"Page Components\" folder directly below this page.</p><p>By adding new components you will be able to add more advanced layout options to this page.</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/c6f3e7f6f721468da59122c2d8366c55",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/2e6d3631066e44b8aec496f09099b2b5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/316c072380004401bdadf4b23390b2e1",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/f4c650803afe47bdb038fe391e9a437b",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/559f12479d804eecb7e45b44c81ae950",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/602291717c1041fd8bf7a1d7e81b20ed",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/89b91cefb9714c6c8d842bec32bf5582",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/9bc03a50d8864adfa8221c9572bd43bd",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/9ea3b81be80a4359a8c6ab48677a6b56",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/a854011482be4818a347e0c469760b57",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/c6f3e7f6f721468da59122c2d8366c55",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/e703b4009f0f40c48421091b0c3bc907",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/f5c73473e4db4b54b1c09d63d0293a8b",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/fec78f3a7e9842148a93297cc88ef945",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/a815d08ac5dc450e9e73021b46582343",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Standard Page",
+  "Alias": "USNStandardPage",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

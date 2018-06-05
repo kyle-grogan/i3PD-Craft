@@ -1,0 +1,124 @@
+{
+  "DefaultTemplate": null,
+  "AllowedTemplates": [],
+  "Icon": "icon-document color-blue",
+  "Thumbnail": "folder.png",
+  "Description": null,
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/6eb4b01a6107460f8a995a99e8ce216f",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "31ee92bd-c77c-4e4f-926f-f4376f881d6b",
+      "Name": "Advanced Page Settings",
+      "SortOrder": 998,
+      "PropertyTypes": [
+        {
+          "Key": "20187171-274f-42fa-8dca-ae8068a980ce",
+          "Alias": "backgroundColor",
+          "DataType": "umb://data-type/8605e6048396472d837e3ad84d8fa466",
+          "Description": "Color selected will decide what color is used for any text that appears over the background.\n\nIf a background image is used, use the color that works best for the text over the image.",
+          "Mandatory": false,
+          "Name": "Background color",
+          "SortOrder": 1,
+          "Validation": null
+        },
+        {
+          "Key": "2767b02b-c995-4ffb-8cbd-7a8ed231b588",
+          "Alias": "backgroundImageOptions",
+          "DataType": "umb://data-type/3f4af8a2fe2f4890bab56a3bf3a07db3",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Background image options",
+          "SortOrder": 3,
+          "Validation": null
+        },
+        {
+          "Key": "62a47b7c-6a50-4896-b622-beb3f6ddaa3b",
+          "Alias": "animate",
+          "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Animate",
+          "SortOrder": 5,
+          "Validation": null
+        },
+        {
+          "Key": "a71f2049-8aef-4e09-a3ef-932df785272e",
+          "Alias": "width",
+          "DataType": "umb://data-type/df2e64b1c0f04e528effee527fa070a5",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Component width",
+          "SortOrder": 4,
+          "Validation": null
+        },
+        {
+          "Key": "ed36121c-1f4f-4895-923d-21a373c1e4d2",
+          "Alias": "apsInstructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-body\"><p>These settings only apply if this component has been added to the \"Homepage\" or an \"Advanced Page / Advanced Page Blog Post\".</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        },
+        {
+          "Key": "eda261eb-0fd7-4300-a668-9c15eb2e406e",
+          "Alias": "backgroundImage",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "No recommended image size.\n\nIf the image will cover the full area of the component, use a large image.\n\nIf the image will repeat, use a small image.",
+          "Mandatory": false,
+          "Name": "Background image",
+          "SortOrder": 2,
+          "Validation": null
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/b67080e8947d475bb13feb27b76d9c27",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/3f4af8a2fe2f4890bab56a3bf3a07db3",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/8605e6048396472d837e3ad84d8fa466",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/df2e64b1c0f04e528effee527fa070a5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/6eb4b01a6107460f8a995a99e8ce216f",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Advanced Page Settings",
+  "Alias": "USN_CMP_AdvancedPageSettings",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

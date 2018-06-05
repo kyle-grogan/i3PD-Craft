@@ -1,0 +1,150 @@
+{
+  "DefaultTemplate": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+  "AllowedTemplates": [
+    "umb://template/fe4691bda9ec426f9630c9e1163bb8d4"
+  ],
+  "Icon": "icon-picture color-orange",
+  "Thumbnail": "usn_landscape.png",
+  "Description": "Use this item to add a new \"Image\" to this section.",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/659fd64b525f4d908e718b93ff94ebf0",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "5c5e8be7-e169-4e05-b77c-39c08f30c7a6",
+      "Name": "Content",
+      "SortOrder": 1,
+      "PropertyTypes": [
+        {
+          "Key": "3a83d004-7596-4167-82a4-a92c33fe8767",
+          "Alias": "lightWindowTitle",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "This text will be displayed above your image within the light window.",
+          "Mandatory": false,
+          "Name": "Light window title",
+          "SortOrder": 2,
+          "Validation": ""
+        },
+        {
+          "Key": "3bfcce98-3a81-4af9-ab7e-5866fc6293a2",
+          "Alias": "imageLink",
+          "DataType": "umb://data-type/2d5d436789f94e289e45bde3e16ab999",
+          "Description": "Link will only be used if light window is disabled.\n\nThe \"Caption\" field will be ignored however you must enter something in order to save this link.",
+          "Mandatory": false,
+          "Name": "Image link",
+          "SortOrder": 6,
+          "Validation": null
+        },
+        {
+          "Key": "454ee514-f7e1-40d3-8a94-00db99300d11",
+          "Alias": "thumbnailImageAltText",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Thumbnail image alt text",
+          "SortOrder": 1,
+          "Validation": ""
+        },
+        {
+          "Key": "53382664-2a87-475e-bddd-cb29f38397dd",
+          "Alias": "disableLightWindow",
+          "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Disable light window",
+          "SortOrder": 5,
+          "Validation": ""
+        },
+        {
+          "Key": "6f8f3391-8240-429b-8c1c-0ef9fcd38cc9",
+          "Alias": "lightWindowFooter",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "This text will be displayed below your image within the light window.",
+          "Mandatory": false,
+          "Name": "Light window footer",
+          "SortOrder": 3,
+          "Validation": null
+        },
+        {
+          "Key": "a43900ac-79f8-46ef-83bc-4f0591f3fbda",
+          "Alias": "lightWindowImage",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "Image will be cropped to 400px x 300px and displayed as the gallery thumbnail.\n\nFocal point of the image is defined within your \"Media\" section.\n\nThe original image you upload will be displayed within the light window uncropped.",
+          "Mandatory": true,
+          "Name": "Light window image",
+          "SortOrder": 0,
+          "Validation": ""
+        }
+      ]
+    },
+    {
+      "Key": "e50bfb4e-b00e-4889-a97e-13e197a71b0a",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "b9cf5919-ab74-4078-bc23-7a395adb37d2",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Gallery Image<i class=\"icon sprTree icon-picture color-orange pull-right\"></i></h3></div><div class=\"panel-body\"><p>The node name you enter above is for your reference only and will not appear on the website.</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/9343c14fec9b4a01b6d4b8026f49efdb",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/2d5d436789f94e289e45bde3e16ab999",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/659fd64b525f4d908e718b93ff94ebf0",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Gallery Image",
+  "Alias": "USN_SC_GalleryImage",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

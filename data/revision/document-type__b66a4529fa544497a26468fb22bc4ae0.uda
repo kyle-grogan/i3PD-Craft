@@ -1,0 +1,247 @@
+{
+  "DefaultTemplate": "umb://template/ac85fda3c2584660bab5362fa1e745fe",
+  "AllowedTemplates": [
+    "umb://template/ac85fda3c2584660bab5362fa1e745fe"
+  ],
+  "Icon": "icon-user-glasses color-orange",
+  "Thumbnail": "usn_user.png",
+  "Description": "Use this item to create a new \"Blog Author\".",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/5a03343f7e0149ffa88cfbb83b28f78d",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "0f55f6db-f3ee-414b-80f3-8d08c441bb91",
+      "Name": "Content",
+      "SortOrder": 1,
+      "PropertyTypes": [
+        {
+          "Key": "0700b9f2-5633-405c-a5a4-e83bc6a1d25f",
+          "Alias": "authorPage",
+          "DataType": "umb://data-type/2d5d436789f94e289e45bde3e16ab999",
+          "Description": "Use this to link to the authors page which could be an external blog or a page on this website. If something is entered here the authors name on blog listings and blog post pages will link to this page.\n\nThe 'Caption' field will be ignored however you must enter something in order to save this link.",
+          "Mandatory": false,
+          "Name": "Author page",
+          "SortOrder": 2,
+          "Validation": null
+        },
+        {
+          "Key": "1a6fcccc-8586-49a1-8b0c-876882bc8a99",
+          "Alias": "authorBio",
+          "DataType": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+          "Description": "The author bio will appear below every blog post associated with this author and should contain a short snippet about the author.",
+          "Mandatory": false,
+          "Name": "Author bio",
+          "SortOrder": 0,
+          "Validation": ""
+        },
+        {
+          "Key": "fa112198-d921-4f33-a9a7-2dde5ab41f54",
+          "Alias": "authorImage",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "Image will be cropped to 200px x 200px.\n\nFocal point of the image is defined within your \"Media\" section.",
+          "Mandatory": false,
+          "Name": "Author image",
+          "SortOrder": 1,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "8916a887-3bfd-4854-b7ab-535a70c05c0f",
+      "Name": "Social links",
+      "SortOrder": 2,
+      "PropertyTypes": [
+        {
+          "Key": "0842ae80-a7ce-4415-a601-fb333e65f592",
+          "Alias": "googleLink",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Google+ link",
+          "SortOrder": 3,
+          "Validation": null
+        },
+        {
+          "Key": "0e4a3607-a985-4284-bcc3-aac7c3d34f92",
+          "Alias": "instagramLink",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Instagram link",
+          "SortOrder": 5,
+          "Validation": null
+        },
+        {
+          "Key": "29e944a9-0f46-4d1d-8b5f-82b159e6782c",
+          "Alias": "flickrLink",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Flickr link",
+          "SortOrder": 6,
+          "Validation": null
+        },
+        {
+          "Key": "2a8e7fae-e9d5-49d4-ad95-cddbe1d8e06b",
+          "Alias": "pinterestLink",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Pinterest link",
+          "SortOrder": 4,
+          "Validation": null
+        },
+        {
+          "Key": "3a8bc955-b0f9-4413-9778-499afaa45c46",
+          "Alias": "vimeoLink",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Vimeo link",
+          "SortOrder": 8,
+          "Validation": null
+        },
+        {
+          "Key": "52a78724-9f40-4f82-a3f6-e7dcfea2ec7b",
+          "Alias": "tumblrLink",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Tumblr link",
+          "SortOrder": 7,
+          "Validation": null
+        },
+        {
+          "Key": "57e06d8c-a60b-4769-be97-61c37f907a51",
+          "Alias": "behanceLink",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Behance link",
+          "SortOrder": 10,
+          "Validation": null
+        },
+        {
+          "Key": "75b07645-b56a-4982-b0a9-43ef0b8ea3ff",
+          "Alias": "youTubeLink",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "YouTube link",
+          "SortOrder": 9,
+          "Validation": null
+        },
+        {
+          "Key": "96e7062a-467a-433b-b613-e80af944bf69",
+          "Alias": "soundCloudLink",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "SoundCloud link",
+          "SortOrder": 11,
+          "Validation": null
+        },
+        {
+          "Key": "b9176668-58b9-47e1-9e9a-7b0ffd9e3080",
+          "Alias": "linkedInLink",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "LinkedIn link",
+          "SortOrder": 2,
+          "Validation": null
+        },
+        {
+          "Key": "d1647154-2bbc-40bc-a8e2-daeecd9b035a",
+          "Alias": "twitterLink",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Twitter link",
+          "SortOrder": 1,
+          "Validation": null
+        },
+        {
+          "Key": "fdde0103-5591-45e4-af19-301bb6f63924",
+          "Alias": "facebookLink",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Facebook link",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "d2a1519b-9706-4689-8b06-f751718680cb",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "396baaa5-dbbf-4f5b-9c25-0e786196e93a",
+          "Alias": "insttructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Blog Author<i class=\"icon sprTree icon-user-glasses color-orange pull-right\"></i></h3></div><div class=\"panel-body\"><p>The node name you enter above will be used for the \"Author Name\" displayed on the website.</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/b66a4529fa544497a26468fb22bc4ae0",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/2d5d436789f94e289e45bde3e16ab999",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/5a03343f7e0149ffa88cfbb83b28f78d",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/ac85fda3c2584660bab5362fa1e745fe",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Blog Author",
+  "Alias": "USNBlogAuthor",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

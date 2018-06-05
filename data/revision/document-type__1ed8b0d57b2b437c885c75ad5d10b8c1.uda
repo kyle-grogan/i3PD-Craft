@@ -1,0 +1,95 @@
+{
+  "DefaultTemplate": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+  "AllowedTemplates": [
+    "umb://template/fe4691bda9ec426f9630c9e1163bb8d4"
+  ],
+  "Icon": "icon-bill color-orange",
+  "Thumbnail": "folder.png",
+  "Description": "Use this item to add a new \"Price List Item\" to this section.",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/659fd64b525f4d908e718b93ff94ebf0",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "08d1849d-7a1f-423c-bb59-926d6ea53a75",
+      "Name": "Content",
+      "SortOrder": 1,
+      "PropertyTypes": [
+        {
+          "Key": "15dc15c8-c761-4e07-b268-5c9743f50c09",
+          "Alias": "itemDescription",
+          "DataType": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Item description",
+          "SortOrder": 0,
+          "Validation": null
+        },
+        {
+          "Key": "f4c692ed-8d42-4d72-8c42-6d43431b1ccb",
+          "Alias": "itemPrice",
+          "DataType": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Item price",
+          "SortOrder": 1,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "594f9b6a-4f6f-4a68-89e0-2ee5f5333b03",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "45e5fd46-2d25-4052-b80d-96e806f75a3e",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Price List Item<i class=\"icon sprTree icon-bill color-orange pull-right\"></i></h3></div><div class=\"panel-body\"><p>The node name you enter above will be used as the name of the \"Price List Item\".</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/1ed8b0d57b2b437c885c75ad5d10b8c1",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/659fd64b525f4d908e718b93ff94ebf0",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Price List Item",
+  "Alias": "USN_SC_PriceListItem",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

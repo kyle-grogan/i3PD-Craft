@@ -1,0 +1,212 @@
+{
+  "DefaultTemplate": "umb://template/a848fd1eab2f4a138c43e46a3656300b",
+  "AllowedTemplates": [
+    "umb://template/a848fd1eab2f4a138c43e46a3656300b"
+  ],
+  "Icon": "icon-layout",
+  "Thumbnail": "usn_text_rich_colored.png",
+  "Description": "Use this item to add a new \"Advanced Page Blog Post\".",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/fec78f3a7e9842148a93297cc88ef945",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [
+    "umb://document-type/559f12479d804eecb7e45b44c81ae950",
+    "umb://document-type/89b91cefb9714c6c8d842bec32bf5582",
+    "umb://document-type/9ea3b81be80a4359a8c6ab48677a6b56",
+    "umb://document-type/a854011482be4818a347e0c469760b57",
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+    "umb://document-type/e703b4009f0f40c48421091b0c3bc907"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "202be903-c210-4f85-acab-d88c3895b818",
+      "Name": "Listing Content",
+      "SortOrder": 4,
+      "PropertyTypes": [
+        {
+          "Key": "4c7a2478-9c78-40cf-99cb-364d6b120f23",
+          "Alias": "pageListingImageAltText",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Listing image alt text",
+          "SortOrder": 2,
+          "Validation": null
+        },
+        {
+          "Key": "764af5e3-9836-4751-9479-a18b8ca34cbc",
+          "Alias": "pageListingImage",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "Image will be cropped to 1200px x 600px if displayed in a vertical list.\n\nImage will be cropped to 400px x 300px if displayed in a grid list.",
+          "Mandatory": false,
+          "Name": "Listing image",
+          "SortOrder": 1,
+          "Validation": null
+        },
+        {
+          "Key": "ff0e20f6-a2f2-409f-8878-f33ce4fe799c",
+          "Alias": "pageSummary",
+          "DataType": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Post summary",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "2ac40360-21d2-4a5b-ae67-71b8abab002f",
+      "Name": "Post Settings",
+      "SortOrder": 3,
+      "PropertyTypes": [
+        {
+          "Key": "70502a7d-8857-46cd-b5a3-afbc57d5dec8",
+          "Alias": "postCategories",
+          "DataType": "umb://data-type/68d4cb19f10940a08211ad5e743bd3b6",
+          "Description": "If selecting a child category make sure you also select the parent categories.",
+          "Mandatory": false,
+          "Name": "Categories",
+          "SortOrder": 1,
+          "Validation": ""
+        },
+        {
+          "Key": "82e3e197-c22f-4e12-975f-b693872e58f5",
+          "Alias": "postAuthor",
+          "DataType": "umb://data-type/86ef462a8b844cfeb196df966460feb2",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Author",
+          "SortOrder": 2,
+          "Validation": ""
+        },
+        {
+          "Key": "8472d5be-177c-4264-a923-b1c5274e982d",
+          "Alias": "postDate",
+          "DataType": "umb://data-type/5046194e4237453ca54715db3a07c4e1",
+          "Description": "",
+          "Mandatory": true,
+          "Name": "Post date",
+          "SortOrder": 0,
+          "Validation": ""
+        },
+        {
+          "Key": "9441963c-e78f-4d9e-b8c6-c022c8c49e73",
+          "Alias": "disableComments",
+          "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+          "Description": "Tick this box to disable commenting for this post. This is only relevant if you have entered a \"Disqus username\" on your \"Blog Landing Page\".",
+          "Mandatory": false,
+          "Name": "Disable comments",
+          "SortOrder": 3,
+          "Validation": ""
+        }
+      ]
+    },
+    {
+      "Key": "91518d99-b8e6-40c4-abc7-d6ea1dc447f7",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "9f6d1a7f-464b-40fc-83ed-c8e5f8c879a9",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Advanced Page Blog Post<i class=\"icon umb-tree-icon sprTree icon-layout pull-right\"></i></h3></div><div class=\"panel-body\"><p>To add content to this page you are required to add components to the \"Page Components\" folder directly below this page.</p><p>By adding new components you will be able to organise the layout and content of this page.</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/2ec1adb9156e4e9bb4bb7b0deb84f162",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/3629487f286f44319cea4f3d000e8498",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/5046194e4237453ca54715db3a07c4e1",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/68d4cb19f10940a08211ad5e743bd3b6",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/86ef462a8b844cfeb196df966460feb2",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/559f12479d804eecb7e45b44c81ae950",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/89b91cefb9714c6c8d842bec32bf5582",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/9ea3b81be80a4359a8c6ab48677a6b56",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/a854011482be4818a347e0c469760b57",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/e703b4009f0f40c48421091b0c3bc907",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/fec78f3a7e9842148a93297cc88ef945",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/a848fd1eab2f4a138c43e46a3656300b",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Advanced Page Blog Post",
+  "Alias": "USNAdvancedPageBlogPost",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

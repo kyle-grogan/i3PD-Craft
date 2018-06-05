@@ -1,0 +1,78 @@
+{
+  "DefaultTemplate": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+  "AllowedTemplates": [
+    "umb://template/fe4691bda9ec426f9630c9e1163bb8d4"
+  ],
+  "Icon": "icon-folder-outline color-orange",
+  "Thumbnail": "usn_folder_calendar.png",
+  "Description": "Use this item to create a new \"Blog Year Folder\".",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/5a03343f7e0149ffa88cfbb83b28f78d",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "d17bd9fe-2238-4154-a10e-c0cf2e3d341a",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "951829f7-91ec-4a46-be5b-df8ab9d19c50",
+          "Alias": "year",
+          "DataType": "umb://data-type/aa599dd728bc4317b7a0a6d589ecb5c0",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Year",
+          "SortOrder": 1,
+          "Validation": null
+        },
+        {
+          "Key": "f6a6a8ac-43f1-446c-ba65-68542219019e",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Blog Year Folder<i class=\"icon sprTree icon-folder-outline color-orange pull-right\"></i></h3></div><div class=\"panel-body\"><p>This folder is created automatically based on your blog posts.</p><p>Below this folder you will find \"Month\" folders containing your \"Blog Posts\".</p><p>\"Blog Posts\" must be added to the \"Blog Posts Folder\"\n above.</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/2e95a36e69b9481a8e3b555bcce165a2",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/aa599dd728bc4317b7a0a6d589ecb5c0",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/5a03343f7e0149ffa88cfbb83b28f78d",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Blog Year Folder",
+  "Alias": "USNBlogYearFolder",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

@@ -1,0 +1,156 @@
+{
+  "DefaultTemplate": "umb://template/c1da4a5c64d748169e69d71a356363f7",
+  "AllowedTemplates": [
+    "umb://template/c1da4a5c64d748169e69d71a356363f7"
+  ],
+  "Icon": "icon-categories",
+  "Thumbnail": "usn_blog_cat.png",
+  "Description": "Use this item to create a new \"Blog Category\".",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/fec78f3a7e9842148a93297cc88ef945",
+  "AllowedChildContentTypes": [
+    "umb://document-type/2d5f22f1217b4f5c904c20389ae4e4bc"
+  ],
+  "CompositionContentTypes": [
+    "umb://document-type/559f12479d804eecb7e45b44c81ae950",
+    "umb://document-type/602291717c1041fd8bf7a1d7e81b20ed",
+    "umb://document-type/89b91cefb9714c6c8d842bec32bf5582",
+    "umb://document-type/9ea3b81be80a4359a8c6ab48677a6b56",
+    "umb://document-type/a854011482be4818a347e0c469760b57",
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+    "umb://document-type/e703b4009f0f40c48421091b0c3bc907",
+    "umb://document-type/f5c73473e4db4b54b1c09d63d0293a8b"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "102bd01b-30d8-4391-ae24-7a72dadc2984",
+      "Name": "Page Settings",
+      "SortOrder": 3,
+      "PropertyTypes": [
+        {
+          "Key": "938f763f-1155-4ef4-8146-273c4a67a727",
+          "Alias": "pageLayout",
+          "DataType": "umb://data-type/316c072380004401bdadf4b23390b2e1",
+          "Description": "Default page layout will be displayed if nothing is selected.\n\nIf 'Content full width' is selected sub navigation will be hidden.",
+          "Mandatory": false,
+          "Name": "Page layout",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "4786c5ff-c5a3-4007-a84d-41bd1573503a",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "b91678d9-0a0b-4f5e-a442-66b3af38edf4",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Blog Category<i class=\"icon sprTree icon-categories  pull-right\"></i></h3></div><div class=\"panel-body\"><p>The node name you enter above will be used for the \"Category Name\" displayed on the website.</p><p> This page will list all blog posts that have been added to this category.</p></p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "eab1d9f0-3688-43f4-9612-875d532c9d46",
+      "Name": "Navigation",
+      "SortOrder": 2,
+      "PropertyTypes": [
+        {
+          "Key": "3dd9eaaa-b0ca-4726-881d-7094bbddc52d",
+          "Alias": "sitemapLinkText",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "Node name will be used by default if nothing is entered.",
+          "Mandatory": false,
+          "Name": "Sitemap link text",
+          "SortOrder": 2,
+          "Validation": null
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/2d5f22f1217b4f5c904c20389ae4e4bc",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/316c072380004401bdadf4b23390b2e1",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/2d5f22f1217b4f5c904c20389ae4e4bc",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/559f12479d804eecb7e45b44c81ae950",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/602291717c1041fd8bf7a1d7e81b20ed",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/89b91cefb9714c6c8d842bec32bf5582",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/9ea3b81be80a4359a8c6ab48677a6b56",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/a854011482be4818a347e0c469760b57",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/e703b4009f0f40c48421091b0c3bc907",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/f5c73473e4db4b54b1c09d63d0293a8b",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/fec78f3a7e9842148a93297cc88ef945",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/c1da4a5c64d748169e69d71a356363f7",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Blog Category Page",
+  "Alias": "USNBlogCategoryPage",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

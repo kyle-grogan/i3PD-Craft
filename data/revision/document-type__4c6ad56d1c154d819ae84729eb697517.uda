@@ -1,0 +1,181 @@
+{
+  "DefaultTemplate": "umb://template/fb4cd8bcd4d4404a9803e650445ba790",
+  "AllowedTemplates": [
+    "umb://template/fb4cd8bcd4d4404a9803e650445ba790"
+  ],
+  "Icon": "icon-arrow-right",
+  "Thumbnail": "usn_form_green.png",
+  "Description": "Use this item to create your websites \"Login Page\".",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/fec78f3a7e9842148a93297cc88ef945",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [
+    "umb://document-type/559f12479d804eecb7e45b44c81ae950",
+    "umb://document-type/602291717c1041fd8bf7a1d7e81b20ed",
+    "umb://document-type/89b91cefb9714c6c8d842bec32bf5582",
+    "umb://document-type/9ea3b81be80a4359a8c6ab48677a6b56",
+    "umb://document-type/a854011482be4818a347e0c469760b57",
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+    "umb://document-type/e703b4009f0f40c48421091b0c3bc907",
+    "umb://document-type/f5c73473e4db4b54b1c09d63d0293a8b"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "0c28867f-eeab-4406-8205-f3c84e1d5949",
+      "Name": "Page Settings",
+      "SortOrder": 3,
+      "PropertyTypes": [
+        {
+          "Key": "bff8975c-66a1-4693-a8a8-11999e76bf22",
+          "Alias": "pageLayout",
+          "DataType": "umb://data-type/316c072380004401bdadf4b23390b2e1",
+          "Description": "Default page layout will be displayed if nothing is selected. \n\nIf 'Content full width' is selected sub navigation will be hidden.",
+          "Mandatory": false,
+          "Name": "Page layout",
+          "SortOrder": 0,
+          "Validation": ""
+        }
+      ]
+    },
+    {
+      "Key": "0c3ac194-7e3e-486f-a19e-49b96b9eb3f9",
+      "Name": "Login Settings",
+      "SortOrder": 4,
+      "PropertyTypes": [
+        {
+          "Key": "7db95c27-c992-48bd-ac00-338cbdd6f264",
+          "Alias": "loginSuccessPage",
+          "DataType": "umb://data-type/fd1e0da556064862b6795d0cf3a52a59",
+          "Description": "Select the page to go to when login is successful.",
+          "Mandatory": true,
+          "Name": "Login success page",
+          "SortOrder": 0,
+          "Validation": ""
+        },
+        {
+          "Key": "8b13b35f-fc85-4916-814f-3b8b10f5dc52",
+          "Alias": "loginFormButtonText",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "Mandatory": true,
+          "Name": "Login form button text",
+          "SortOrder": 1,
+          "Validation": ""
+        }
+      ]
+    },
+    {
+      "Key": "a57387d9-b6f6-4692-8649-6741d1398817",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "7f3b8a7a-9fd4-4e63-8021-8f02e4b47b24",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Login Page<i class=\"icon umb-tree-icon sprTree icon-arrow-right pull-right\"></i></h3></div><div class=\"panel-body\"><p>This page displays a login form for gaining access to password protected areas of your website.</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "e71628f2-8cbf-47d6-b502-3de097fd5ff1",
+      "Name": "Navigation",
+      "SortOrder": 2,
+      "PropertyTypes": [
+        {
+          "Key": "72640536-e40d-4a19-ad00-66524b615244",
+          "Alias": "sitemapLinkText",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "Node name will be used by default if nothing is entered.",
+          "Mandatory": false,
+          "Name": "Sitemap link text",
+          "SortOrder": 2,
+          "Validation": null
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/4c6ad56d1c154d819ae84729eb697517",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/316c072380004401bdadf4b23390b2e1",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/fd1e0da556064862b6795d0cf3a52a59",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/559f12479d804eecb7e45b44c81ae950",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/602291717c1041fd8bf7a1d7e81b20ed",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/89b91cefb9714c6c8d842bec32bf5582",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/9ea3b81be80a4359a8c6ab48677a6b56",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/a854011482be4818a347e0c469760b57",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/e703b4009f0f40c48421091b0c3bc907",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/f5c73473e4db4b54b1c09d63d0293a8b",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/fec78f3a7e9842148a93297cc88ef945",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/fb4cd8bcd4d4404a9803e650445ba790",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Login Page",
+  "Alias": "USNLoginPage",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

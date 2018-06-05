@@ -1,0 +1,150 @@
+{
+  "DefaultTemplate": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+  "AllowedTemplates": [
+    "umb://template/fe4691bda9ec426f9630c9e1163bb8d4"
+  ],
+  "Icon": "icon-picture color-orange",
+  "Thumbnail": "folder.png",
+  "Description": "Use this item to add a new \"Carousel Image\" to this section.",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/165ef6f529a9435ba232170a1e1c7e62",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "42fa43ef-bf09-44a8-b010-71605433172f",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "8073f259-50ae-40ae-b981-43d5ffb9a9e5",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Carousel Image<i class=\"icon sprTree icon-picture color-orange pull-right\"></i></h3></div><div class=\"panel-body\"><p>The node name you enter above is for your reference only and will not appear on the website.</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "76ef3ef7-e351-4746-bd30-195345472754",
+      "Name": "Content",
+      "SortOrder": 1,
+      "PropertyTypes": [
+        {
+          "Key": "2352bb16-df62-4147-9002-31090e2c2172",
+          "Alias": "disableLightWindow",
+          "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Disable light window",
+          "SortOrder": 4,
+          "Validation": null
+        },
+        {
+          "Key": "330cff1c-056d-4bac-850f-51115541d1cd",
+          "Alias": "lightWindowFooter",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "This text will be displayed below your image within the light window.",
+          "Mandatory": false,
+          "Name": "Light window footer",
+          "SortOrder": 3,
+          "Validation": null
+        },
+        {
+          "Key": "5c23987c-97ec-466d-bdd8-9f229fad1ec5",
+          "Alias": "thumbnailImageAltText",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Thumbnail image alt text",
+          "SortOrder": 1,
+          "Validation": null
+        },
+        {
+          "Key": "7cfdda91-d1c6-44c4-8579-53426d3752b8",
+          "Alias": "lightWindowImage",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "Image will be cropped to 400px x 300px and displayed as the gallery thumbnail.\n\nFocal point of the image is defined within your \"Media\" section.\n\nThe original image you upload will be displayed within the light window uncropped.",
+          "Mandatory": true,
+          "Name": "Light window image",
+          "SortOrder": 0,
+          "Validation": null
+        },
+        {
+          "Key": "9d9a8a12-3634-4217-9961-7d60c232ae20",
+          "Alias": "lightWindowTitle",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "This text will be displayed above your image within the light window.",
+          "Mandatory": false,
+          "Name": "Light window title",
+          "SortOrder": 2,
+          "Validation": null
+        },
+        {
+          "Key": "ac305760-d83d-4aee-a772-6e7de080c63c",
+          "Alias": "imageLink",
+          "DataType": "umb://data-type/2d5d436789f94e289e45bde3e16ab999",
+          "Description": "Link will only be used if light window is disabled.\n\nThe \"Caption\" field will be ignored however you must enter something in order to save this link.",
+          "Mandatory": false,
+          "Name": "Link",
+          "SortOrder": 5,
+          "Validation": null
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/fbb56e5aa23d48cba63822885b2e336f",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/2d5d436789f94e289e45bde3e16ab999",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/165ef6f529a9435ba232170a1e1c7e62",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Carousel Image",
+  "Alias": "USN_AC_CarouselImage",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

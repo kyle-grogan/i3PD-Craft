@@ -1,0 +1,106 @@
+{
+  "DefaultTemplate": "umb://template/ac85fda3c2584660bab5362fa1e745fe",
+  "AllowedTemplates": [
+    "umb://template/ac85fda3c2584660bab5362fa1e745fe"
+  ],
+  "Icon": "icon-folder-outline color-orange",
+  "Thumbnail": "usn_folder_pods.png",
+  "Description": "Use this item to organise the \"Sitewide Pods\" available on your website.",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/b4caa3e05e2341a7b39d5285c0ef4328",
+  "AllowedChildContentTypes": [
+    "umb://document-type/29a7a419de344739987090de83eb994f",
+    "umb://document-type/332279adec2240968b417ddbf2a9d17e",
+    "umb://document-type/6ec31ddb55de44489cb2687ecf415c4c",
+    "umb://document-type/b18e3de801db45c0b87d192723dd67af",
+    "umb://document-type/bdc2fd069db647aea087d1b8ae9a0676",
+    "umb://document-type/c42fec75a5254737b0e99e060227478a",
+    "umb://document-type/d1b81a06f2654e25934b83d0aa0a549a"
+  ],
+  "CompositionContentTypes": [
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "a9da4593-2814-4be8-a8a0-866c2452cf88",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "54ad6814-d147-4d7b-bdde-d68c7aa78933",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Sitewide Pods<i class=\"icon sprTree icon-folder-outline color-orange pull-right\"></i></h3></div><div class=\"panel-body\"><p>Add items below this folder to create \"Sitewide pods\" that will be available for display on \"Standard Pages\" and \"Standard Page Blog Posts\".</p><p>The \"Pods\" tab within \"Global Settings\" is used to control the default pods that will be added to \"Standard Pages\" and \"Standard Page Blog Posts\".</p><p>The \"Pods\" tab on each \"Standard Page\" and \"Standard Page Blog Post\" can be used to override the default pods that have been selected.</p><p><strong>DO NOT</strong> delete this folder.</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/2aee5c301d024d4a99797c6f4a067b75",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/29a7a419de344739987090de83eb994f",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/332279adec2240968b417ddbf2a9d17e",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/6ec31ddb55de44489cb2687ecf415c4c",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/b18e3de801db45c0b87d192723dd67af",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/bdc2fd069db647aea087d1b8ae9a0676",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/c42fec75a5254737b0e99e060227478a",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/d1b81a06f2654e25934b83d0aa0a549a",
+      "Ordering": false,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/b4caa3e05e2341a7b39d5285c0ef4328",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/ac85fda3c2584660bab5362fa1e745fe",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Sitewide Pods Folder",
+  "Alias": "USNSitewidePods",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

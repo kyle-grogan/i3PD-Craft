@@ -1,0 +1,97 @@
+{
+  "DefaultTemplate": null,
+  "AllowedTemplates": [],
+  "Icon": "icon-document color-blue",
+  "Thumbnail": "folder.png",
+  "Description": null,
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/6eb4b01a6107460f8a995a99e8ce216f",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [],
+  "PropertyGroups": [],
+  "PropertyTypes": [
+    {
+      "Key": "06b34a70-1089-4e22-a367-1f56b092e6d4",
+      "Alias": "hideWebsiteFooterSection",
+      "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+      "Description": "This setting is useful for landing pages where you want a clear 'call to action' and don't want to distract your users with other options.",
+      "Mandatory": false,
+      "Name": "Hide website footer section",
+      "SortOrder": 5,
+      "Validation": null
+    },
+    {
+      "Key": "0e640ed4-8db4-4ee1-b2f6-1bc67650df0e",
+      "Alias": "hideWebsiteHeaderSection",
+      "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+      "Description": "This setting is useful for landing pages where you want a clear 'call to action' and don't want to distract your users with other options.",
+      "Mandatory": false,
+      "Name": "Hide website header section",
+      "SortOrder": 4,
+      "Validation": null
+    },
+    {
+      "Key": "356a5ba3-dae8-4ca2-8337-f861ca11bfd5",
+      "Alias": "hideFromSearchEngines",
+      "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+      "Description": "This will add a noindex meta tag to your page.",
+      "Mandatory": false,
+      "Name": "Hide from search engines",
+      "SortOrder": 3,
+      "Validation": null
+    },
+    {
+      "Key": "635f67ed-5adc-4d9e-9f58-6a9be1535299",
+      "Alias": "umbracoUrlAlias",
+      "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Description": "Use this field to provide multiple URLs for a content node.\n\nFor example if you were to enter \"examplepage1,examplepage2/this-is-a-test\", this would resolve the following URLs to the same page.\n\n/examplepage1/\n/examplepage2/this-is-a-test/\n\nPlease note that the values you use must be lowercase, not use a leading slash and not use a trailing \".aspx\".",
+      "Mandatory": false,
+      "Name": "Alternative URL",
+      "SortOrder": 6,
+      "Validation": ""
+    },
+    {
+      "Key": "919f94d3-89c0-4768-bdc1-393d25a44ae6",
+      "Alias": "umbracoNaviHide",
+      "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+      "Description": "",
+      "Mandatory": false,
+      "Name": "Hide from all navigation",
+      "SortOrder": 2,
+      "Validation": ""
+    },
+    {
+      "Key": "bff3c524-4661-498c-9793-a52231a7c00e",
+      "Alias": "customBodyClasses",
+      "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Description": "Override the default styles of this page by adding page specific classes. You should leave a space between each individual class e.g:\n\ncustom-class another-class",
+      "Mandatory": false,
+      "Name": "Custom body classes",
+      "SortOrder": 7,
+      "Validation": null
+    }
+  ],
+  "Udi": "umb://document-type/9ea3b81be80a4359a8c6ab48677a6b56",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/6eb4b01a6107460f8a995a99e8ce216f",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Page Generic Properties",
+  "Alias": "USN_CMP_PageGenericProperties",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

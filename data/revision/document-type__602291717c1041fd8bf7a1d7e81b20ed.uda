@@ -1,0 +1,99 @@
+{
+  "DefaultTemplate": null,
+  "AllowedTemplates": [],
+  "Icon": "icon-document color-blue",
+  "Thumbnail": "folder.png",
+  "Description": null,
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/6eb4b01a6107460f8a995a99e8ce216f",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "958983cd-3f2a-4179-9cd0-34774a75da17",
+      "Name": "Content",
+      "SortOrder": 6,
+      "PropertyTypes": [
+        {
+          "Key": "0f28656f-c960-40aa-a58c-da1b5203202d",
+          "Alias": "bodyText",
+          "DataType": "umb://data-type/797b6d29015c4580aa0065d5013cfbf9",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Main content",
+          "SortOrder": 4,
+          "Validation": ""
+        },
+        {
+          "Key": "105684c8-0b89-4b37-8e04-42102d7ca272",
+          "Alias": "onPageTitle",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "Node name will be used by default if nothing is entered.",
+          "Mandatory": false,
+          "Name": "Page title",
+          "SortOrder": 0,
+          "Validation": ""
+        },
+        {
+          "Key": "4f60a912-4f30-4531-99a5-fca56154e491",
+          "Alias": "mainImageCaption",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Main image caption",
+          "SortOrder": 3,
+          "Validation": ""
+        },
+        {
+          "Key": "71bec5c4-de99-4700-ad55-725729ec8ab1",
+          "Alias": "mainImage",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "Image will be cropped to 1200px x 600px.\n\nFocal point of the image is defined within your \"Media\" section.",
+          "Mandatory": false,
+          "Name": "Main image",
+          "SortOrder": 1,
+          "Validation": ""
+        },
+        {
+          "Key": "fa7bd34c-3ddc-4f4f-86e9-9f13bd8c6f83",
+          "Alias": "mainImageAltText",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "Mandatory": false,
+          "Name": "Main image alt text",
+          "SortOrder": 2,
+          "Validation": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/602291717c1041fd8bf7a1d7e81b20ed",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/797b6d29015c4580aa0065d5013cfbf9",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/6eb4b01a6107460f8a995a99e8ce216f",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Standard Page Content",
+  "Alias": "USN_CMP_SP_Content",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

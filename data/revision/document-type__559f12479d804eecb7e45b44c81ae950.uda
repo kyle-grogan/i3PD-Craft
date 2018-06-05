@@ -1,0 +1,64 @@
+{
+  "DefaultTemplate": null,
+  "AllowedTemplates": [],
+  "Icon": "icon-document color-blue",
+  "Thumbnail": "folder.png",
+  "Description": null,
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/6eb4b01a6107460f8a995a99e8ce216f",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "f76b386f-b36b-4308-902a-a35284bc5f5e",
+      "Name": "Pods",
+      "SortOrder": 8,
+      "PropertyTypes": [
+        {
+          "Key": "4addaf94-e24f-47ff-a68a-2d17078e7b8b",
+          "Alias": "pagePods",
+          "DataType": "umb://data-type/37c366bfcfa94663a84c646e49e90fc2",
+          "Description": "Select the pods you would like to appear on this page. The pods selected will only be displayed if \"Yes\" is selected above.",
+          "Mandatory": false,
+          "Name": "Pods",
+          "SortOrder": 1,
+          "Validation": null
+        },
+        {
+          "Key": "6d626ba1-257d-494f-ae99-2185589d7411",
+          "Alias": "overrideDefaultPods",
+          "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+          "Description": "Select \"Yes\" to override the default pods selected within \"Global Settings\".",
+          "Mandatory": false,
+          "Name": "Override default pods",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/559f12479d804eecb7e45b44c81ae950",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/37c366bfcfa94663a84c646e49e90fc2",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/6eb4b01a6107460f8a995a99e8ce216f",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Page Pods",
+  "Alias": "USN_CMP_Pods",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}

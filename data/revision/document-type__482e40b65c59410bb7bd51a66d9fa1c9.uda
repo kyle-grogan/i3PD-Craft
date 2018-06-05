@@ -1,0 +1,160 @@
+{
+  "DefaultTemplate": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+  "AllowedTemplates": [
+    "umb://template/fe4691bda9ec426f9630c9e1163bb8d4"
+  ],
+  "Icon": "icon-video color-orange",
+  "Thumbnail": "folder.png",
+  "Description": "Use this item to add a new \"Window Section Video\" to this section.",
+  "AllowedAtRoot": false,
+  "IsContainer": false,
+  "Parent": "umb://document-type-container/165ef6f529a9435ba232170a1e1c7e62",
+  "AllowedChildContentTypes": [],
+  "CompositionContentTypes": [
+    "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "6244c121-27d2-4086-89ae-1907704e50bd",
+      "Name": "Instructions",
+      "SortOrder": 0,
+      "PropertyTypes": [
+        {
+          "Key": "e92dac42-eab1-49e0-9346-8ee963ced418",
+          "Alias": "instructions",
+          "DataType": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+          "Description": "<div class=\"panel-heading\"><h3 class=\"panel-title\">Window Section Video<i class=\"icon sprTree icon-video color-orange pull-right\"></i></h3></div><div class=\"panel-body\"><p>The node name you enter above is for your reference only and will not appear on the website.</p></div>",
+          "Mandatory": false,
+          "Name": "Instructions",
+          "SortOrder": 0,
+          "Validation": null
+        }
+      ]
+    },
+    {
+      "Key": "fa89ce47-9aed-4f2e-91ac-f2ab90dc6dc7",
+      "Name": "Content",
+      "SortOrder": 5,
+      "PropertyTypes": [
+        {
+          "Key": "406af95a-6bf8-4128-8d6d-badcfa6939e6",
+          "Alias": "videoURL",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "<p>Copy the full URL for your video from the address bar. YouTube or Vimeo only)</p>",
+          "Mandatory": true,
+          "Name": "Video URL",
+          "SortOrder": 4,
+          "Validation": null
+        },
+        {
+          "Key": "56687ddf-9c5f-44df-9f3a-d10fcff520d8",
+          "Alias": "imageAltText",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": null,
+          "Mandatory": false,
+          "Name": "Image alt text",
+          "SortOrder": 3,
+          "Validation": null
+        },
+        {
+          "Key": "6f2e85ab-1113-4f71-bfb7-ab4923a2ccb5",
+          "Alias": "lightWindowFooter",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "This text will be displayed below your video within the light window.",
+          "Mandatory": false,
+          "Name": "Light window footer",
+          "SortOrder": 6,
+          "Validation": null
+        },
+        {
+          "Key": "b27d5329-c5a1-4a19-b165-08f77c08b255",
+          "Alias": "backgroundImage",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "Image will be cropped to one of the following sizes depending on order within this section.\n\n800px x 800px\n800px x 400px\n\nFocal point of the image is defined within your \"Media\" section.",
+          "Mandatory": false,
+          "Name": "Image",
+          "SortOrder": 2,
+          "Validation": null
+        },
+        {
+          "Key": "be6e77b5-0c1c-42c0-a03f-abd608bafac2",
+          "Alias": "addColorOverlay",
+          "DataType": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+          "Description": "The color overlay added to your banner will be decided based on the background color selected.",
+          "Mandatory": false,
+          "Name": "Add color overlay",
+          "SortOrder": 1,
+          "Validation": null
+        },
+        {
+          "Key": "f1e6b829-d1ff-4a09-9558-d3f2935d895f",
+          "Alias": "backgroundColor",
+          "DataType": "umb://data-type/8605e6048396472d837e3ad84d8fa466",
+          "Description": "Color selected will decide what color is used for any text that appears over the background.\n\nIf the banner contains an image, use the color that works best for the text over the image.",
+          "Mandatory": false,
+          "Name": "Background color",
+          "SortOrder": 0,
+          "Validation": null
+        },
+        {
+          "Key": "f7773f87-e3f8-4879-af0c-eea9b9aa1cde",
+          "Alias": "lightWindowTitle",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "This text will be displayed above your video within the light window.",
+          "Mandatory": false,
+          "Name": "Light window title",
+          "SortOrder": 5,
+          "Validation": null
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/482e40b65c59410bb7bd51a66d9fa1c9",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/84a4dd46ed68409b82082ff4918d21cb",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/8605e6048396472d837e3ad84d8fa466",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://data-type/d6c4e9affa7e42268ec31ce5ebb062d6",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type/cf239669a3dd4c36aab1ca35c2ca1684",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://document-type-container/165ef6f529a9435ba232170a1e1c7e62",
+      "Ordering": true,
+      "Mode": 0
+    },
+    {
+      "Udi": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "Window Section Video",
+  "Alias": "USN_AC_WindowSectionVideo",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DocumentTypeArtifact",
+  "__version": "2.0.14"
+}
