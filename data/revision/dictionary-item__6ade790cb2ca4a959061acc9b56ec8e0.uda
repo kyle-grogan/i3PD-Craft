@@ -1,0 +1,23 @@
+{
+  "ItemKey": "USN Form Password Label",
+  "ParentId": "1391e0d2-ed64-4558-89f8-268f7f46e353",
+  "Translations": [
+    {
+      "Key": "6ade790c-b2ca-4a95-9061-acc9b56ec8e0",
+      "Value": "Password",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/6ade790cb2ca4a959061acc9b56ec8e0",
+  "Udi": "umb://dictionary-item/6ade790cb2ca4a959061acc9b56ec8e0",
+  "Dependencies": [
+    {
+      "Udi": "umb://dictionary-item/1391e0d2ed64455889f8268f7f46e353",
+      "Ordering": true,
+      "Mode": 1
+    }
+  ],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
