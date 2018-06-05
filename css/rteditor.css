@@ -1,0 +1,58 @@
+	body { 
+	font-size: 14px;
+	line-height:1.3;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	color:#444444;
+} 
+table {
+	width:100%;
+}
+table td {
+	padding:5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**umb_name:Heading 1 (h1)*/
+h1{font-size:35px;}
+
+/**umb_name:Heading 2 (h2)*/
+h2{font-size:30px;}
+
+/**umb_name:Heading 3 (h3)*/
+h3{font-size:22px;}
+
+/**umb_name:Heading 4 (h4)*/
+h4{font-size:18px;}
+
+/**umb_name:Heading 5 (h5)*/
+h5{font-size:16px;}
+
+/**umb_name:Introduction paragraph*/
+.intro{font-size:20px;}
