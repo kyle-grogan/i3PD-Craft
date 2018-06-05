@@ -1,0 +1,16 @@
+﻿@inherits UmbracoViewPage<USNStarterKit.USNModels.USNBaseViewModel>
+
+@using Umbraco.Web.Models;
+@using USNStarterKit.USNModels;
+@using USNStarterKit.USNHelpers;
+	
+@{
+    Usnnavigation navigation = (Usnnavigation)Model.Navigation;
+
+    USNLink ctaLink = USNUrlHelper.GetLinkFromRelatedLinks(navigation.CtaLink);
+
+    if (ctaLink.LinkURL.HasValue())
+    {
+        <nav class="cta-link"><a class="btn c1-bg c5-text" href="@ctaLink.LinkURL" @Html.Raw(ctaLink.LinkTitle) @Html.Raw(ctaLink.LinkTarget)>@ctaLink.LinkCaption@Html.Raw(ctaLink.LinkIcon)</a></nav>
+    }
+}

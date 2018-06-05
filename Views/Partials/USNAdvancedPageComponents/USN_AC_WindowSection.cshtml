@@ -1,0 +1,373 @@
+﻿@inherits UmbracoViewPage<Usn_Ac_WindowSection_AN>
+
+@using Umbraco.Web.Models;
+@using USNStarterKit.USNModels;
+@using USNStarterKit.USNHelpers;
+@using USNStarterKit.USNEntities;
+
+@{
+
+    string animateClass = String.Empty;
+
+    if (Model.Animate)
+    {
+        animateClass = "os-animation";
+    }
+
+    string containerClass = "container-fluid";
+
+    if (Model.FixedWidth)
+    {
+        containerClass = "container";
+    }
+
+    bool bigItemFirst = true;
+
+    if (Model.ImageOrder == "Small images first")
+    {
+        bigItemFirst = false;
+    }
+
+    USNTemplateStyleSettings settings = USNViewTemplateHelper.GetTemplateStyleSettings(Model.BackgroundColor, Model.ButtonColor);
+
+    string backgroundImageStyle = USNViewTemplateHelper.GetBackgroundImageStyle(Model.BackgroundImage, Model.BackgroundImageOptions);
+
+    int currentItemPosition = 1;
+    int totalItemCount = Model.Children.Count(x => x.IsDocumentType(Usn_Ac_WindowSectionImage.ModelTypeAlias)  || x.IsDocumentType(Usn_Ac_WindowSectionVideo.ModelTypeAlias));
+
+    <section class="content apc pod-windows @settings.BackGroundStyle @Model.CustomComponentClasses" @Html.Raw(backgroundImageStyle) id="pos_@Model.Id">
+                            
+        @{
+            if (Model.IntroductionHeading != null || Model.IntroductionText.HasValue())
+            {
+                <div class="container">
+                    <!-- ROW - OVERVIEW -->
+                    <div class="row overview text-center @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0s">
+                        <div class="col-md-8 col-xs-12">
+                            @if (Model.IntroductionSecondaryHeading.HasValue())
+                            {
+                                @Html.Raw(String.Format("<p class=\"secondary-heading {0}\">{1}</{0}>", settings.HeadingStyle, Model.IntroductionSecondaryHeading))
+                            }
+                            @if (Model.IntroductionHeading != null)
+                            {
+                                @Html.Raw(String.Format("<{0} class=\"heading main {1}\">{2}</{0}>", Model.IntroductionHeading.HeadingTag, settings.HeadingStyle, Model.IntroductionHeading.Text))
+                            }
+                            @if (Model.IntroductionText.HasValue())
+                            {
+                                <div class="text @settings.TextStyle">
+                                    @Html.Raw(Model.IntroductionText)
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <!--// ROW - OVERVIEW -->
+                </div>
+            }
+        }
+
+		<div class="@containerClass">
+			
+            @if(totalItemCount > 0)
+            {
+                foreach(IPublishedContent item in Model.Children.Where(x => x.IsDocumentType(Usn_Ac_WindowSectionImage.ModelTypeAlias)  || x.IsDocumentType(Usn_Ac_WindowSectionVideo.ModelTypeAlias)))
+                {
+                    string itemClass = String.Empty;
+                    string animationTime = String.Format("0.{0}s", currentItemPosition.ToString());
+                    int imageWidth = 800;
+                    int imageWidthSmall = 8;
+                    int imageHeight = 600;
+                    int imageHeightSmall = 6;
+
+                    string colorOverlayClass = String.Empty;
+                    
+                    if(bigItemFirst)
+                    { 
+                        if(currentItemPosition == 1)
+                        {
+                            @:<div class="row text-center">
+                            itemClass = "full-item col-lg-6 col-xs-12";
+                            imageWidth = 1200;
+                            imageWidthSmall = 12;
+                            imageHeight = 1600;
+                            imageHeightSmall = 16;
+                        }
+                        else if(currentItemPosition == 2)
+                        {
+                            itemClass = "half-item col-lg-12 col-sm-6 col-xs-12";
+                            imageWidth = 800;
+                            imageWidthSmall = 8;
+                            imageHeight = 600;
+                            imageHeightSmall = 6;
+                        }
+                        else if(currentItemPosition == 3)
+                        {
+                            itemClass = "half-item col-lg-12 col-sm-6 col-xs-12";
+                            imageWidth = 800;
+                            imageWidthSmall = 8;
+                            imageHeight = 600;
+                            imageHeightSmall = 6;
+                        }
+                    
+                        if(currentItemPosition == 2)
+                        {
+                            @:<div class="smaller-items col-lg-6 col-xs-12">
+                        }
+                    }
+                    else
+                    {
+                        if (currentItemPosition == 1)
+                        {
+                            @:<div class="row text-center">
+                            itemClass = "half-item col-lg-12 col-sm-6 col-xs-12";
+                            imageWidth = 800;
+                            imageWidthSmall = 8;
+                            imageHeight = 600;
+                            imageHeightSmall = 6;
+                        }
+                        else if (currentItemPosition == 2)
+                        {
+                            itemClass = "half-item col-lg-12 col-sm-6 col-xs-12";
+                            imageWidth = 800;
+                            imageWidthSmall = 8;
+                            imageHeight = 600;
+                            imageHeightSmall = 6;
+                        }
+                        else if (currentItemPosition == 3)
+                        {
+                            itemClass = "full-item col-lg-6 col-xs-12";
+                            imageWidth = 1200;
+                            imageWidthSmall = 12;
+                            imageHeight = 1600;
+                            imageHeightSmall = 16;
+                        }
+
+                        if (currentItemPosition == 1)
+                        {
+                            @:<div class="smaller-items col-lg-6 col-xs-12">
+                        }
+                    }
+
+                    if (item.IsDocumentType(Usn_Ac_WindowSectionImage.ModelTypeAlias))
+                    {
+                        Usn_Ac_WindowSectionImage windowSectionImage = (Usn_Ac_WindowSectionImage)item;
+
+                        USNTemplateStyleSettings windowSettings = USNViewTemplateHelper.GetTemplateStyleSettings(windowSectionImage.BackgroundColor);
+
+                        string bgImage = String.Empty;
+                        string bgImageSmall = String.Empty;
+
+                        if (windowSectionImage.BackgroundImage != null)
+                        {
+                            bgImage = windowSectionImage.BackgroundImage.GetCropUrl(cropAlias: imageWidth + "x" + imageHeight);
+                            bgImageSmall = "style=\"background-image:url('" + windowSectionImage.BackgroundImage.GetCropUrl(cropAlias: imageWidth + "x" + imageHeight, width: imageWidthSmall, height: imageHeightSmall) + "')\"";
+                        }
+                        
+                        USNLink link = USNUrlHelper.GetLinkFromRelatedLinks(windowSectionImage.Link);
+
+                        if (windowSectionImage.AddColorOverlay)
+                        {
+                            colorOverlayClass = "overlay";
+                        }
+
+                        <!-- ITEM -->
+                        <div class="item @itemClass @colorOverlayClass @animateClass" data-os-animation="fadeIn" data-os-animation-delay="@animationTime">
+
+                            <!-- INFO -->
+                            @if(link.LinkURL.HasValue())
+                            {
+                                @:<a href="@link.LinkURL" @Html.Raw(link.LinkTarget) @Html.Raw(link.LinkTitle) class="info lazyload @windowSettings.BackGroundStyle" @Html.Raw(bgImageSmall) data-bg="@bgImage">
+                            }
+                            else
+                            {
+                                @:<div class="info lazyload @windowSettings.BackGroundStyle">
+                            }
+						
+								<!-- IMAGE -->
+								<div class="image lazyload" @Html.Raw(bgImageSmall) data-bg="@bgImage">
+								</div>
+								<!--// IMAGE -->
+
+                                <div class="table">
+                                    <div class="table-cell">
+
+                                        <!-- INNER -->
+                                        <div class="inner">
+											
+                                            @if (windowSectionImage.SecondaryHeading.HasValue())
+                                            {
+                                                @Html.Raw(String.Format("<p class=\"secondary-heading {0}\">{1}</{0}>", windowSettings.SecondaryHeadingStyle, windowSectionImage.SecondaryHeading))
+                                            }
+                                            @if (windowSectionImage.Heading != null)
+                                            {
+                                                @Html.Raw(String.Format("<{0} class=\"heading main {1}\">{2}</{0}>", windowSectionImage.Heading.HeadingTag, windowSettings.HeadingStyle, windowSectionImage.Heading.Text))
+                                            }
+                                            @if (windowSectionImage.Text.HasValue())
+                                            {
+                                            <div class="text @windowSettings.TextStyle">
+                                                @Html.Raw(windowSectionImage.Text)
+                                            </div>
+                                            }
+                                            @if(link.LinkURL.HasValue())
+                                            {
+                                            <p class="link @windowSettings.HeadingStyle"><span class="btn btn-sm c1-bg c5-text">@link.LinkCaption@Html.Raw(link.LinkIcon)</span></p>
+                                            }
+
+                                        </div>
+                                        <!--// INNER -->
+
+                                    </div>
+                                </div>
+                            
+                            @if(link.LinkURL.HasValue())
+                            {
+                                @:</a>
+                            }
+                            else
+                            {
+                                @:</div>
+                            }
+                            <!--// INFO -->
+
+                        </div>
+                        <!--// ITEM -->
+                    }
+                    else
+                    {
+                        Usn_Ac_WindowSectionVideo windowSectionVideo = (Usn_Ac_WindowSectionVideo)item;
+
+                        USNTemplateStyleSettings windowSettings = USNViewTemplateHelper.GetTemplateStyleSettings(windowSectionVideo.BackgroundColor);
+
+                        string bgImage = String.Empty;
+                        string bgImageSmall = String.Empty;
+
+                        if (windowSectionVideo.BackgroundImage != null)
+                        {
+                            bgImage = windowSectionVideo.BackgroundImage.GetCropUrl(cropAlias: imageWidth + "x" + imageHeight);
+                            bgImageSmall = "style=\"background-image:url('" + windowSectionVideo.BackgroundImage.GetCropUrl(cropAlias: imageWidth + "x" + imageHeight, width: imageWidthSmall, height: imageHeightSmall) + "')\"";
+                        }
+
+                        string title = String.Empty;
+                        string footer = String.Empty;
+
+                        string videoUrlOriginal = windowSectionVideo.VideoUrl;
+
+                        if (windowSectionVideo.LightWindowTitle.HasValue())
+                        {
+                            title = "data-title=\"" + windowSectionVideo.LightWindowTitle + "\"";
+                        }
+
+                        if (windowSectionVideo.LightWindowFooter.HasValue())
+                        {
+                            footer = "data-footer=\"" + windowSectionVideo.LightWindowFooter + "\"";
+                        }
+
+                        USNVideo video = USNVideoHelper.GetVideoInfo(videoUrlOriginal);
+
+                        if (windowSectionVideo.AddColorOverlay)
+                        {
+                            colorOverlayClass = "overlay";
+                        }
+                        
+                        <!-- ITEM -->
+                        <div class="item @itemClass @colorOverlayClass video @animateClass" data-os-animation="fadeIn" data-os-animation-delay="@animationTime">
+
+                            <!-- INFO -->
+                            <a href="@video.VideoURLModified" @Html.Raw(title) @Html.Raw(footer) data-toggle="lightbox" @Html.Raw(video.VideoDataRemote) class="info lazyload @windowSettings.BackGroundStyle">
+						
+								<!-- IMAGE -->
+								<div class="image lazyload" @Html.Raw(bgImageSmall) data-bg="@bgImage">
+								</div>
+								<!--// IMAGE -->
+
+                                <div class="table">
+                                    <div class="table-cell">
+
+                                        <!-- INNER -->
+                                        <div class="inner">
+
+                                            <p class="link @windowSettings.HeadingStyle"><span class="btn btn-sm c1-bg c5-text">@umbraco.library.GetDictionaryItem("USN Window Section Component Play Video")</span></p>
+
+                                        </div>
+                                        <!--// INNER -->
+
+                                        <!-- VIDEO OVERLAYICON -->
+                                        <div class="overlayicon ion-ios-play @windowSettings.HeadingStyle"></div>
+                                        <!--// VIDEO OVERLAYICON -->
+
+                                    </div>
+                                </div>
+
+                            </a>
+                            <!--// INFO -->
+
+                        </div>
+                        <!--// ITEM -->
+                    }
+
+                    if (bigItemFirst)
+                    { 
+                        if ((currentItemPosition > 1 && currentItemPosition == totalItemCount) || currentItemPosition == 3)
+                        {
+                            @:</div>
+                        }
+                    }
+                    else
+                    {
+                        if (currentItemPosition == totalItemCount || currentItemPosition == 2)
+                        {
+                            @:</div>
+                        }
+                    }
+                    
+                    if(currentItemPosition == 3)
+                    {
+                        bigItemFirst = false;
+                    }
+
+                    currentItemPosition += 1;
+
+                    currentItemPosition = currentItemPosition == 4 ? 1 : currentItemPosition;
+                }
+
+            }
+
+        </div>
+
+        @{
+            RelatedLinks outroLinks = Model.OutroLinks;
+
+            if (Model.OutroText.HasValue() || outroLinks != null)
+            {
+                <div class="container">
+                    <!-- ROW - OUTRO -->
+                    <div class="row outro text-center @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0.1s">
+                        <div class="col-md-8 col-xs-12">
+                            @if (Model.OutroText.HasValue())
+                            {
+                                <div class="text @settings.TextStyle">
+                                    @Html.Raw(Model.OutroText)
+                                </div>
+                            }
+
+                            @if (outroLinks != null)
+                            {
+                                <p class="link">
+                                    @foreach (RelatedLink link in outroLinks)
+                                    {
+                                        USNLink outroLink = USNUrlHelper.GetLinkFromRelatedLink(link);
+
+                                        <a role="button" class="btn @settings.ButtonStyle" href="@outroLink.LinkURL" @Html.Raw(outroLink.LinkTarget) @Html.Raw(outroLink.LinkTitle)>@outroLink.LinkCaption@Html.Raw(outroLink.LinkIcon)</a>
+                                    }
+                                </p>
+                            }
+
+                        </div>
+                    </div>
+                    <!--// ROW - OUTRO -->
+                </div>
+            }
+        }
+       
+    </section>
+
+}

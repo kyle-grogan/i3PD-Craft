@@ -1,0 +1,45 @@
+﻿@inherits UmbracoViewPage<USNStarterKit.USNModels.USNBaseViewModel>
+
+@{
+    UsnglobalSettings globalSettings = (UsnglobalSettings)Model.GlobalSettings;
+    
+    Image websiteLogo = (Image)globalSettings.WebsiteLogo;
+
+    if (globalSettings.WebsiteLogo != null)
+    {
+        int originalWidth = Convert.ToInt32(websiteLogo.UmbracoWidth);
+        int originalHeight = Convert.ToInt32(websiteLogo.UmbracoHeight);
+        int smallWidth = originalWidth;
+        int smallHeight = originalHeight;
+
+        if (originalHeight > 160)
+        {
+            //get new width
+            smallWidth = (160 * originalWidth) / originalHeight;
+            smallHeight = 160;
+        }
+
+        string smallLogo = websiteLogo.Url + "?width=" + smallWidth + "&height=" + smallHeight;
+        
+    <style>
+        header #logo {
+	        width: @Html.Raw(smallWidth)px; 
+            height: @Html.Raw(smallHeight)px;
+	    }
+
+        header #logo a {
+            width: @Html.Raw(smallWidth)px;
+            height: @Html.Raw(smallHeight)px;
+            background-image: url('@smallLogo');
+            background-repeat:no-repeat; background-position:center;
+        }
+
+        @@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5), only screen and (-webkit-min-device-pixel-ratio : 2), only screen and (min-device-pixel-ratio : 2) {
+            header #logo a {
+                background-image: url('@websiteLogo.Url');
+                background-size: @Html.Raw(smallWidth)px @Html.Raw(smallHeight)px;
+            }
+        }
+    </style>
+    }
+}

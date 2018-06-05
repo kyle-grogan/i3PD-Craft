@@ -1,0 +1,129 @@
+﻿@inherits UmbracoViewPage<IUsn_Cmp_OutroStrip>
+
+@using USNStarterKit.USNModels;
+@using USNStarterKit.USNHelpers;
+@using USNStarterKit.USNEntities;
+
+@{
+    UsnglobalSettings globalSettings = (UsnglobalSettings)ViewData["globalSettings"];
+
+    string headingSource = String.Empty;
+    string secondaryHeadingSource = String.Empty;
+    IHtmlString text = null;
+    string backgroundColor = String.Empty;
+    string buttonColor = String.Empty;
+    string animateClass = String.Empty;
+    string backgroundImageStyle;
+
+    USNLink outroLink;
+
+    if(!Model.HideOutroStripSection)
+    {
+        if (Model.OverrideDefaultOutroStripSection)
+        {
+            outroLink = USNUrlHelper.GetLinkFromRelatedLinks(Model.OutroLink);
+
+            if (Model.OutroSecondaryHeading != null)
+            {
+                secondaryHeadingSource = "<p class=\"secondary-heading {0} {1}\" data-os-animation=\"fadeInUp\" data-os-animation-delay=\"0.5s\">" + Model.OutroSecondaryHeading + "</p>";
+            }
+
+            if (Model.OutroHeading != null)
+            {
+                headingSource = "<" + Model.OutroHeading.HeadingTag + " class=\"heading main {0} {1}\" data-os-animation=\"fadeInUp\" data-os-animation-delay=\"0.1s\">" + Model.OutroHeading.Text + "</" + Model.OutroHeading.HeadingTag + ">";
+            }
+
+            if (Model.OutroText.HasValue())
+            {
+                text = Model.OutroText;
+            }
+
+            if (Model.OutroBackgroundColor.HasValue())
+            {
+                backgroundColor = Model.OutroBackgroundColor;
+            }
+
+            if (Model.OutroButtonColor.HasValue())
+            {
+                buttonColor = Model.OutroButtonColor;
+            }
+
+            if (Model.OutroAnimate)
+            {
+                animateClass = "os-animation";
+            }
+
+            backgroundImageStyle = USNViewTemplateHelper.GetBackgroundImageStyle(Model.OutroBackgroundImage, Model.OutroBackgroundImageOptions);
+        }
+        else
+        {
+            outroLink = USNUrlHelper.GetLinkFromRelatedLinks(globalSettings.OutroDefaultLink);
+
+            if (globalSettings.OutroDefaultHeading != null)
+            {
+                headingSource = "<" + globalSettings.OutroDefaultHeading.HeadingTag + " class=\"heading main {0} {1}\" data-os-animation=\"fadeInUp\" data-os-animation-delay=\"0.1s\">" + globalSettings.OutroDefaultHeading.Text + "</" + globalSettings.OutroDefaultHeading.HeadingTag + ">";
+            }
+
+            if (globalSettings.OutroDefaultSecondaryHeading != null)
+            {
+                secondaryHeadingSource = "<p class=\"secondary-heading {0} {1}\" data-os-animation=\"fadeInUp\" data-os-animation-delay=\"0.5s\">" + globalSettings.OutroDefaultSecondaryHeading + "</p>";
+            }
+
+            text = globalSettings.OutroDefaultText;
+            backgroundColor = globalSettings.OutroDefaultBackgroundColor;
+            buttonColor = globalSettings.OutroDefaultButtonColor;
+
+            if (globalSettings.OutroDefaultAnimate)
+            {
+                animateClass = "os-animation";
+            }
+
+            backgroundImageStyle = USNViewTemplateHelper.GetBackgroundImageStyle(globalSettings.OutroDefaultBackgroundImage, globalSettings.OutroDefaultBackgroundImageOptions);
+        }
+
+        USNTemplateStyleSettings settings = USNViewTemplateHelper.GetTemplateStyleSettings(backgroundColor, buttonColor);
+
+        if (outroLink.LinkURL.HasValue() || text.HasValue() || headingSource != String.Empty)
+        {
+            <section class="content apc cta-strip @settings.BackGroundStyle" @Html.Raw(backgroundImageStyle)>
+                <div class="container">
+	
+                    <!-- ROW -->
+                    <div class="row text-center">
+
+                        <div class="col-md-8 col-xs-12">
+	
+                            @if (secondaryHeadingSource != String.Empty)
+                            {
+                                @Html.Raw(String.Format(secondaryHeadingSource, settings.SecondaryHeadingStyle, animateClass))
+                            }
+
+                    		@if (headingSource != String.Empty)
+		                    { 
+                            	@Html.Raw(String.Format(headingSource, settings.HeadingStyle, animateClass))
+                    		}
+
+                            @if (text.HasValue())
+                            {
+                            <div class="text @settings.TextStyle @animateClass" data-os-animation="fadeInUp" data-os-animation-delay="0.2s">
+                                @Html.Raw(text)
+                            </div>
+                            }
+                    
+ 	                       	@if (outroLink.LinkURL.HasValue())
+	                        { 
+                            <p class="link @animateClass" data-os-animation="fadeInUp" data-os-animation-delay="0.3s">
+								<a class="btn @settings.ButtonStyle" href="@outroLink.LinkURL" @Html.Raw(outroLink.LinkTarget) @Html.Raw(outroLink.LinkTitle)>@outroLink.LinkCaption@Html.Raw(outroLink.LinkIcon)</a>
+							</p>
+	                        }
+
+                        </div>
+
+                    </div>
+                    <!--// ROW -->
+
+                </div>
+            </section>
+        }
+    }
+}

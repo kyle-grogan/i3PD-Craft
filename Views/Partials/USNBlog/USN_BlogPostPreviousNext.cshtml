@@ -1,0 +1,25 @@
+﻿@inherits UmbracoViewPage
+
+@using USNStarterKit.USNBlog;
+
+@{
+	// get landing node
+    var landing = Model.AncestorOrSelf(UsnblogLandingPage.ModelTypeAlias);
+
+    var prev = USNBlogPostService.Instance.GetNextPost(landing, Model);
+    var next = USNBlogPostService.Instance.GetPreviousPost(landing, Model);
+
+	<nav id="pagination" class="post text-center">
+		<ul class="pagination">
+			@if (prev != null)
+            {
+			<li class="prev"><a href="@prev.Url" title="@umbraco.library.GetDictionaryItem("USN Blog Post Navigation Previous")"><i class="ion-chevron-left"></i><span class="hidden">@umbraco.library.GetDictionaryItem("USN Blog Post Navigation Previous")</span></a></li>
+			}
+            <li class="all"><a href="@landing.Url" title="@umbraco.library.GetDictionaryItem("USN Blog All Posts")"><span>@umbraco.library.GetDictionaryItem("USN Blog All Posts")</span></a></li>
+			@if (next != null)
+            {
+			<li class="next"><a href="@next.Url" title="@umbraco.library.GetDictionaryItem("USN Blog Post Navigation Next")"><span class="hidden">@umbraco.library.GetDictionaryItem("USN Blog Post Navigation Next")</span><i class="ion-chevron-right"></i></a></li>
+			}
+		</ul>
+	</nav>
+}

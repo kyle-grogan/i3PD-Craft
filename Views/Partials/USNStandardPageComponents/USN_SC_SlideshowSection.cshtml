@@ -1,0 +1,100 @@
+﻿@inherits UmbracoViewPage<Usn_Sc_SlideshowSection_AN>
+
+@using USNStarterKit.USNHelpers;
+@using USNStarterKit.USNModels;
+
+@{
+    string anchorId = String.Empty;
+
+    if (Model.Children.Any())
+    {
+        decimal autoRotateSpeed = 0;
+        string autoRotateAttribute = String.Empty;
+
+        if (Model.AutoRotateSpeed.HasValue())
+        {
+            autoRotateSpeed = Model.AutoRotateSpeed;
+            if (autoRotateSpeed > 0)
+            {
+                autoRotateSpeed = autoRotateSpeed * 1000;
+                autoRotateAttribute = "data-slick='{\"autoplay\": true, \"autoplaySpeed\": " + autoRotateSpeed + "}'";
+            }
+        }
+
+        @* Add div for column width on Andvanced Pages *@
+        if (!Model.Parent.Parent.IsDocumentType(UsnstandardPage.ModelTypeAlias) && !Model.Parent.Parent.IsDocumentType(UsnstandardPageBlogPost.ModelTypeAlias))
+        {
+            if (Model.Width == "Centered")
+            {
+            	@:<div id="mid-col" class="col-md-8 col-md-offset-2 col-xs-12">
+            }
+            else
+            {
+                @:<div id="wide-col" class="col-xs-12">
+            }
+        }
+        else
+        {
+            anchorId = "id=\"pos_" + Model.Id + "\" ";
+        }
+
+        <!-- PAGE COMPONENT SLIDESHOW -->
+        <div class="spc slideshow" @Html.Raw(anchorId)>
+            <div class="slides" @Html.Raw(autoRotateAttribute)>
+            @foreach (IPublishedContent slideshowItem in Model.Children())
+            {
+                if (slideshowItem.IsDocumentType(Usn_Sc_SlideshowImage.ModelTypeAlias))
+                {
+                    Usn_Sc_SlideshowImage item = (Usn_Sc_SlideshowImage) slideshowItem;
+
+                    if (item.SlideshowImage != null)
+                    {
+                        <div class="item">
+                            <div class="image">
+                                <img class="lazyload" src="@(item.SlideshowImage.GetCropUrl(cropAlias: "1200x600", width: 12, height: 6))" data-src="@(item.SlideshowImage.GetCropUrl(cropAlias: "1200x600"))" alt="@item.SlideshowImageAltText">
+                            </div>
+                            @if (item.SlideshowImageCaption.HasValue())
+                            {
+                                <div class="info">
+                                    <div class="text">@item.SlideshowImageCaption</div>
+                                </div>
+                            }
+                        </div>
+                    }
+                }
+                else
+                {
+                    Usn_Sc_SlideshowVideo item = (Usn_Sc_SlideshowVideo) slideshowItem;
+
+                    if (item.Video.HasValue())
+                    {
+                        USNVideo video = USNVideoHelper.GetVideoInfo(item.Video);
+
+                        if (video.VideoIFrame != String.Empty)
+                        {
+                            <div class="item">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    @Html.Raw(video.VideoIFrame)
+                                </div>
+                                @if (item.SlideshowVideoCaption.HasValue())
+                                {
+                                    <div class="info">
+                                        <div class="text">@item.SlideshowVideoCaption</div>
+                                    </div>
+                                }
+                            </div>
+                        }
+                    }
+                }
+            }
+            </div>
+        </div>
+        <!--// PAGE COMPONENT SLIDESHOW -->
+
+        @* Close div for column width on Advanced Pages *@
+        if (!Model.Parent.Parent.IsDocumentType(UsnstandardPage.ModelTypeAlias) && !Model.Parent.Parent.IsDocumentType(UsnstandardPageBlogPost.ModelTypeAlias))
+        {
+            @:</div>
+        }
+    }
+}

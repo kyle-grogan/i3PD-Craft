@@ -1,0 +1,27 @@
+﻿@inherits UmbracoViewPage
+
+@{
+    if (Model.HasValue("postCategories"))
+    {
+
+        IEnumerable<IPublishedContent> categories = Model.GetPropertyValue<IEnumerable<IPublishedContent>>("postCategories");
+
+        int currentCount = 1;
+
+        IList<IPublishedContent> publishedContents = categories as IList<IPublishedContent> ?? categories.ToList();
+
+        foreach (var catNode in publishedContents)
+        {
+            if(catNode != null)
+            {
+                <span><a href="@catNode.Url" title="@catNode.Name" rel="NOINDEX, FOLLOW">@catNode.Name</a>@if (currentCount != publishedContents.Count() && publishedContents.Count() != 1){@Html.Raw(", ")}</span>
+            }
+            currentCount += 1;
+        }
+    }
+    else
+    {
+        @Html.Raw("&nbsp;")
+    }
+
+}

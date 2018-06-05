@@ -1,0 +1,177 @@
+﻿@inherits UmbracoViewPage<Usn_Ac_PodsSection_AN>
+
+@using Umbraco.Web.Models;
+@using USNStarterKit.USNModels;
+@using USNStarterKit.USNHelpers;
+@using USNStarterKit.USNEntities;
+
+@{
+
+    string animateClass = String.Empty;
+
+    if (Model.Animate)
+    {
+        animateClass = "os-animation";
+    }
+
+    USNTemplateStyleSettings settings = USNViewTemplateHelper.GetTemplateStyleSettings(Model.BackgroundColor, Model.ButtonColor);
+
+    string backgroundImageStyle = USNViewTemplateHelper.GetBackgroundImageStyle(Model.BackgroundImage, Model.BackgroundImageOptions);
+
+    string rowStyle = String.Empty;
+
+    if (Model.PodStyle == "Text over image")
+    {
+        rowStyle = "alt text-center";
+    }
+
+    <section class="content apc promo-pods @settings.BackGroundStyle @Model.CustomComponentClasses" @Html.Raw(backgroundImageStyle) id="pos_@Model.Id">
+        <div class="container">
+                                
+            @{
+                if (Model.IntroductionHeading != null || Model.IntroductionText.HasValue())
+                {
+                <!-- ROW - OVERVIEW -->
+                    <div class="row overview text-center @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0s">
+                        <div class="col-md-8 col-xs-12">
+                            @if (Model.IntroductionSecondaryHeading.HasValue())
+                            {
+                                @Html.Raw(String.Format("<p class=\"secondary-heading {0}\">{1}</{0}>", settings.SecondaryHeadingStyle, Model.IntroductionSecondaryHeading))
+                            }
+                            @if (Model.IntroductionHeading != null)
+                            {
+                                @Html.Raw(String.Format("<{0} class=\"heading main {1}\">{2}</{0}>", Model.IntroductionHeading.HeadingTag, settings.HeadingStyle, Model.IntroductionHeading.Text))
+                            }
+                            @if (Model.IntroductionText.HasValue())
+                            {
+                                <div class="text @settings.TextStyle">
+                                    @Html.Raw(Model.IntroductionText)
+                                </div>
+                            }
+                        </div>
+                    </div>
+                <!--// ROW - OVERVIEW -->
+                }
+            }
+
+            @if (Model.Children<Usn_Ac_Pod>().Any())
+            {
+            <div class="row @rowStyle">
+                @foreach (Usn_Ac_Pod pod in Model.Children<Usn_Ac_Pod>())
+                {
+                    USNLink podLink = USNUrlHelper.GetLinkFromRelatedLinks(pod.PodLink);
+
+                    if (rowStyle == String.Empty)
+                    {
+
+                    <div class="item col-md-4 col-sm-6 col-xs-12 @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0.1s">
+                        @if (podLink.LinkURL.HasValue())
+                        {
+                            @:<a href="@podLink.LinkURL" @Html.Raw(podLink.LinkTitle)  @Html.Raw(podLink.LinkTarget)>
+                        }
+
+                        @if (pod.PodImage != null)
+                        {
+                            <div class="image">
+                                <img class="lazyload" src="@pod.PodImage.GetCropUrl(cropAlias: "400x300", width: 4, height: 3)" data-src="@pod.PodImage.GetCropUrl(cropAlias: "400x300")" alt="@pod.PodImageAltText">
+                            </div>
+                        }
+
+                        @if (pod.PodTitle.HasValue())
+                        {
+                            <p class="heading @settings.HeadingStyle">@pod.PodTitle</p>
+                        }
+
+                        @if (podLink.LinkURL.HasValue())
+                        {
+                            @:</a>
+                        }
+
+                        @if (pod.PodText.HasValue())
+                        {
+                            <div class="text @settings.TextStyle">@Html.Raw(pod.PodText)</div>
+                        }
+                        @if (podLink.LinkURL.HasValue())
+                        {
+                            <p class="link"><a role="button" class="btn @settings.ButtonStyle" href="@podLink.LinkURL" @Html.Raw(podLink.LinkTarget) @Html.Raw(podLink.LinkTitle)>@podLink.LinkCaption@Html.Raw(podLink.LinkIcon)</a></p>
+                        }
+                    </div>
+                    }
+                    else
+                    {
+                    <div class="item col-md-4 col-sm-6 col-xs-12 @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0.1s">
+
+                        @if (podLink.LinkURL.HasValue())
+                        {
+                            @:<a href="@podLink.LinkURL" @Html.Raw(podLink.LinkTitle) @Html.Raw(podLink.LinkTarget)>
+                        }
+
+                        @if (pod.PodImage != null)
+                        {
+                            <!-- IMAGE -->
+                            <div class="image">
+                                <img class="lazyload" src="@pod.PodImage.GetCropUrl(cropAlias: "400x300", width: 4, height: 3)" data-src="@pod.PodImage.GetCropUrl(cropAlias: "400x300")" alt="@pod.PodImageAltText">
+                            </div>
+                            <!--// IMAGE -->
+                        }
+
+                        <!-- INFO -->
+                        <div class="info">
+                            <div class="table">
+                                <div class="table-cell">
+                                    @if (pod.PodTitle.HasValue())
+                                    {
+                                        <p class="heading c5-text">@pod.PodTitle</p>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <!--// INFO -->
+
+                        @if (podLink.LinkURL.HasValue())
+                        {
+                            @:</a>
+                        }
+
+                    </div>
+                    }
+                }
+            </div>
+            }
+
+            @{
+                RelatedLinks outroLinks = Model.OutroLinks;
+
+                if (Model.OutroText.HasValue() || outroLinks != null)
+                {
+					<!-- ROW - OUTRO -->
+                    <div class="row outro text-center @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0.1s">
+                        <div class="col-md-8 col-xs-12">
+                            @if (Model.OutroText.HasValue())
+                            {
+                                <div class="text @settings.TextStyle">
+                                    @Html.Raw(Model.OutroText)
+                                </div>
+                            }
+
+                            @if (outroLinks != null)
+                            {
+                                <p class="link">
+                                    @foreach (RelatedLink link in outroLinks)
+                                    {
+                                        USNLink outroLink = USNUrlHelper.GetLinkFromRelatedLink(link);
+
+                                        <a role="button" class="btn @settings.ButtonStyle" href="@outroLink.LinkURL" @Html.Raw(outroLink.LinkTarget) @Html.Raw(outroLink.LinkTitle)>@outroLink.LinkCaption@Html.Raw(outroLink.LinkIcon)</a>
+                                    }
+                                </p>
+                            }
+
+                        </div>
+                    </div>
+					<!--// ROW - OUTRO -->
+                }
+            }
+        </div>
+    </section>
+    
+}

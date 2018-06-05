@@ -1,0 +1,17 @@
+﻿{
+    propertyEditors: [
+    {
+        alias: "USN.TrueFalse",
+        name: "USN True/False",
+        editor:{
+            view: "~/App_Plugins/USN.TrueFalse/views/usn.truefalse.html",
+            valueType: "INT"
+        }
+  	}],
+  	javascript: [
+      "~/App_Plugins/USN.TrueFalse/js/usn.truefalse.js"
+	],
+    css: [
+        "~/App_Plugins/USN.TrueFalse/css/usn.truefalse.css"
+    ]
+}

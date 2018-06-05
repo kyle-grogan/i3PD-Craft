@@ -1,0 +1,47 @@
+﻿@inherits UmbracoViewPage
+
+@using USNStarterKit.USNHelpers;
+@using USNStarterKit.USNModels;
+
+@{
+    // get landing node
+    UsnblogLandingPage landing = (UsnblogLandingPage)Model.AncestorOrSelf(UsnblogLandingPage.ModelTypeAlias);
+	
+            <div class="author-date">
+                @{                
+                    UsnblogAuthor authorNode = null;
+
+                    if (Model.HasValue("postAuthor"))
+                    {
+                        authorNode = (UsnblogAuthor)Model.GetPropertyValue<IEnumerable<IPublishedContent>>("postAuthor").FirstOrDefault();
+                    }
+                    else if (landing.DefaultAuthor != null)
+                    {
+                        authorNode = (UsnblogAuthor)landing.DefaultAuthor.FirstOrDefault();
+                    }
+
+                    if (authorNode != null)
+                    {
+
+                        USNLink authorPage = USNUrlHelper.GetLinkFromRelatedLinks(authorNode.AuthorPage);
+
+                        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                            @umbraco.library.GetDictionaryItem("USN Blog Meta Posted By")
+                            @if (authorPage.LinkURL.HasValue())
+                            {
+                                <a itemprop="url" rel="author" href="@authorPage.LinkURL" @Html.Raw(authorPage.LinkTarget) @Html.Raw(authorPage.LinkTitle)>@authorNode.Name@Html.Raw(authorPage.LinkIcon)</a>
+                            }
+                            else
+                            {
+                                @authorNode.Name
+                            }
+                        </span>
+                    }
+                }
+            </div>
+        	<div class="categories">@Html.Partial("USNBlog/USN_BlogPostCategories", Model)</div>
+            if (landing.DisqusUsername.HasValue() && !Model.GetPropertyValue<bool>("disableComments"))
+            {
+            <div class="comments"><a href="@Model.Url#disqus_thread">0 @umbraco.library.GetDictionaryItem("USN Blog Meta Comments")</a></div>
+            }
+}

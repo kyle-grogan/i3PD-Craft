@@ -1,0 +1,115 @@
+﻿@inherits UmbracoViewPage<UsnstandardPage>
+
+@using USNStarterKit.USNHelpers;
+
+@{	
+    if (Model.DisplaySubpageListing)
+    {
+        int summaryTextLength = 0;
+
+        if (Model.PageSummaryTextCharacterCount.HasValue())
+        {
+            summaryTextLength = Model.PageSummaryTextCharacterCount;
+        }
+
+        string layoutClass = String.Empty;
+
+        if (Model.Children.Any(x => (x.IsDocumentType(UsnstandardPage.ModelTypeAlias) || x.IsDocumentType(UsnadvancedPage.ModelTypeAlias)) && x.IsVisible()))
+        {
+            if (Model.SubpageListingLayout == "Grid")
+            {
+                layoutClass = "grid row";
+            }
+
+        	<!-- LISTING  -->   
+			<div class="listing section @layoutClass">
+                @foreach (var item in Model.Children.Where(x => (x.IsDocumentType(UsnstandardPage.ModelTypeAlias) || x.IsDocumentType(UsnadvancedPage.ModelTypeAlias)) && x.IsVisible()))
+                {
+                    Boolean displaySummaryText = false;
+                    string introText = String.Empty;
+
+                    if (item.HasValue("pageSummary"))
+                    {
+                        introText = item.GetPropertyValue<string>("pageSummary");
+                        displaySummaryText = true;
+                    }
+                    else
+                    {
+                        if (summaryTextLength > 0 && item.HasProperty("bodyText"))
+                        {
+                            introText = item.GetPropertyValue<string>("bodyText").StripHtml().Trim();
+
+                            displaySummaryText = true;
+
+                            if (introText.Length >= summaryTextLength)
+                            {
+                                introText = introText.Substring(0, summaryTextLength);
+                            }
+
+                            if (introText.Length > 0)
+                            {
+                                introText = "<p>" + introText + " ...</p>";
+                            }
+                        }
+                    }
+
+                    string pageName = item.HasValue("subpageListingLinkText") ? item.GetPropertyValue<string>("subpageListingLinkText") : item.Name;
+
+                    if (layoutClass == String.Empty)
+                    {
+                        string textClass = String.Empty;
+
+                        <div class="row item">
+						   
+                            @if (item.HasValue("pageListingImage") && item.GetPropertyValue<IPublishedContent>("pageListingImage") != null)
+                            {
+                                textClass = "col-sm-7 pull-left";
+                            
+                                <div class="col-sm-4 pull-right col-xs-12 text-right">
+                                    <div class="image">
+                                        <a href="@item.Url">
+                                            <img class="lazyload" src="@(item.GetPropertyValue<Image>("pageListingImage").GetCropUrl(cropAlias: "400x300", width: 4, height: 3))" data-src="@(item.GetPropertyValue<Image>("pageListingImage").GetCropUrl(cropAlias: "400x300"))" alt="@(item.GetPropertyValue<string>("pageListingImageAltText"))">
+                                        </a>
+                                    </div>
+                                </div>
+                            }
+                            <div class="info @textClass col-xs-12">
+                                <a href="@item.Url"><p class="heading">@Html.Raw(pageName)</p></a>
+                                @if (displaySummaryText && introText != String.Empty)
+                                {
+                                    <div class="text">@Html.Raw(introText)</div>
+                                }
+                            </div>
+                           
+					    </div>
+                    }
+                    else
+                    {
+                        //If wide col-lg-3 col-sm-4 col-xs-12
+                        
+                        <div class="item col-sm-6 col-xs-12">
+						<div class="inner c3-bg">
+                            <a href="@item.Url">
+                                @if (item.HasValue("pageListingImage") && item.GetPropertyValue<IPublishedContent>("pageListingImage") != null)
+                                {
+                                    <div class="image">
+                                        <img class="lazyload" src="@(item.GetPropertyValue<Image>("pageListingImage").GetCropUrl(cropAlias: "400x300", width: 4, height: 3))" data-src="@(item.GetPropertyValue<Image>("pageListingImage").GetCropUrl(cropAlias: "400x300"))" alt="@(item.GetPropertyValue<string>("pageListingImageAltText"))">
+                                    </div>
+                                }
+                                <p class="heading">@Html.Raw(pageName)</p>
+                            </a>
+                            @if (displaySummaryText && introText != String.Empty)
+                            {
+                                <div class="text">@Html.Raw(introText)</div>
+                            }
+                        </div>
+                        </div>
+                    }
+                }
+            </div>
+        }
+    }
+}
+
+
+  

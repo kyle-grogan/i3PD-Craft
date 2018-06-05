@@ -1,0 +1,41 @@
+﻿@inherits UmbracoViewPage<Usn_Swp_VideoPod>
+
+@using USNStarterKit.USNHelpers;
+@using USNStarterKit.USNModels;
+
+@{
+    if (Model.PodVideo.HasValue())
+    {
+        string title = String.Empty;
+        string footer = String.Empty;
+        string videoImageSrc;
+        string videoImageDataSrc;
+
+        string videoUrlOriginal = Model.PodVideo;
+
+        if (Model.LightWindowTitle.HasValue())
+        {
+            title = "data-title=\"" + Model.LightWindowTitle + "\"";
+        }
+
+        if (Model.LightWindowFooter.HasValue())
+        {
+            footer = "data-footer=\"" + Model.LightWindowFooter + "\"";
+        }
+
+        USNVideo video = USNVideoHelper.GetVideoInfo(videoUrlOriginal);
+
+        videoImageSrc = Model.PodThumbnailImage != null ? Model.PodThumbnailImage.GetCropUrl(cropAlias: "400x300", width: 4, height: 3) : video.VideoImage;
+        videoImageDataSrc = Model.PodThumbnailImage != null ? Model.PodThumbnailImage.GetCropUrl(cropAlias: "400x300") : video.VideoImage;
+
+        <div class="item video-pod">
+            <div class="image video">
+                <a href="@video.VideoURLModified" @Html.Raw(title) @Html.Raw(footer) data-toggle="lightbox" @Html.Raw(video.VideoDataRemote)>
+                    <img class="lazyload" src="@videoImageSrc" data-src="@videoImageDataSrc"  alt="@Model.ThumbnailImageAltText">
+                    <div class="overlayicon ion-ios-play c5-text"></div>
+                </a>
+            </div>
+        </div>
+    }
+
+}

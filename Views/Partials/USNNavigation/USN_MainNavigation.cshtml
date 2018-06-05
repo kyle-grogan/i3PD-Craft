@@ -1,0 +1,110 @@
+﻿@inherits UmbracoViewPage<USNStarterKit.USNModels.USNBaseViewModel>
+
+@using Umbraco.Web.Models;
+@using USNStarterKit.USNModels;
+@using USNStarterKit.USNHelpers;
+
+@{
+    Usnnavigation navigation = (Usnnavigation)Model.Navigation;
+    
+    RelatedLinks mainNavigation = navigation.MainNavigation;
+
+    if (mainNavigation != null)
+    {
+        <nav class="main">
+            <ul>
+                @foreach (RelatedLink link in mainNavigation)
+                {
+                    USNLink mainLink = USNUrlHelper.GetLinkFromRelatedLink(link);
+                    
+                    //Display nav link for Umbraco Content Page
+                    if (mainLink.InternalNode != null && mainLink.InternalNode.IsVisible())
+                    {
+                        var selected = Array.IndexOf(Model.Content.Path.Split(','), mainLink.InternalNode.Id.ToString()) >= 0 ? " class=\"active\"" : "";
+
+                        if (mainLink.InternalNode.IsDocumentType(Usnhomepage.ModelTypeAlias) && !Model.Content.IsDocumentType(Usnhomepage.ModelTypeAlias))
+                        {
+                            selected = String.Empty;
+                        }
+
+                        var subPages = mainLink.InternalNode.Children.Where(x => (x.IsDocumentType(UsnstandardPage.ModelTypeAlias) || x.IsDocumentType(UsnadvancedPage.ModelTypeAlias) || x.IsDocumentType(UsnblogLandingPage.ModelTypeAlias) || x.IsDocumentType(UsnloginPage.ModelTypeAlias) || x.IsDocumentType(UsnsearchResultsPage.ModelTypeAlias)) && x.IsVisible());
+
+                        string subPageClass = String.Empty;
+
+                        IList<IPublishedContent> publishedContents = subPages as IList<IPublishedContent> ?? subPages.ToList();
+                        if (publishedContents.Any() && !mainLink.InternalNode.IsDocumentType(Usnhomepage.ModelTypeAlias) && navigation.DisplaySubPages)
+                        {
+                            subPageClass = " class=\"has-child\"";
+                        }
+
+                        <li @Html.Raw(subPageClass)>
+                            <span @Html.Raw(selected)>
+                                <a href="@mainLink.LinkURL" @Html.Raw(mainLink.LinkTarget) @Html.Raw(mainLink.LinkTitle)>
+                                    @mainLink.LinkCaption@Html.Raw(mainLink.LinkIcon)
+                                </a>
+                                @if (subPageClass != String.Empty)
+                                {
+                                    <i class="ion-chevron-down"></i>
+                                }
+                            </span>
+                            @if (publishedContents.Any() && navigation.DisplaySubPages && !mainLink.InternalNode.IsDocumentType(Usnhomepage.ModelTypeAlias))
+                            {
+                                @SubPages(publishedContents)
+                            }
+                        </li>
+                    }
+                    //Display nav link for external link
+                    else if (mainLink.LinkURL != String.Empty)
+                    { 
+                        <li>
+                            <span><a href="@mainLink.LinkURL" @Html.Raw(mainLink.LinkTarget) @Html.Raw(mainLink.LinkTitle)>@mainLink.LinkCaption@Html.Raw(mainLink.LinkIcon)</a></span>                                    
+		                </li>
+                    }
+                }
+            </ul>
+        </nav>
+    }
+}
+
+@helper SubPages(IEnumerable<IPublishedContent> pages)
+{
+    <ul>
+        @foreach (var node in pages)
+        {
+            string selected = Array.IndexOf(Model.Content.Path.Split(','), node.Id.ToString()) >= 0 ? " class=\"active\"" : "";
+
+            var subPages = node.Children.Where(x => (x.IsDocumentType(UsnstandardPage.ModelTypeAlias) || x.IsDocumentType(UsnadvancedPage.ModelTypeAlias) || x.IsDocumentType(UsnblogLandingPage.ModelTypeAlias) || x.IsDocumentType(UsnloginPage.ModelTypeAlias) || x.IsDocumentType(UsnsearchResultsPage.ModelTypeAlias)) && x.IsVisible());
+
+            string subPageClass = String.Empty;
+
+            IList<IPublishedContent> publishedContents = subPages as IList<IPublishedContent> ?? subPages.ToList();
+            if (publishedContents.Any())
+            {
+                subPageClass = " class=\"has-child\"";
+            }
+
+            <li @Html.Raw(subPageClass)>
+                <span @Html.Raw(selected)>
+                    <a href="@node.Url()">
+                        @if (node.HasValue("subNavigationLinkText"))
+                        {
+                            @(node.GetPropertyValue<string>("subNavigationLinkText"));
+                        }
+                        else
+                        {
+                            @node.Name
+                        }
+                    </a>
+                @if (subPageClass != String.Empty)
+                {
+                    <i class="ion-chevron-down"></i>
+                }
+                </span>
+                @if (publishedContents.Any())
+                {
+                    @SubPages(publishedContents)
+                }
+            </li>
+        }
+    </ul>
+}

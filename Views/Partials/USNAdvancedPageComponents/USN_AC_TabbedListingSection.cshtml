@@ -1,0 +1,230 @@
+﻿@inherits UmbracoViewPage<Usn_Ac_TabbedListingSection_AN>
+
+@using Umbraco.Web.Models;
+@using USNStarterKit.USNModels;
+@using USNStarterKit.USNHelpers;
+@using USNStarterKit.USNEntities;
+@using USNStarterKit.USNBlog;
+
+@{
+
+    string animateClass = String.Empty;
+
+    if (Model.Animate)
+    {
+        animateClass = "os-animation";
+    }
+
+    USNTemplateStyleSettings settings = USNViewTemplateHelper.GetTemplateStyleSettings(Model.BackgroundColor, Model.ButtonColor);
+
+    string backgroundImageStyle = USNViewTemplateHelper.GetBackgroundImageStyle(Model.BackgroundImage, Model.BackgroundImageOptions);
+        
+    <section class="content apc tabbed tabbed-listing @settings.BackGroundStyle @Model.CustomComponentClasses" @Html.Raw(backgroundImageStyle) id="pos_@Model.Id">
+        <div class="container">
+                                
+            @{
+                if (Model.IntroductionHeading != null || Model.IntroductionText.HasValue())
+                {
+                <!-- ROW - OVERVIEW -->
+                    <div class="row overview text-center @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0s">
+                        <div class="col-md-8 col-xs-12">
+	
+							@if (Model.IntroductionSecondaryHeading.HasValue())
+                            {
+                                @Html.Raw(String.Format("<p class=\"secondary-heading {0}\">{1}</{0}>", settings.SecondaryHeadingStyle, Model.IntroductionSecondaryHeading))
+                            }
+                            @if (Model.IntroductionHeading != null)
+                            {
+                                @Html.Raw(String.Format("<{0} class=\"heading main {1}\">{2}</{0}>", Model.IntroductionHeading.HeadingTag, settings.HeadingStyle, Model.IntroductionHeading.Text))
+                            }
+                            @if (Model.IntroductionText.HasValue())
+                            {
+                                <div class="text @settings.TextStyle">
+                                    @Html.Raw(Model.IntroductionText)
+                                </div>
+                            }
+                        </div>
+                    </div>
+                <!--// ROW - OVERVIEW -->
+                }
+            }
+
+            @{
+                RelatedLinks listingPages = Model.LinkToListings;
+
+                if (listingPages != null && listingPages.Any())
+                {                
+                    int pagesDisplayCount = 0;
+
+                    if (listingPages != null && Model.PagesToDisplay.HasValue())
+                    {
+                        pagesDisplayCount = Model.PagesToDisplay;
+                    }
+                
+                    int listPage = 1;
+
+                    if (listingPages.Count() > 1)
+                    {
+                        <!-- ROW -->
+                        <div class="row">
+
+                            <nav class="tabs col-xs-12 @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0s">
+                                <ul class="nav text-center" role="tablist">
+                                    @foreach (RelatedLink link in listingPages)
+                                    {
+                                        USNLink page = USNUrlHelper.GetLinkFromRelatedLink(link);
+
+                                        if (page.InternalNode != null && (page.InternalNode.IsDocumentType(UsnstandardPage.ModelTypeAlias) || page.InternalNode.IsDocumentType(UsnadvancedPage.ModelTypeAlias) || page.InternalNode.IsDocumentType(UsnblogLandingPage.ModelTypeAlias)))
+                                        {
+                                            <li role="presentation" @if (listPage == 1) { @Html.Raw("class=\"active\"")  }>
+                                                <a href="#tab-name-@Model.Id-@listPage" aria-controls="tab-name-@Model.Id-@listPage" role="tab" data-toggle="tab">
+                                                    @page.LinkCaption
+                                                </a>
+                                            </li>
+                                            listPage += 1;
+                                        }
+                                    }
+                                </ul>
+                            </nav>
+
+                        </div>
+	                    <!--// ROW -->
+                    }
+
+                    listPage = 1;
+
+                    <!-- TABBED CONTENT -->
+                    <div class="tab-content">
+                        @foreach (RelatedLink link in listingPages)
+                        {
+                            <div id="tab-name-@Model.Id-@listPage" role="tabpanel" class="tab-pane @if(listPage == 1){@Html.Raw("active")}">
+                            
+                                <!-- ROW -->
+                                <div class="row">
+                                @{
+                                    USNLink page = USNUrlHelper.GetLinkFromRelatedLink(link);
+
+                                    if (page.InternalNode != null && (page.InternalNode.IsDocumentType(UsnstandardPage.ModelTypeAlias) || page.InternalNode.IsDocumentType(UsnadvancedPage.ModelTypeAlias)))
+                                    {
+                                    <div class="listing grid">
+                                    
+                                            @foreach (var subPage in page.InternalNode.Children.Where(x => x.IsDocumentType(UsnstandardPage.ModelTypeAlias) || x.IsDocumentType(UsnadvancedPage.ModelTypeAlias)).Take(pagesDisplayCount))
+                                            {
+                                                <!-- ITEM -->
+                                                <div class="item col-md-4 col-sm-6 col-xs-12 @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0s">
+												<div class="inner c3-bg">
+                                                    @if (subPage.GetPropertyValue<Image>("pageListingImage") != null)
+                                                    {
+                                                        <a href="@subPage.Url">
+                                                            <div class="image">
+                                                                <img class="lazyload" src="@(subPage.GetPropertyValue<Image>("pageListingImage").GetCropUrl(cropAlias: "400x300", width: 4, height: 3))" data-src="@(subPage.GetPropertyValue<Image>("pageListingImage").GetCropUrl(width: 400, height: 300))" alt="@(subPage.GetPropertyValue<string>("pageListingImageAltText"))">
+                                                            </div>
+                                                        </a>
+                                                    }
+                                                    <a href="@subPage.Url">
+                                                        <p class="heading c5-text">
+
+                                                            @if (subPage.HasValue("subPageListingLinkText"))
+                                                            {
+                                                                @Html.Raw(subPage.GetPropertyValue<string>("subPageListingLinkText"))
+                                                            }
+                                                            else
+                                                            {
+                                                                @subPage.Name
+                                                            }
+                                                        </p>
+                                                    </a>
+                                                </div>
+                                                </div>
+                                                <!--// ITEM -->
+                                            }
+                                        </div>
+                                       
+                                    }
+                                    else if (page.InternalNode != null && page.InternalNode.IsDocumentType(UsnblogLandingPage.ModelTypeAlias))
+                                    {
+                                        string category = null;
+                                        IPublishedContent blogLandingPage;
+
+                                        if (page.InternalNode.IsDocumentType(UsnblogCategoryPage.ModelTypeAlias))
+                                        {
+                                            category = page.InternalNode.Id.ToString();
+                                            blogLandingPage = page.InternalNode.AncestorOrSelf(UsnblogLandingPage.ModelTypeAlias);
+                                        }
+                                        else
+                                        {
+                                            blogLandingPage = page.InternalNode;
+                                        }
+                                    
+                                        IEnumerable<IPublishedContent> posts = USNBlogPostService.Instance.GetPostItems(blogLandingPage, null, null, category);
+
+                                        var nodes = posts.Take(pagesDisplayCount).ToList();
+                                
+                                        <div class="listing grid blog">
+                                    
+                                            @foreach (var post in nodes)
+                                            { 
+                                                <!-- ITEM -->
+                                                <div class="item col-md-4 col-sm-6 col-xs-12 @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0s" itemscope itemtype="http://schema.org/BlogPosting">
+												<div class="inner c3-bg">
+
+                                                    @Html.Partial("USNBlog/USN_BlogListItem", post, new ViewDataDictionary { { "summaryTextLength", 0 }, { "displaySummaryText", false }, { "imageWidth", 400 }, { "imageHeight", 300 } })
+
+                                                </div>
+                                                </div>
+					                            <!--// ITEM -->
+                                            }
+
+                                        </div>
+                                    }
+                                }
+                                </div>
+                                <!--// ROW -->
+
+                            </div>
+                            
+                            listPage += 1;
+                        }
+                    </div>
+                    <!--// TABBED CONTENT -->
+                }
+                
+            }
+
+
+            @{
+                RelatedLinks outroLinks = Model.OutroLinks;
+
+                if (Model.OutroText.HasValue() || outroLinks != null)
+                {
+					<!-- ROW - OUTRO -->
+                    <div class="row outro text-center @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0.1s">
+                        <div class="col-md-8 col-xs-12">
+                            @if (Model.OutroText.HasValue())
+                            {
+                                <div class="text @settings.TextStyle">
+                                    @Html.Raw(Model.OutroText)
+                                </div>
+                            }
+
+                            @if (outroLinks != null)
+                            {
+                                <p class="link">
+                                    @foreach (RelatedLink link in outroLinks)
+                                    {
+                                        USNLink outroLink = USNUrlHelper.GetLinkFromRelatedLink(link);
+
+                                        <a role="button" class="btn @settings.ButtonStyle" href="@outroLink.LinkURL" @Html.Raw(outroLink.LinkTarget) @Html.Raw(outroLink.LinkTitle)>@outroLink.LinkCaption@Html.Raw(outroLink.LinkIcon)</a>
+                                    }
+                                </p>
+                            }
+
+                        </div>
+                    </div>
+					<!--// ROW - OUTRO -->
+                }
+            }
+        </div>
+    </section>
+
+}

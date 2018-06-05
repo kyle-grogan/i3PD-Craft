@@ -1,0 +1,67 @@
+﻿@inherits UmbracoViewPage<Usn_Ac_Ctastrip_AN>
+
+@using USNStarterKit.USNModels;
+@using USNStarterKit.USNHelpers;
+@using USNStarterKit.USNEntities;
+
+@{
+    string headingSource = String.Empty;
+    string animateClass = String.Empty;
+
+    USNLink outroLink = USNUrlHelper.GetLinkFromRelatedLinks(Model.Link);
+
+    if (Model.Heading != null)
+    {
+        headingSource = "<" + Model.Heading.HeadingTag + " class=\"heading main {0} {1}\" data-os-animation=\"fadeInUp\" data-os-animation-delay=\"0.1s\">" + Model.Heading.Text + "</" + Model.Heading.HeadingTag + ">";
+    }
+
+    var text = Model.Text;
+
+    if (Model.Animate)
+    {
+        animateClass = "os-animation";
+    }
+
+    USNTemplateStyleSettings settings = USNViewTemplateHelper.GetTemplateStyleSettings(Model.BackgroundColor, Model.ButtonColor);
+
+    string backgroundImageStyle = USNViewTemplateHelper.GetBackgroundImageStyle(Model.BackgroundImage, Model.BackgroundImageOptions);
+
+    if (outroLink.LinkURL.HasValue() || text != null || headingSource != String.Empty || Model.SecondaryHeading.HasValue())
+    {
+        <section class="content apc cta-strip @settings.BackGroundStyle @Model.CustomComponentClasses" @Html.Raw(backgroundImageStyle) id="pos_@Model.Id">
+            <div class="container">
+	
+                <!-- ROW -->
+                <div class="row text-center">
+
+                    <div class="col-md-8 col-xs-12">
+                        @if (Model.SecondaryHeading.HasValue())
+                        {
+                            @Html.Raw(String.Format("<p class=\"secondary-heading {0} {1}\" data-os-animation=\"fadeInUp\" data-os-animation-delay=\"0.5s\">{2}</{0}>", settings.SecondaryHeadingStyle, animateClass, Model.SecondaryHeading))
+                        }
+                	    @if (headingSource != String.Empty)
+                	    {
+                		    @Html.Raw(String.Format(headingSource, settings.HeadingStyle, animateClass))
+                	    }
+
+                        @if (text != null)
+                        {
+	                        <div class="text @settings.TextStyle @animateClass" data-os-animation="fadeInUp" data-os-animation-delay="0.2s">
+	                            @Html.Raw(text)
+	                        </div>
+                        }
+
+                        @if (outroLink.LinkURL.HasValue())
+                        {
+                    	    <p class="link @animateClass" data-os-animation="fadeInUp" data-os-animation-delay="0.3s"><a class="btn @settings.ButtonStyle" href="@outroLink.LinkURL" @Html.Raw(outroLink.LinkTarget) @Html.Raw(outroLink.LinkTitle)>@outroLink.LinkCaption@Html.Raw(outroLink.LinkIcon)</a></p>
+                        }
+
+	                </div>
+
+	            </div>
+	            <!--// ROW -->
+
+            </div>
+        </section>
+    }
+}

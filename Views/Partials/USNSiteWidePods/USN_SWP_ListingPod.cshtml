@@ -1,0 +1,98 @@
+﻿@inherits UmbracoViewPage<Usn_Swp_ListingPod>
+
+@using USNStarterKit.USNHelpers;
+@using USNStarterKit.USNBlog;
+@using USNStarterKit.USNModels;
+
+@{
+    
+    USNLink linkToListing = USNUrlHelper.GetLinkFromRelatedLinks(Model.LinkToListing);
+
+    if (linkToListing != null && Model.PagesToDisplay.HasValue())
+    {
+        int pagesDisplayCount = Model.PagesToDisplay;
+
+        if (linkToListing.InternalNode != null && (linkToListing.InternalNode.IsDocumentType(UsnblogLandingPage.ModelTypeAlias) || linkToListing.InternalNode.IsDocumentType(UsnblogCategoryPage.ModelTypeAlias)))
+        {
+            string category = null;
+            IPublishedContent blogLandingPage;
+
+            if (linkToListing.InternalNode.IsDocumentType(UsnblogCategoryPage.ModelTypeAlias))
+            {
+                category = linkToListing.InternalNode.Id.ToString();
+                blogLandingPage = linkToListing.InternalNode.AncestorOrSelf(UsnblogLandingPage.ModelTypeAlias);
+            }
+            else
+            {
+                blogLandingPage = linkToListing.InternalNode;
+            }
+
+            IEnumerable<IPublishedContent> posts = USNBlogPostService.Instance.GetPostItems(blogLandingPage, null, null, category);
+
+            var nodes = posts.Take(pagesDisplayCount).ToList();
+
+            if (nodes.Any())
+            {
+                <div class="item listing-pod c3-bg has-borders c5-borders borders-perc_20">
+                    <div class="inner">
+
+                        @if (Model.PodTitle.HasValue())
+                        {
+                            <p class="heading c5-text">@Model.PodTitle</p>
+                        }
+
+                        <div class="listing blog short">
+                            
+                            @foreach (var node in nodes)
+                            {
+                                <div class="item" itemscope itemtype="http://schema.org/BlogPosting">
+                                    <div class="meta">
+                                    	<time itemprop="datePublished" datetime="@(node.GetPropertyValue<DateTime>("postDate").ToString("yyyy-MM-dd"))"><span class="date">@(node.GetPropertyValue<DateTime>("postDate").ToString("dd MMM yyyy"))</span></time>
+                                    </div>
+                                    @{
+                                        string postName = node.HasValue("onPageTitle") ? node.GetPropertyValue<string>("onPageTitle") : node.Name;
+                                    }
+                                    <p class="heading c5-text" itemprop="name headline"><a class="c5-text" href="@node.Url" itemprop="url">@postName</a></p>
+                                    
+                                </div>
+                            }
+                        </div>
+                        <p class="link"><a class="btn btn-sm c1-bg c5-text" href="@linkToListing.LinkURL" @Html.Raw(linkToListing.LinkTarget) @Html.Raw(linkToListing.LinkTitle)>@linkToListing.LinkCaption@Html.Raw(linkToListing.LinkIcon)</a></p>
+                    </div>
+                </div>
+            }
+        }
+        else if (linkToListing.InternalNode != null && (linkToListing.InternalNode.Children.Where(x => x.IsDocumentType(UsnstandardPage.ModelTypeAlias) || x.IsDocumentType(UsnadvancedPage.ModelTypeAlias)).Any()))
+        {
+            <div class="item listing-pod c3-bg has-borders c5-borders borders-perc_20">
+                <div class="inner">
+                    @if (Model.PodTitle.HasValue())
+                    {
+                        <p class="heading c5-text">@Model.PodTitle</p>
+                    }
+                    <div class="listing">
+
+                        @foreach (var item in linkToListing.InternalNode.Children.Where(x => x.IsDocumentType(UsnstandardPage.ModelTypeAlias) || x.IsDocumentType(UsnadvancedPage.ModelTypeAlias)).Take(pagesDisplayCount))
+                        {
+                            <div class="item"> 
+                                <p class="heading c5-text">
+                                    <a href="@item.Url" class="c5-text">
+                                        @if (item.HasValue("subPageListingLinkText"))
+                                        {
+                                            @(item.GetPropertyValue<string>("subPageListingLinkText"))
+                                        }
+                                        else
+                                        {
+                                            @item.Name
+                                        }
+                                    </a>
+                                </p>      
+                            </div>
+                        }
+                    </div>
+                    <p class="link"><a class="btn btn-sm c1-bg c5-text" href="@linkToListing.LinkURL" @Html.Raw(linkToListing.LinkTarget) @Html.Raw(linkToListing.LinkTitle)>@linkToListing.LinkCaption@Html.Raw(linkToListing.LinkIcon)</a></p>
+                </div>
+            </div>
+        }
+    }
+}

@@ -1,0 +1,55 @@
+﻿@inherits UmbracoViewPage<USNStarterKit.USNModels.USNBaseViewModel>
+
+@{ 
+    UsnstandardPageComponents pageComponentsNode = Model.Content.Children<UsnstandardPageComponents>().FirstOrDefault();
+
+    if (pageComponentsNode != null)
+    {
+        foreach (IPublishedContent component in pageComponentsNode.Children)
+        {
+            switch (component.DocumentTypeAlias)
+            {
+                case Usn_Sc_AccordionTabSection_AN.ModelTypeAlias:
+                    @Html.Partial("USNStandardPageComponents/USN_SC_AccordionTabSection", (Usn_Sc_AccordionTabSection_AN) component)
+                    break;
+                case Usn_Sc_ResourcesSection_AN.ModelTypeAlias:
+                    @Html.Partial("USNStandardPageComponents/USN_SC_ResourcesSection", (Usn_Sc_ResourcesSection_AN) component)
+                    break;
+                case Usn_Sc_TextSection_AN.ModelTypeAlias:
+                    @Html.Partial("USNStandardPageComponents/USN_SC_TextSection", (Usn_Sc_TextSection_AN) component)
+                    break;
+                case Usn_Sc_Alert_AN.ModelTypeAlias:
+                    @Html.Partial("USNStandardPageComponents/USN_SC_Alert", (Usn_Sc_Alert_AN) component)
+                    break;
+                case Usn_Sc_LinksSection_AN.ModelTypeAlias:
+                    @Html.Partial("USNStandardPageComponents/USN_SC_LinksSection", (Usn_Sc_LinksSection_AN) component)
+                    break;
+                case Usn_Sc_GallerySection_AN.ModelTypeAlias:
+                    @Html.Partial("USNStandardPageComponents/USN_SC_GallerySection", (Usn_Sc_GallerySection_AN) component)
+                    break;
+                case Usn_Sc_Blockquote_AN.ModelTypeAlias:
+                    @Html.Partial("USNStandardPageComponents/USN_SC_Blockquote", (Usn_Sc_Blockquote_AN) component)
+                    break;
+                case Usn_Sc_CodeSection_AN.ModelTypeAlias:
+                    @Html.Partial("USNStandardPageComponents/USN_SC_CodeSection", (Usn_Sc_CodeSection_AN) component)
+                    break;
+                case Usn_Sc_SlideshowSection_AN.ModelTypeAlias:
+                    @Html.Partial("USNStandardPageComponents/USN_SC_SlideshowSection", (Usn_Sc_SlideshowSection_AN) component)
+                    break;
+                case Usn_Sc_PriceListSection_AN.ModelTypeAlias:
+                    @Html.Partial("USNStandardPageComponents/USN_SC_PriceListSection", (Usn_Sc_PriceListSection_AN) component)
+                    break;
+                case Usn_NewsletterSignup_AN.ModelTypeAlias:
+                    <div class="spc forms" id="pos_@Html.Raw(component.Id)">
+                        @Html.Action("Index", "USNNewsletterSignupSurface", new { NodeID = component.Id, GlobalSettingsID = Model.GlobalSettings.Id })
+                    </div>
+                    break;
+                case Usn_Sc_ContactForm_AN.ModelTypeAlias:
+                    <div class="spc forms" id="pos_@Html.Raw(component.Id)">
+                        @Html.Action("Index", "USNContactFormSurface", new { NodeID = component.Id, GlobalSettingsID = Model.GlobalSettings.Id })
+                    </div>
+                    break;
+            }
+        }
+    }
+}

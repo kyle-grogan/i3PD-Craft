@@ -1,0 +1,28 @@
+﻿@inherits UmbracoViewPage<USNStarterKit.USNModels.USNBaseViewModel>
+
+@{
+    UsnglobalSettings globalSettings = (UsnglobalSettings)Model.GlobalSettings;
+    string pageLayout = !Model.Content.HasValue("pageLayout") ? globalSettings.DefaultPageLayout : Model.Content.GetPropertyValue<string>("pageLayout");
+
+    switch (pageLayout)
+	{
+		case "Content left, with sidebar":
+			@Html.Raw("id=\"left-col\" class=\"col-md-8 col-xs-12\"")
+			break;
+		case "Content right, with sidebar":
+			@Html.Raw("id=\"right-col\" class=\"col-md-8 col-xs-12 pull-right\"")
+			break;
+		case "Content center, pods left, navigation right":
+			@Html.Raw("id=\"mid-col\" class=\"col-md-6 col-md-push-3 col-xs-12\"")
+			break;
+		case "Content center, pods right, navigation left":
+			@Html.Raw("id=\"mid-col\" class=\"col-md-6 col-md-push-3 col-xs-12\"")
+			break;
+        case "Content full width":
+			@Html.Raw("id=\"wide-col\" class=\"col-xs-12\"")
+            break;
+        default:
+			@Html.Raw("id=\"left-col\" class=\"col-md-8 col-xs-12\"")
+			break;	
+	}	
+}

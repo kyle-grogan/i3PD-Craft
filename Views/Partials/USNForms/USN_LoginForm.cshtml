@@ -1,0 +1,41 @@
+﻿@inherits UmbracoViewPage<USNStarterKit.USNModels.USNLoginFormViewModel>
+
+@using (Html.BeginUmbracoForm("HandleLoginSubmit", "USNLoginFormSurface"))
+{    
+    if (TempData["LoginFailure"] != null)
+    { 
+        <div class="alert alert-danger alert-dismissible fade in">
+            <div class="info">
+                <p>@TempData["LoginFailure"]</p>
+            </div>
+        </div>
+    }
+
+    @Html.AntiForgeryToken()
+    <div class="login">
+        <fieldset>
+
+            <div class="form-group">
+                <label for="Username" class="control-label">
+                    @umbraco.library.GetDictionaryItem("USN Form Username Label") <em class="req">*</em>
+                </label>
+                @Html.TextBoxFor(x => Model.Username, new { autocapitalize = "off", @class = "form-control" })
+                @Html.ValidationMessageFor(x => Model.Username, umbraco.library.GetDictionaryItem("USN Form Username Validation"))
+            </div>
+
+            <div class="form-group">
+                <label for="Password" class="control-label">
+                    @umbraco.library.GetDictionaryItem("USN Form Password Label") <em class="req">*</em>
+                </label>
+                @Html.PasswordFor(x => Model.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => Model.Password, umbraco.library.GetDictionaryItem("USN Form Password Validation"))
+            </div>
+            @Html.HiddenFor(x => Model.ReturnUrl)
+        </fieldset>
+        <fieldset>
+            <button class="btn c1-bg c5-text" type="submit">
+                <span>@Model.LoginFormButtonText</span>
+            </button>
+        </fieldset>
+    </div>
+}

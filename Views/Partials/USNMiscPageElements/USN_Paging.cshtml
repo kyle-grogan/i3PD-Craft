@@ -1,0 +1,137 @@
+﻿@inherits UmbracoViewPage
+
+@using USNStarterKit.USNHelpers;
+
+@{
+    int currentPageNo;
+
+    if (!int.TryParse(Request.QueryString["page"], out currentPageNo))
+    {
+        currentPageNo = 1;
+    }
+    
+    int totalPageCount = (int)ViewData["totalPageCount"];
+    
+    int pagesPerGroup = 5;
+    
+    string url = Request.Url.ToString();
+    
+    <nav id="pagination" class="text-center">
+        <ul class="pagination">
+            @* render prev link *@
+            @if (currentPageNo > 1)
+            {
+                url = url.ReplaceQueryStringItem("page", (currentPageNo - 1).ToString());
+                
+                <li class="prev">
+                    <a href="@url" aria-label="Previous" title="@umbraco.library.GetDictionaryItem("USN Listing Navigation Previous")"><i class="ion-chevron-left"></i><span class="hidden">@umbraco.library.GetDictionaryItem("USN Listing Navigation Previous")</span></a>
+                </li>
+
+                if (currentPageNo > pagesPerGroup)
+                {
+                    url = url.ReplaceQueryStringItem("page", currentPageNo % pagesPerGroup == 0 ? (currentPageNo - pagesPerGroup).ToString() : ((currentPageNo / pagesPerGroup) * pagesPerGroup).ToString());
+
+                    <li class="hidden-xs"><a href="@url">...</a></li>
+                }
+            }
+            @* render page links *@
+            @{
+                int pagesCount = 0;
+                int startPage = 1;
+
+
+                if (currentPageNo <= pagesPerGroup)
+                {
+                    startPage = 1;
+                }
+                else if (currentPageNo % pagesPerGroup > 0)
+                {
+                    startPage = currentPageNo - (currentPageNo % pagesPerGroup) + 1;
+                }
+                else if (currentPageNo % pagesPerGroup == 0)
+                {
+                    startPage = (currentPageNo - pagesPerGroup) + 1;
+                }
+
+                for (int i = startPage; i < totalPageCount + 1; i++)
+                {
+                    if (pagesCount == pagesPerGroup)
+                    {
+                        break;
+                    }
+                    url = url.ReplaceQueryStringItem("page", i.ToString());
+                    string pageClass = i == currentPageNo ? "active" : string.Empty;
+
+                    <li class="hidden-xs @pageClass">
+                        @if (currentPageNo == i)
+                        {
+                            <a href="@url" class="disabled">@i<span class="sr-only">(current)</span></a>
+                        }
+                        else
+                        {
+                            <a href="@url">@i</a>
+                        }
+                    </li>
+
+                    pagesCount += 1;
+                }
+
+            }
+            @{
+
+                int totalGroups = 0;
+
+                if (totalPageCount % pagesPerGroup == 0)
+                {
+                    totalGroups = totalPageCount / pagesPerGroup;
+                }
+                else
+                {
+                    totalGroups = totalPageCount / pagesPerGroup + 1;
+                }
+
+                int currentGroup = 0;
+
+                if (currentPageNo % pagesPerGroup == 0)
+                {
+                    currentGroup = currentPageNo / pagesPerGroup;
+                }
+                else
+                {
+                    currentGroup = currentPageNo / pagesPerGroup + 1;
+                }
+
+
+                if (totalGroups != currentGroup)
+                {
+
+                    if (currentPageNo % pagesPerGroup == 0)
+                    {
+                        url = url.ReplaceQueryStringItem("page", (currentPageNo + 1).ToString());
+                    }
+                    else
+                    {
+                        int liPageNumber = (((currentPageNo / pagesPerGroup) + 1) * pagesPerGroup) + 1;
+                        url = url.ReplaceQueryStringItem("page", liPageNumber.ToString());
+                    }
+
+                    <li class="hidden-xs">
+                        <a href="@url">...</a>
+                    </li>
+                }
+            }
+
+            @if (currentPageNo < totalPageCount)
+            {
+                url = url.ReplaceQueryStringItem("page", (currentPageNo + 1).ToString());
+                @* render next link *@
+                <li class="next">
+                    <a href="@url" aria-label="Next" title="@umbraco.library.GetDictionaryItem("USN Listing Navigation Next")"><span class="hidden">@umbraco.library.GetDictionaryItem("USN Listing Navigation Next")</span><i class="ion-chevron-right"></i></a>
+                </li>
+            }
+        </ul>
+
+    </nav>
+
+
+}

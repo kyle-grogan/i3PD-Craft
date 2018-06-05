@@ -1,0 +1,77 @@
+﻿@inherits UmbracoViewPage<USNStarterKit.USNModels.USNBaseViewModel>
+
+@using USNStarterKit.USNHelpers;
+	
+@{
+    Usnnavigation navigation = (Usnnavigation)Model.Navigation;
+    
+    if (navigation.SocialHeading.HasValue() || navigation.FacebookLink.HasValue() ||
+        navigation.TwitterLink.HasValue() || navigation.LinkedInLink.HasValue() ||
+        navigation.GoogleLink.HasValue() || navigation.PinterestLink.HasValue() ||
+        navigation.FlickrLink.HasValue() || navigation.TumblrLink.HasValue() ||
+        navigation.VimeoLink.HasValue() || navigation.YouTubeLink.HasValue() ||
+        navigation.BehanceLink.HasValue() || navigation.SoundCloudLink.HasValue() ||
+        navigation.InstagramLink.HasValue() || navigation.RssFeedLink != null)
+    {
+        <nav class="social">
+	    @if (navigation.SocialHeading.HasValue())
+        {
+	        <p class="heading no-margin padding-top padding-bottom has-border-bottom c4-borders borders-perc_20">@navigation.SocialHeading</p>
+        }
+		    <ul>
+	            @if (navigation.FacebookLink.HasValue())
+                {
+			    <li class="facebook"><a href="@navigation.FacebookLink" class="symbol" target="_blank" title="@umbraco.library.GetDictionaryItem("USN New Window Title Tag")">facebook</a></li>
+                }
+	            @if (navigation.TwitterLink.HasValue())
+                {
+			    <li class="twitter"><a href="@navigation.TwitterLink" class="symbol" target="_blank" title="@umbraco.library.GetDictionaryItem("USN New Window Title Tag")">twitter</a></li>
+                }
+	            @if (navigation.LinkedInLink.HasValue())
+                {
+			    <li class="linkedin"><a href="@navigation.LinkedInLink" class="symbol" target="_blank" title="@umbraco.library.GetDictionaryItem("USN New Window Title Tag")">linkedin</a></li>
+                }
+	            @if (navigation.GoogleLink.HasValue())
+                {
+			    <li class="google_plus"><a href="@navigation.GoogleLink" class="symbol" target="_blank" title="@umbraco.library.GetDictionaryItem("USN New Window Title Tag")">googleplus</a></li>
+                }
+		        @if (navigation.PinterestLink.HasValue())
+                {
+			    <li class="pinterest"><a href="@navigation.PinterestLink" class="symbol" target="_blank" title="@umbraco.library.GetDictionaryItem("USN New Window Title Tag")">pinterest</a></li>
+                }
+                @if (navigation.InstagramLink.HasValue())
+                {
+                <li class="instagram"><a href="@navigation.InstagramLink" class="symbol" target="_blank" title="@umbraco.library.GetDictionaryItem("USN New Window Title Tag")">instagram</a></li>
+                }
+	            @if (navigation.FlickrLink.HasValue())
+                {
+			    <li class="flickr"><a href="@navigation.FlickrLink.HasValue()" class="symbol" target="_blank" title="@umbraco.library.GetDictionaryItem("USN New Window Title Tag")">flickr</a></li>
+                }
+	            @if (navigation.TumblrLink.HasValue())
+                {
+	            <li class="tumblr"><a href="@navigation.TumblrLink" class="symbol" target="_blank" title="@umbraco.library.GetDictionaryItem("USN New Window Title Tag")">tumblr</a></li>
+                }
+	            @if (navigation.VimeoLink.HasValue())
+                {
+	            <li class="vimeo"><a href="@navigation.VimeoLink" class="symbol" target="_blank" title="@umbraco.library.GetDictionaryItem("USN New Window Title Tag")">vimeo</a></li>
+                }
+	            @if (navigation.YouTubeLink.HasValue())
+                {
+	            <li class="youtube"><a href="@navigation.YouTubeLink" class="symbol" target="_blank" title="@umbraco.library.GetDictionaryItem("USN New Window Title Tag")">youtube</a></li>
+                }
+                @if (navigation.BehanceLink.HasValue())
+                {
+                    <li class="behance"><a href="@navigation.BehanceLink" class="symbol" target="_blank" title="@umbraco.library.GetDictionaryItem("USN New Window Title Tag")">behance</a></li>
+                }
+                @if (navigation.SoundCloudLink.HasValue())
+                {
+                    <li class="soundcloud"><a href="@navigation.SoundCloudLink" class="symbol" target="_blank" title="@umbraco.library.GetDictionaryItem("USN New Window Title Tag")">soundcloud</a></li>
+                }
+                @if (navigation.RssFeedLink != null)
+                {                    
+	                <li class="rss"><a href="@navigation.RssFeedLink.Url" class="symbol" target="_blank" title="@umbraco.library.GetDictionaryItem("USN New Window Title Tag")">rss</a></li>
+                }
+		</ul>
+    </nav>   
+    }
+}

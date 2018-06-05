@@ -1,0 +1,14 @@
+﻿@inherits UmbracoViewPage<USNStarterKit.USNModels.USNBaseViewModel>
+
+@{
+    UsnglobalSettings globalSettings = (UsnglobalSettings)Model.GlobalSettings;
+
+    string logoClass = String.Empty;
+
+    if(globalSettings.WebsiteLogo == null)
+    {
+        logoClass = "class=\"no-image\"";
+    }
+
+    <div id="logo" @Html.Raw(logoClass)><a href="@Model.Content.Site().Url">@globalSettings.WebsiteName</a></div>
+}

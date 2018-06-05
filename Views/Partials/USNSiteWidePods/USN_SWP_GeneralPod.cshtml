@@ -1,0 +1,50 @@
+﻿@inherits UmbracoViewPage<Usn_Swp_GeneralPod>
+
+@using USNStarterKit.USNHelpers;
+@using USNStarterKit.USNModels;
+
+@{
+    USNLink podLink = USNUrlHelper.GetLinkFromRelatedLinks(Model.PodLink);
+    
+    IHtmlString podText = Model.PodText;
+
+    <div class="item general-pod c2-bg">
+        <div class="inner">
+        @if (Model.PodHeading.HasValue())
+        {
+            <p class="heading c5-text">
+                @if (podLink.LinkURL.HasValue())
+                {
+                    @:<a class="c5-text" href="@podLink.LinkURL" @Html.Raw(podLink.LinkTitle) @Html.Raw(podLink.LinkTarget)>
+                }
+                @Html.Raw(Model.PodHeading)
+                @if (podLink.LinkURL.HasValue())
+                {
+                    @:</a>
+                }
+            </p>
+        }
+
+        @if (podText.HasValue() || podLink.LinkURL.HasValue())
+        {
+            @:<div class="info c4-text">
+        }
+
+        @if (podText.HasValue())
+        {
+            <div class="text c4-text">@Html.Raw(podText)</div>
+        }
+
+        @if (podLink.LinkURL.HasValue())
+        {
+            <p class="link"><a href="@podLink.LinkURL" @Html.Raw(podLink.LinkTitle) @Html.Raw(podLink.LinkTarget) class="btn c5-bg c2-text">@podLink.LinkCaption@Html.Raw(podLink.LinkIcon)</a></p>
+        }
+
+        @if (podText.HasValue() || podLink.LinkURL.HasValue())
+        {
+            @:</div>
+        }
+        </div>
+    </div>
+    
+}

@@ -1,0 +1,18 @@
+﻿{
+    propertyEditors:[
+        {
+            alias: "USN.Label",
+            name: "USN Label",
+            editor: {
+                view: "~/App_Plugins/USN.Label/views/usn.label.html",
+				hideLabel: true
+            }
+        }
+    ],
+	javascript: [
+		"~/App_Plugins/USN.Label/js/usn.label.js"
+	],
+	css: [
+        "~/App_Plugins/USN.Label/css/usn.label.css"
+    ]
+}

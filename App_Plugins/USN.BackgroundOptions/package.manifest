@@ -1,0 +1,17 @@
+﻿{
+    propertyEditors:[
+        {
+            alias: "USN.BackgroundOptions",
+            name: "USN Background Options",
+            editor: {
+                view: "~/App_Plugins/USN.BackgroundOptions/views/usn.backgroundoptions.html"
+            }
+        }
+    ],
+	javascript: [
+		"~/App_Plugins/USN.BackgroundOptions/js/usn.backgroundoptions.js"
+	],
+    css: [
+        "~/App_Plugins/USN.BackgroundOptions/css/usn.backgroundoptions.css"
+    ]
+}

@@ -1,0 +1,83 @@
+﻿@inherits UmbracoViewPage<Usn_Sc_PriceListSection_AN>
+
+@using USNStarterKit.USNHelpers;
+
+@{
+    string anchorId = string.Empty;
+
+    @* Add div for column width on Advanced Pages *@
+    if (!Model.Parent.Parent.IsDocumentType(UsnstandardPage.ModelTypeAlias) && !Model.Parent.Parent.IsDocumentType(UsnstandardPageBlogPost.ModelTypeAlias))
+    {
+        if (Model.Width == "Centered")
+        {
+            @:<div id="mid-col" class="col-md-8 col-md-offset-2 col-xs-12">
+        }
+        else
+        {
+            @:<div id="wide-col" class="col-xs-12">
+        }
+    }
+    else
+    {
+        anchorId = "id=\"pos_" + Model.Id + "\" ";
+    }
+
+    <!-- SPC - PRICING MENU -->
+    <div class="spc pricing-menu" @Html.Raw(anchorId)>
+	
+        @if (Model.TableHeading.HasValue())
+        {
+        <!-- HEAD -->
+        <div class="head">
+            <p class="heading main">@Model.TableHeading</p>
+        </div>
+        <!--// HEAD -->
+        }
+
+        <!-- ROW -->
+        <div class="row menu-items">
+            @foreach (Usn_Sc_PriceListItem item in Model.Children<Usn_Sc_PriceListItem>())
+            {
+            <!-- ITEM -->
+            <div class="item">
+            <div class="inner">
+
+        		<!-- ROW -->
+                <div class="row">
+	
+                    <!-- INFO -->
+                    <div class="info col-md-8 col-xs-12">
+                        <p class="heading">@item.Name</p>
+                        @if (item.ItemDescription.HasValue())
+                        {
+                        <div class="text">
+                            @Html.Raw(item.ItemDescription)
+                        </div>
+                        }
+                    </div>
+                    <!--// INFO -->
+
+                    <!-- PRICE -->
+                    <div class="price col-md-4 col-xs-12">
+                        @Html.Raw(item.ItemPrice)
+                    </div>
+                    <!--// PRICE -->
+
+                </div>
+        		<!--// ROW -->
+
+            </div>
+            </div>
+            <!--// ITEM -->
+            }
+        </div>
+        <!--// ROW -->
+    </div>
+    <!--// SPC - PRICING MENU -->
+
+    @* Close div for column width on Advanced Pages *@
+    if (!Model.Parent.Parent.IsDocumentType(UsnstandardPage.ModelTypeAlias) && !Model.Parent.Parent.IsDocumentType(UsnstandardPageBlogPost.ModelTypeAlias))
+    {
+        @:</div>
+    }
+}

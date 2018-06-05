@@ -1,0 +1,44 @@
+﻿
+	.background-colour-options { 
+	
+		}
+	.background-colour-options .row .col { 
+		margin:0 0 10px;
+		}
+	.background-colour-options .row .col label { 
+		display:block;
+		}
+	.background-colour-options .row .col select { 
+		width:100%;
+		}
+		
+	@media (min-width:1200px) {
+		
+	.background-colour-options .row { 
+		overflow:hidden; height:100%
+		}
+	.background-colour-options .row::after {
+		content:"";
+		display:block;
+		width:100%; height:1px;
+		}
+		
+	.background-colour-options .row .col { 
+		width:50%; float:left;
+		
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		-ms-box-sizing:border-box;
+		-o-box-sizing:border-box;
+		box-sizing:border-box;
+		}
+	.background-colour-options .row .col:nth-of-type(odd) { 
+		padding-right:5px;
+		}
+	.background-colour-options .row .col:nth-of-type(even) { 
+		padding-left:5px;
+		}
+		
+	}	
+	
+	

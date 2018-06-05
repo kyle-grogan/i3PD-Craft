@@ -1,0 +1,124 @@
+﻿@inherits UmbracoViewPage
+
+@using USNStarterKit.USNHelpers;
+@using USNStarterKit.USNModels;
+
+@{
+    // get landing node
+    UsnblogLandingPage landing = (UsnblogLandingPage)Model.AncestorOrSelf(UsnblogLandingPage.ModelTypeAlias);
+	
+    UsnblogAuthor authorNode = null;
+
+    if (Model.HasValue("postAuthor"))
+    {
+        authorNode = (UsnblogAuthor)Model.GetPropertyValue<IEnumerable<IPublishedContent>>("postAuthor").FirstOrDefault();
+    }
+    else if (landing.DefaultAuthor != null)
+    {
+        authorNode = (UsnblogAuthor)landing.DefaultAuthor.FirstOrDefault();
+    }
+
+    if (authorNode != null)
+    {
+        USNLink authorPage = USNUrlHelper.GetLinkFromRelatedLinks(authorNode.AuthorPage);
+    
+	<!-- PAGE COMPONENT AUTHOR BIO -->
+    <div class="spc author-bio c3-bg">
+	<div class="inner">
+        <p class="heading">@umbraco.library.GetDictionaryItem("USN Blog About The Author")</p>
+
+        @if (authorNode.AuthorImage != null)
+        {
+        <div class="image">
+            <img class="lazyload" src="@(authorNode.AuthorImage.GetCropUrl(cropAlias: "200x200", width: 2, height: 2))" data-src="@(authorNode.AuthorImage.GetCropUrl(cropAlias: "200x200"))" alt="@authorNode.Name" />
+        </div>
+        }
+
+        <div class="info">
+            <p class="heading" itemtype="http://schema.org/Person" itemscope="itemscope" itemprop="author">
+                @if (authorPage.LinkURL.HasValue())
+                {
+                    <a href="@authorPage.LinkURL" itemprop="url" rel="author" @Html.Raw(authorPage.LinkTarget) @Html.Raw(authorPage.LinkTitle)>@authorNode.Name@Html.Raw(authorPage.LinkIcon)</a>
+                }
+                else
+                {
+                    @authorNode.Name
+                }
+            </p>
+            @if(authorNode.AuthorBio.HasValue())
+            {
+            <div class="text">
+                @Html.Raw(authorNode.AuthorBio)
+            </div>
+            }
+        </div>
+    </div>
+
+        @if (authorNode.FacebookLink.HasValue() ||
+            authorNode.TwitterLink.HasValue() || authorNode.LinkedInLink.HasValue() ||
+            authorNode.GoogleLink.HasValue() || authorNode.PinterestLink.HasValue() ||
+            authorNode.FlickrLink.HasValue() || authorNode.TumblrLink.HasValue() ||
+            authorNode.VimeoLink.HasValue() || authorNode.YouTubeLink.HasValue() ||
+            authorNode.BehanceLink.HasValue() || authorNode.SoundCloudLink.HasValue())
+        {
+			<!-- SOCIAL -->
+            <nav class="social">
+                <ul>
+                    @if (authorNode.FacebookLink.HasValue())
+                    {
+                        <li class="facebook"><a href="@authorNode.FacebookLink" class="symbol" target="_blank" title="@umbraco.library.GetDictionaryItem("USN New Window Title Tag")">facebook</a></li>
+                    }
+                    @if (authorNode.TwitterLink.HasValue())
+                    {
+                        <li class="twitter"><a href="@authorNode.TwitterLink" class="symbol" target="_blank" title="@umbraco.library.GetDictionaryItem("USN New Window Title Tag")">twitter</a></li>
+                    }
+                    @if (authorNode.LinkedInLink.HasValue())
+                    {
+                        <li class="linkedin"><a href="@authorNode.LinkedInLink" class="symbol" target="_blank" title="@umbraco.library.GetDictionaryItem("USN New Window Title Tag")">linkedin</a></li>
+                    }
+                    @if (authorNode.GoogleLink.HasValue())
+                    {
+                        <li class="google_plus"><a href="@authorNode.GoogleLink" class="symbol" target="_blank" title="@umbraco.library.GetDictionaryItem("USN New Window Title Tag")">googleplus</a></li>
+                    }
+                    @if (authorNode.PinterestLink.HasValue())
+                    {
+                        <li class="pinterest"><a href="@authorNode.PinterestLink" class="symbol" target="_blank" title="@umbraco.library.GetDictionaryItem("USN New Window Title Tag")">pinterest</a></li>
+                    }
+                    @if (authorNode.InstagramLink.HasValue())
+                    {
+                        <li class="instagram"><a href="@authorNode.InstagramLink" class="symbol" target="_blank" title="@umbraco.library.GetDictionaryItem("USN New Window Title Tag")">instagram</a></li>
+                    }
+                    @if (authorNode.FlickrLink.HasValue())
+                    {
+                        <li class="flickr"><a href="@authorNode.FlickrLink" class="symbol" target="_blank" title="@umbraco.library.GetDictionaryItem("USN New Window Title Tag")">flickr</a></li>
+                    }
+                    @if (authorNode.TumblrLink.HasValue())
+                    {
+                        <li class="tumblr"><a href="@authorNode.TumblrLink" class="symbol" target="_blank" title="@umbraco.library.GetDictionaryItem("USN New Window Title Tag")">tumblr</a></li>
+                    }
+                    @if (authorNode.VimeoLink.HasValue())
+                    {
+                        <li class="vimeo"><a href="@authorNode.VimeoLink" class="symbol" target="_blank" title="@umbraco.library.GetDictionaryItem("USN New Window Title Tag")">vimeo</a></li>
+                    }
+                    @if (authorNode.YouTubeLink.HasValue())
+                    {
+                        <li class="youtube"><a href="@authorNode.YouTubeLink" class="symbol" target="_blank" title="@umbraco.library.GetDictionaryItem("USN New Window Title Tag")">youtube</a></li>
+                    }
+                    @if (authorNode.BehanceLink.HasValue())
+                    {
+                        <li class="behance"><a href="@authorNode.BehanceLink" class="symbol" target="_blank" title="@umbraco.library.GetDictionaryItem("USN New Window Title Tag")">behance</a></li>
+                    }
+                    @if (authorNode.SoundCloudLink.HasValue())
+                    {
+                        <li class="soundcloud"><a href="@authorNode.SoundCloudLink" class="symbol" target="_blank" title="@umbraco.library.GetDictionaryItem("USN New Window Title Tag")">soundcloud</a></li>
+                    }
+                </ul>
+            </nav>
+			<!--// SOCIAL -->
+        }
+        </div>
+		<!--// PAGE COMPONENT AUTHOR BIO -->
+					
+    }		
+    
+}

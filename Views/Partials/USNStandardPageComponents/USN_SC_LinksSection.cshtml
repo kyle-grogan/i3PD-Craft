@@ -1,0 +1,59 @@
+﻿@inherits UmbracoViewPage<Usn_Sc_LinksSection_AN>
+
+@using Umbraco.Web.Models;
+@using USNStarterKit.USNModels;
+@using USNStarterKit.USNHelpers;
+
+@{
+    string anchorId = String.Empty;
+
+    @* Add div for column width on Andvanced Pages *@
+    if (!Model.Parent.Parent.IsDocumentType(UsnstandardPage.ModelTypeAlias) && !Model.Parent.Parent.IsDocumentType(UsnstandardPageBlogPost.ModelTypeAlias))
+    {
+        if (Model.Width == "Centered")
+        {
+            @:<div id="mid-col" class="col-md-8 col-md-offset-2 col-xs-12">
+        }
+        else
+        {
+            @:<div id="wide-col" class="col-xs-12">
+        }
+    }
+    else
+    {
+        anchorId = "id=\"pos_" + Model.Id + "\" ";
+    }
+
+    RelatedLinks groupLinks = Model.GroupLinks;
+
+    <!-- PAGE COMPONENT QUICK LINKS -->
+    if (groupLinks != null)
+    {
+        <div class="spc quick-links c3-bg has-borders c5-borders borders-perc_20" @Html.Raw(anchorId)>
+            <div class="inner">
+                <nav>
+                    <ul class="row">
+                        @foreach (RelatedLink link in groupLinks)
+                        {
+                            USNLink groupLink = USNUrlHelper.GetLinkFromRelatedLink(link);
+
+                            if ((groupLink.InternalNode != null && groupLink.InternalNode.IsVisible()) || (!link.IsInternal && groupLink.LinkURL != String.Empty))
+                            { 
+                                <li class="col-md-4 col-xs-6">
+                                    <a href="@groupLink.LinkURL" @Html.Raw(groupLink.LinkTarget) @Html.Raw(groupLink.LinkTitle)>@groupLink.LinkCaption@Html.Raw(groupLink.LinkIcon)</a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    }
+    <!--// PAGE COMPONENT QUICK LINKS -->
+
+    @* Close div for column width on Advanced Pages *@
+    if (!Model.Parent.Parent.IsDocumentType(UsnstandardPage.ModelTypeAlias) && !Model.Parent.Parent.IsDocumentType(UsnstandardPageBlogPost.ModelTypeAlias))
+    {
+        @:</div>
+    }
+}

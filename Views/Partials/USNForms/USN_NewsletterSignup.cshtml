@@ -1,0 +1,115 @@
+﻿@inherits UmbracoViewPage<USNStarterKit.USNModels.USNNewsletterFormViewModel>
+
+@using USNStarterKit.USNHeading.Models;
+@using USNStarterKit.USNHelpers;
+	
+@using (Ajax.BeginForm("HandleNewsletterSubmit", "USNNewsletterSignupSurface", new AjaxOptions
+{
+    HttpMethod = "POST",
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "NewsletterSignupContainer" + Model.CurrentNodeID,
+    LoadingElementId = "NewsletterAjaxLoading" + Model.CurrentNodeID
+}))
+{
+    var currentNode = Umbraco.TypedContent(Model.CurrentNodeID);
+
+    var containerId = "NewsletterSignupContainer" + Model.CurrentNodeID;
+    var errorId = "NewsletterError" + Model.CurrentNodeID;
+    var ajaxLoadingId = "NewsletterAjaxLoading" + Model.CurrentNodeID;
+    
+    UsnglobalSettings globalSettings = (UsnglobalSettings)Umbraco.TypedContent(Model.GlobalSettingsID);
+
+    if (globalSettings.EmailMarketingPlatform.HasValue() && globalSettings.NewsletterApikey.HasValue() && (currentNode.HasValue("newsletterSubscriberListID") || globalSettings.DefaultNewsletterSubscriberListID.HasValue()))
+    {
+
+        @Html.Hidden("CurrentNodeID", Model.CurrentNodeID)
+        @Html.Hidden("GlobalSettingsID", Model.GlobalSettingsID)
+        @Html.AntiForgeryToken()
+
+
+        if ((currentNode.Parent.Parent.IsDocumentType(Usnhomepage.ModelTypeAlias) || currentNode.Parent.Parent.IsDocumentType(UsnadvancedPage.ModelTypeAlias) || currentNode.Parent.Parent.IsDocumentType(UsnadvancedPage.ModelTypeAlias)) && currentNode.IsDocumentType(Usn_NewsletterSignup_AN.ModelTypeAlias))
+        {
+            if (currentNode.HasValue("width") && currentNode.GetPropertyValue<string>("width") == "Centered")
+            {
+                @:<div id="mid-col" class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12"><div class="spc forms">
+            }
+            else
+            {
+                @:<div id="wide-col" class="col-xs-12"><div class="spc forms">
+            }
+        }
+
+        <div class="newsletter form ajax-wrap">
+            <div class="inner c1-bg c4-text">
+	
+			<!-- INFO -->
+			<div class="info">
+                @{
+                    var newsletterHeading = currentNode.GetPropertyValue<USNHeading>("newsletterHeading");
+
+                    if (newsletterHeading != null)
+                    {
+                        @Html.Raw(String.Format("<{0} class=\"heading main\">{1}</{0}>", newsletterHeading.HeadingTag, newsletterHeading.Text))
+                    }
+                    else if (currentNode.HasValue("newsletterHeading"))
+                    {
+                        <p class="heading main c5-text">@(currentNode.GetPropertyValue<string>("newsletterHeading"))</p>
+                    } 
+                }
+
+                @if (currentNode.HasValue("newsletterIntroduction"))
+                {
+				<div class="text">
+                    @Html.Raw(currentNode.GetPropertyValue<string>("newsletterIntroduction"))
+				</div>
+                }
+			</div>
+			<!--// INFO -->
+			
+                <div id="@containerId">
+                    <div class="alert alert-danger alert-dismissible fade in" id="@errorId" style="display:none">
+                    </div>
+                    <fieldset>
+                        <div class="form-group">
+                            <label for="FirstName" class="control-label hidden">
+                                @umbraco.library.GetDictionaryItem("USN Form First Name Label") <em class="req">*</em>
+                            </label>
+                            @Html.TextBoxFor(x => Model.FirstName, new { @class = "form-control", placeholder = @umbraco.library.GetDictionaryItem("USN Form First Name Label") })
+                            @Html.ValidationMessageFor(x => Model.FirstName, @umbraco.library.GetDictionaryItem("USN Form First Name Validation"))
+                        </div>
+                        <div class="form-group">
+                            <label for="LastName" class="control-label hidden">
+                                @umbraco.library.GetDictionaryItem("USN Form Last Name Label") <em class="req">*</em>
+                            </label>
+                            @Html.TextBoxFor(x => Model.LastName, new { @class = "form-control", placeholder = @umbraco.library.GetDictionaryItem("USN Form Last Name Label") })
+                            @Html.ValidationMessageFor(x => Model.LastName, @umbraco.library.GetDictionaryItem("USN Form Last Name Validation"))
+                        </div>
+                        <div class="form-group">
+                            <label for="Email" class="control-label hidden">
+                                @umbraco.library.GetDictionaryItem("USN Form Email Address Label") <em class="req">*</em>
+                            </label>
+                            @Html.TextBoxFor(x => Model.Email, new { autocapitalize = "off", @class = "form-control", placeholder = @umbraco.library.GetDictionaryItem("USN Form Email Address Label") })
+                            @Html.ValidationMessageFor(x => Model.Email, @umbraco.library.GetDictionaryItem("USN Form Email Address Validation"))
+                        </div>
+                    </fieldset>
+                    <fieldset class="buttons">
+                        <button class="btn c5-bg c3-text" type="submit">
+                            <span>@(currentNode.GetPropertyValue<string>("newsletterButtonText"))</span>
+                        </button>
+                    </fieldset>
+                    <div class="ajax-loading" id="@ajaxLoadingId" style="display:none">
+                        <div class="loading">
+                            <span class="message">@umbraco.library.GetDictionaryItem("USN Newsletter Form Sending Message")</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        if ((currentNode.Parent.Parent.IsDocumentType(Usnhomepage.ModelTypeAlias) || currentNode.Parent.Parent.IsDocumentType(UsnadvancedPage.ModelTypeAlias)) && currentNode.IsDocumentType(Usn_NewsletterSignup_AN.ModelTypeAlias))
+        {
+            @:</div></div>
+
+        }
+    }
+}

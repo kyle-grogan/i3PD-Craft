@@ -1,0 +1,83 @@
+﻿@inherits UmbracoViewPage<USNStarterKit.USNModels.USNBaseViewModel>
+	
+@using Umbraco.Web.Models;
+@using USNStarterKit.USNModels;
+@using USNStarterKit.USNHelpers;
+	
+@{
+    Usnnavigation navigation = (Usnnavigation)Model.Navigation;
+    
+    RelatedLinks secondaryNavigation = navigation.SecondaryNavigation;
+
+    if (secondaryNavigation != null || navigation.LoginPage != null)
+    {
+    <nav class="top">
+        <ul>
+            @if (secondaryNavigation != null)
+            {
+
+                foreach (RelatedLink link in secondaryNavigation)
+                {
+                    USNLink topLink = USNUrlHelper.GetLinkFromRelatedLink(link);
+
+                    if ((topLink.InternalNode != null && topLink.InternalNode.IsVisible()) || (topLink.LinkURL != String.Empty))
+                    { 
+                        <li>
+                            <a href="@topLink.LinkURL" @Html.Raw(topLink.LinkTarget) @Html.Raw(topLink.LinkTitle)>@topLink.LinkCaption@Html.Raw(topLink.LinkIcon)</a>      
+                        </li>
+                    }
+                }
+
+            }
+
+            @if (navigation.LoginPage != null)
+            {
+                IPublishedContent loginPage = navigation.LoginPage;
+                
+                if (Umbraco.MemberIsLoggedOn())
+                {
+                    RelatedLinks loggedInMembersNavigation = navigation.LoggedInMembersNavigation;
+                    
+                <li class="members-nav">
+                    <p class="heading">@Context.User.Identity.Name</p>
+                    <ul>
+                        @if (loggedInMembersNavigation != null)
+                        {
+                            foreach (RelatedLink link in loggedInMembersNavigation)
+                            {
+                                USNLink memberLink = USNUrlHelper.GetLinkFromRelatedLink(link);
+
+                                if ((memberLink.InternalNode != null && memberLink.InternalNode.IsVisible()) || (memberLink.LinkURL != String.Empty))
+                                { 
+                                    <li>
+                                        <a href="@memberLink.LinkURL" @Html.Raw(memberLink.LinkTarget) @Html.Raw(memberLink.LinkTitle)>@memberLink.LinkCaption@Html.Raw(memberLink.LinkIcon)</a>
+                                    </li>
+                                }
+                            }
+                        }
+                        <li><a href="@loginPage.Url?signout=true">@umbraco.library.GetDictionaryItem("USN Members Navigation Logout")<i class="fa fa-sign-out c1-text after"></i></a></li>
+                    </ul>
+                </li>
+                }
+                else
+                {
+                    string navigationHeading = umbraco.library.GetDictionaryItem("USN Members Navigation Default Heading");
+
+                    if (navigation.MembersNavigationHeading.HasValue())
+                    {
+                        navigationHeading = navigation.MembersNavigationHeading;
+                    }
+                    
+                    <li class="members-nav">
+                        <p class="heading">@navigationHeading</p>
+                        <ul>
+                            <li><a href="@loginPage.Url"><i class="fa fa-sign-in c1-text"></i>@umbraco.library.GetDictionaryItem("USN Members Navigation Login")</a></li>
+                        </ul>
+                    </li>
+                }
+            }
+        </ul>                                                            
+	</nav> 
+    }
+}
+

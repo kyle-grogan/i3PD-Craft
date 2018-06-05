@@ -1,0 +1,46 @@
+﻿@inherits UmbracoViewPage<Usn_Sc_Blockquote_AN>
+
+@using USNStarterKit.USNHelpers;
+
+@{
+    string anchorId = string.Empty;
+
+    @* Add div for column width on Advanced Pages *@
+    if (!Model.Parent.Parent.IsDocumentType(UsnstandardPage.ModelTypeAlias) && !Model.Parent.Parent.IsDocumentType(UsnstandardPageBlogPost.ModelTypeAlias))
+    {
+        if (Model.Width == "Centered")
+        {
+            @:<div id="mid-col" class="col-md-8 col-md-offset-2 col-xs-12">
+        }
+        else
+        {
+            @:<div id="wide-col" class="col-xs-12">
+        }
+    }
+    else
+    {
+        anchorId = "id=\"pos_" + Model.Id + "\" ";
+    }
+
+    <!-- PAGE COMPONENT BLOCKQUOTE -->
+    <div class="spc quotes" @Html.Raw(anchorId)>
+	@*<div class="inner c4-bg has-borders c6-borders">*@
+        <blockquote>
+            <p>@Html.Raw(umbraco.library.ReplaceLineBreaks(Model.Quote))</p>
+            @if (Model.Cite.HasValue())
+            {
+                <cite>
+                    <span class="who">@Model.Cite</span>
+                </cite>
+            }
+        </blockquote>
+    @*</div>*@
+    </div>
+    <!-- PAGE COMPONENT BLOCKQUOTE -->
+
+    @* Close div for column width on Advanced Pages *@
+    if (!Model.Parent.Parent.IsDocumentType(UsnstandardPage.ModelTypeAlias) && !Model.Parent.Parent.IsDocumentType(UsnstandardPageBlogPost.ModelTypeAlias))
+    {
+        @:</div>
+    }
+}

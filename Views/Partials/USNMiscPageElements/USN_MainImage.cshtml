@@ -1,0 +1,19 @@
+﻿@inherits UmbracoViewPage<IUsn_Cmp_Sp_Content>
+
+@using USNStarterKit.USNHelpers;
+
+@{    
+    if (Model.MainImage != null)
+    {
+        <div class="spc image">
+            <img class="lazyload" src="@Model.MainImage.GetCropUrl(cropAlias: "1200x600", width: 12, height: 6)" data-src="@Model.MainImage.GetCropUrl(cropAlias: "1200x600")" alt="@Model.MainImageAltText" />
+			
+		@if (Model.MainImageCaption.HasValue())
+        {
+            <div class="info">
+			    <div class="text">@Model.MainImageCaption</div>
+            </div>
+        }
+		</div>           
+    }
+}

@@ -1,0 +1,32 @@
+﻿@inherits UmbracoViewPage<USNStarterKit.USNModels.USNBaseViewModel>
+
+@using USNStarterKit.USNHelpers;
+	
+@{
+    UsnglobalSettings globalSettings = (UsnglobalSettings)Model.GlobalSettings;
+    
+    if (globalSettings.CompanyName.HasValue() || globalSettings.Address.HasValue() ||
+        globalSettings.TelephoneNumber.HasValue() || globalSettings.EmailAddress.HasValue())
+    {
+        <div class="company-details">
+        @if (globalSettings.CompanyName.HasValue())
+	    {	
+		    <p class="heading short-margin-bottom">@globalSettings.CompanyName</p>
+	    }
+	    @if (globalSettings.Address.HasValue())
+	    {
+		    <address>
+			    @Html.Raw(globalSettings.Address)
+		    </address>
+	    }
+        @if (globalSettings.TelephoneNumber.HasValue())
+        {
+            <p>@Html.Raw(globalSettings.TelephoneNumber)</p>
+        }    
+	    @if (globalSettings.EmailAddress.HasValue())
+        {
+            <p><a href="mailto:@globalSettings.EmailAddress">@globalSettings.EmailAddress</a></p>
+        }                                                  
+	    </div> 
+    }
+}

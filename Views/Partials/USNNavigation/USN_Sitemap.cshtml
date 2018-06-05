@@ -1,0 +1,52 @@
+﻿@inherits UmbracoViewPage
+
+@using USNStarterKit.USNHelpers;
+
+@{
+    Usnhomepage homePage = (Usnhomepage)Model.AncestorOrSelf(1);
+}
+<nav class="sitemap">
+    <ul class="nav">
+        <li>
+            <a href="@homePage.Url">
+                @if (homePage.SitemapLinkText.HasValue())
+                {
+                    @Html.Raw(homePage.SitemapLinkText)
+                }
+                else
+                {
+                    @homePage.Name
+                }
+            </a>
+            @Traverse(homePage)
+        </li>
+    </ul>
+</nav>
+
+@helper Traverse(IPublishedContent node)
+{
+    var items = node.Children.Where(x => (x.IsDocumentType(UsnstandardPage.ModelTypeAlias) || x.IsDocumentType(UsnadvancedPage.ModelTypeAlias) || x.IsDocumentType(UsnblogLandingPage.ModelTypeAlias) || x.IsDocumentType(UsnloginPage.ModelTypeAlias) || x.IsDocumentType(UsnsearchResultsPage.ModelTypeAlias)) && x.IsVisible());
+
+    IList<IPublishedContent> publishedContents = items as IList<IPublishedContent> ?? items.ToList();
+    if (publishedContents.Any())
+    {
+        <ul class="nav">
+            @foreach (var item in publishedContents)
+            {
+                <li class="level-@item.Level">
+                    <a href="@item.Url">
+                        @if (item.HasValue("sitemapLinkText"))
+                        {
+                            @Html.Raw(item.GetPropertyValue<string>("sitemapLinkText"))
+                        }
+                        else
+                        {
+                            @item.Name
+                        }
+                    </a>
+                    @Traverse(item)
+                </li>
+            }
+        </ul>
+    }
+}

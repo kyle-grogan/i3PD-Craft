@@ -1,0 +1,34 @@
+﻿@inherits UmbracoViewPage<Usn_Sc_CodeSection_AN>
+
+@{
+    string anchorId = string.Empty;
+
+    @* Add div for column width on Advanced Pages *@
+    if (!Model.Parent.Parent.IsDocumentType(UsnstandardPage.ModelTypeAlias) && !Model.Parent.Parent.IsDocumentType(UsnstandardPageBlogPost.ModelTypeAlias))
+    {
+        if (Model.Width == "Centered")
+        {
+            @:<div id="mid-col" class="col-md-8 col-md-offset-2 col-xs-12">
+        }
+        else
+        {
+            @:<div id="wide-col" class="col-xs-12">
+        }
+    }
+    else
+    {
+        anchorId = "id=\"pos_" + Model.Id + "\" ";
+    }
+
+    <!-- PAGE COMPONENT CODE -->
+    <div class="spc codeblock" @Html.Raw(anchorId)>
+        @Html.Raw(Model.Code)
+    </div>
+    <!--// PAGE COMPONENT CODE -->
+
+    @* Close div for column width on Advanced Pages *@
+    if (!Model.Parent.Parent.IsDocumentType(UsnstandardPage.ModelTypeAlias) && !Model.Parent.Parent.IsDocumentType(UsnstandardPageBlogPost.ModelTypeAlias))
+    {
+        @:</div>
+    }
+}

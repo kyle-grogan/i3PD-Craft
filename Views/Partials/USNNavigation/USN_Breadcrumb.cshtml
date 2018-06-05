@@ -1,0 +1,90 @@
+﻿@inherits UmbracoViewPage
+
+@using System.Globalization;
+
+@{
+    if (!Model.GetPropertyValue<bool>("hideBreadcrumb"))
+    {
+        int catLevel = 1;
+
+        <section class="breadcrumb-trail">
+            <div class="container">
+
+                <!-- ROW -->
+                <div class="row">
+                    <nav class="col-xs-12">
+                        <ol itemscope itemtype="http://schema.org/BreadcrumbList">
+                            @if (Model.IsDocumentType(UsnstandardPageBlogPost.ModelTypeAlias) || Model.IsDocumentType(UsnadvancedPageBlogPost.ModelTypeAlias))
+                            {
+                                //Start blog breadcrumb 4 levels lower than blog post
+                                int blogLevel = Model.Level - 4;
+
+                                foreach (var level in Model.Ancestors().Where(x => x.Level <= blogLevel).OrderBy("Level"))
+                                {
+                                    string breadcrumbLinkText = level.HasValue("breadcrumbLinkText") ? level.GetPropertyValue<string>("breadcrumbLinkText") : level.Name;
+
+                                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="@level.Url" itemscope itemtype="http://schema.org/Thing"  itemprop="item"><span itemprop="name">@breadcrumbLinkText</span></a><meta itemprop="position" content="@level.Level" /></li>
+
+                                }
+                            }
+                            else
+                            {
+                                foreach (var level in Model.Ancestors().Where("Visible").OrderBy("Level"))
+                                {
+                                    string breadcrumbLinkText = level.HasValue("breadcrumbLinkText") ? level.GetPropertyValue<string>("breadcrumbLinkText") : level.Name;
+
+                                    if (!level.IsDocumentType(UsnblogCategories.ModelTypeAlias))
+                                    {
+                                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="@level.Url" itemscope itemtype="http://schema.org/Thing" itemprop="item"><span itemprop="name">@breadcrumbLinkText</span></a><meta itemprop="position" content="@level.Level"/></li>
+                                        catLevel += 1;
+                                    }
+                                }
+                            }
+
+                            @{
+                                string breadcrumbLinkTextPage = Model.HasValue("breadcrumbLinkText") ? Model.GetPropertyValue<string>("breadcrumbLinkText") : Model.Name;
+
+                                if (Model.IsDocumentType(UsnblogLandingPage.ModelTypeAlias))
+                                {
+                                    if (!String.IsNullOrEmpty(Request.QueryString["year"]) && String.IsNullOrEmpty(Request.QueryString["month"]))
+                                    {
+                                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="@Model.Url" itemscope itemtype="http://schema.org/Thing" itemprop="item"><span itemprop="title">@breadcrumbLinkTextPage</span></a><meta itemprop="position" content="@Model.Level" /></li>
+                                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="active"><span itemprop="name">@Request.QueryString["year"]</span><meta itemprop="position" content="@(Model.Level + 1)" /></li>
+                                    }
+                                    else if (!String.IsNullOrEmpty(Request.QueryString["year"]) && !String.IsNullOrEmpty(Request.QueryString["month"]))
+                                    {
+                                        string archiveUrl = Model.Url + "?year=" + Request.QueryString["year"];
+
+                                        string monthName = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Convert.ToInt32(Request.QueryString["month"]));
+
+                                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="@Model.Url" itemscope itemtype="http://schema.org/Thing" itemprop="item"><span itemprop="name">@breadcrumbLinkTextPage</span></a><meta itemprop="position" content="@Model.Level" /></li>
+                                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="@archiveUrl" itemscope itemtype="http://schema.org/Thing" itemprop="item"><span itemprop="name">@Request.QueryString["year"]</span></a><meta itemprop="position" content="@(Model.Level + 1)" /></li>
+                                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="active" ><span itemprop="name">@monthName</span><meta itemprop="position" content="@(Model.Level + 2)" /></li>
+                                    }
+                                    else
+                                    {
+                                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="active"><span itemprop="name">@breadcrumbLinkTextPage</span><meta itemprop="position" content="@Model.Level" /></li>
+                                    }
+
+                                }
+                                else
+                                {
+                                    if (Model.IsDocumentType(UsnblogCategoryPage.ModelTypeAlias))
+                                    {
+                                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="active"><span itemprop="name">@breadcrumbLinkTextPage</span><meta itemprop="position" content="@catLevel"/></li>
+                                    }
+                                    else
+                                    {
+                                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="active"><span itemprop="name">@breadcrumbLinkTextPage</span><meta itemprop="position" content="@Model.Level" /></li>
+                                    }
+                                }
+                            }
+                        </ol>
+
+                    </nav>
+                </div>
+                <!--// ROW -->
+            </div>
+        </section>
+    }
+}

@@ -1,0 +1,219 @@
+﻿@inherits UmbracoViewPage<Usn_Ac_CarouselSection_AN>
+
+@using Umbraco.Web.Models;
+@using USNStarterKit.USNModels;
+@using USNStarterKit.USNHelpers;
+@using USNStarterKit.USNEntities;
+
+@{
+
+    string animateClass = String.Empty;
+
+    if (Model.Animate)
+    {
+        animateClass = "os-animation";
+    }
+
+    USNTemplateStyleSettings settings = USNViewTemplateHelper.GetTemplateStyleSettings(Model.BackgroundColor, Model.ButtonColor);
+
+    string backgroundImageStyle = USNViewTemplateHelper.GetBackgroundImageStyle(Model.BackgroundImage, Model.BackgroundImageOptions);
+        
+    <section class="content apc image-carousel @settings.BackGroundStyle @Model.CustomComponentClasses" @Html.Raw(backgroundImageStyle) id="pos_@Model.Id">
+        <div class="container">
+                                
+            @{
+                if (Model.IntroductionHeading != null || Model.IntroductionText.HasValue())
+                {
+                <!-- ROW - OVERVIEW -->
+                    <div class="row overview text-center @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0s">
+                        <div class="col-md-8 col-xs-12">
+                            @if (Model.IntroductionSecondaryHeading.HasValue())
+                            {
+                                @Html.Raw(String.Format("<p class=\"secondary-heading {0}\">{1}</{0}>", settings.SecondaryHeadingStyle, Model.IntroductionSecondaryHeading))
+                            }
+                            @if (Model.IntroductionHeading != null)
+                            {
+                                @Html.Raw(String.Format("<{0} class=\"heading main {1}\">{2}</{0}>", Model.IntroductionHeading.HeadingTag, settings.HeadingStyle, Model.IntroductionHeading.Text))
+                            }
+                            @if (Model.IntroductionText.HasValue())
+                            {
+                                <div class="text @settings.TextStyle">
+                                    @Html.Raw(Model.IntroductionText)
+                                </div>
+                            }
+                        </div>
+                    </div>
+                <!--// ROW - OVERVIEW -->
+                }
+            }
+            
+            @if (Model.Children.Any())
+            {
+                decimal autoRotateSpeed = 0;
+                string autoRotateAttribute = String.Empty;
+
+                if (Model.AutoRotateSpeed.HasValue())
+                {
+                    autoRotateSpeed = Model.AutoRotateSpeed;
+                    if (autoRotateSpeed > 0)
+                    {
+                        autoRotateSpeed = autoRotateSpeed * 1000;
+                        autoRotateAttribute = "data-slick='{\"autoplay\": true, \"autoplaySpeed\": " + autoRotateSpeed + "}'";
+                    }
+                }
+
+                <div class="slides" @Html.Raw(autoRotateAttribute)>
+                    @foreach (IPublishedContent thumbnail in Model.Children())
+                    {
+                        string lightWindow = String.Empty;
+                        string title = String.Empty;
+                        string footer = String.Empty;
+
+                        if (thumbnail.IsDocumentType(Usn_Ac_CarouselImage.ModelTypeAlias))
+                        {
+                            Usn_Ac_CarouselImage image = (Usn_Ac_CarouselImage) thumbnail;
+
+                            if (!image.DisableLightWindow)
+                            {
+                                lightWindow = " data-toggle=\"lightbox\" data-type=\"image\" data-gallery=\"galleryname-" + Model.Id + "\"";
+
+                                if (image.LightWindowTitle.HasValue())
+                                {
+                                    title = "data-title=\"" + image.LightWindowTitle + "\"";
+                                }
+
+                                if (image.LightWindowFooter.HasValue())
+                                {
+                                    footer = "data-footer=\"" + image.LightWindowFooter + "\"";
+                                }
+                            }
+
+                            if (image.LightWindowImage != null)
+                            {
+                                string linkUrl = String.Empty;
+                                string linkTarget = String.Empty;
+
+                                if (image.DisableLightWindow && image.ImageLink.HasValue())
+                                {
+
+                                    USNLink imageLink = USNUrlHelper.GetLinkFromRelatedLinks(image.ImageLink);
+
+                                    if (imageLink.LinkURL.HasValue())
+                                    {
+                                        linkUrl = imageLink.LinkURL;
+                                        linkTarget = imageLink.LinkTarget;
+                                    }
+                                }
+                                else if (image.DisableLightWindow && !image.ImageLink.HasValue())
+                                {
+                                    linkUrl = String.Empty;
+                                }
+                                else
+                                {
+                                    linkUrl = image.LightWindowImage.Url;
+                                }
+
+                                <div class="item">
+                                    <div class="image">
+                                        @if (linkUrl != String.Empty)
+                                        {
+                                            @:<a href="@linkUrl" @Html.Raw(title) @Html.Raw(footer) target="@linkTarget" @Html.Raw(lightWindow)>
+                                        }
+                                        <img class="lazyload" src="@image.LightWindowImage.GetCropUrl(cropAlias: "400x300", width: 4, height: 3)" data-src="@image.LightWindowImage.GetCropUrl(cropAlias: "400x300")" alt="@image.ThumbnailImageAltText">
+                                        @if (lightWindow != String.Empty)
+                                        {
+                                            <div class="overlayicon ion-arrow-expand c5-text"></div>
+                                        }
+                                        else if (linkUrl != String.Empty && linkTarget != String.Empty)
+                                        {
+                                            <div class="overlayicon ion-android-open c5-text"></div>
+                                        }
+                                        else if (linkUrl != String.Empty && linkTarget == String.Empty)
+                                        {
+                                            <div class="overlayicon ion-link c5-text"></div>
+                                        }
+                                        @if (linkUrl != String.Empty)
+                                        {
+                                            @:</a>
+                                        }
+                                    </div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            Usn_Ac_CarouselVideo videoItem = (Usn_Ac_CarouselVideo) thumbnail;
+
+                            if (videoItem.Video.HasValue())
+                            {
+                                string videoUrlOriginal = videoItem.Video;
+
+                                if (videoItem.LightWindowTitle.HasValue())
+                                {
+                                    title = "data-title=\"" + videoItem.LightWindowTitle + "\"";
+                                }
+
+                                if (videoItem.LightWindowFooter.HasValue())
+                                {
+                                    footer = "data-footer=\"" + videoItem.LightWindowFooter + "\"";
+                                }
+
+                                USNVideo video = USNVideoHelper.GetVideoInfo(videoUrlOriginal);
+
+                                string videoImageSrc = videoItem.ThumbnailImage != null ? videoItem.ThumbnailImage.GetCropUrl(cropAlias: "400x300", width: 4, height: 3) : video.VideoImage;
+                                string videoImageDataSrc = videoItem.ThumbnailImage != null ? videoItem.ThumbnailImage.GetCropUrl(cropAlias: "400x300") : video.VideoImage;
+
+                                if (videoImageSrc != String.Empty)
+                                {
+                                    <div class="item">
+                                        <div class="image video">
+                                            <a href="@video.VideoURLModified" @Html.Raw(title) @Html.Raw(footer) data-toggle="lightbox" @Html.Raw(video.VideoDataRemote) data-gallery="galleryname-@Model.Id">
+                                                <img class="lazyload" src="@videoImageSrc" data-src="@videoImageDataSrc" alt="@videoItem.ThumbnailImageAltText">
+                                                <div class="overlayicon ion-ios-play c5-text"></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                }
+                            }
+
+                        }
+                    }
+                </div>
+            }
+
+            @{
+                RelatedLinks outroLinks = Model.OutroLinks;
+
+                if (Model.OutroText.HasValue() || outroLinks != null)
+                {
+					<!-- ROW - OUTRO -->
+                    <div class="row outro text-center @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0.1s">
+                        <div class="col-md-8 col-xs-12">
+                            @if (Model.OutroText.HasValue())
+                            {
+                                <div class="text @settings.TextStyle">
+                                    @Html.Raw(Model.OutroText)
+                                </div>
+                            }
+
+                            @if (outroLinks != null)
+                            {
+                                <p class="link">
+                                    @foreach (RelatedLink link in outroLinks)
+                                    {
+                                        USNLink outroLink = USNUrlHelper.GetLinkFromRelatedLink(link);
+
+                                        <a role="button" class="btn @settings.ButtonStyle" href="@outroLink.LinkURL" @Html.Raw(outroLink.LinkTarget) @Html.Raw(outroLink.LinkTitle)>@outroLink.LinkCaption@Html.Raw(outroLink.LinkIcon)</a>
+                                    }
+                                </p>
+                            }
+
+                        </div>
+                    </div>
+					<!--// ROW - OUTRO -->
+                }
+            }
+        </div>
+    </section>
+
+}

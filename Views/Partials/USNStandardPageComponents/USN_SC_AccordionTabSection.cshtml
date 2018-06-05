@@ -1,0 +1,91 @@
+﻿@inherits UmbracoViewPage<Usn_Sc_AccordionTabSection_AN>
+
+@{
+    string anchorId = String.Empty;
+    string customComponentClasses = String.Empty;
+
+    int tabHeadingCount = 1;
+    int tabContentCount = 1;
+    int accordionCount = 1;
+
+
+    if (Model.Children.Any())
+    {
+        @* Add div for column width on Advanced Pages *@
+        if (!Model.Parent.Parent.IsDocumentType(UsnstandardPage.ModelTypeAlias) && !Model.Parent.Parent.IsDocumentType(UsnstandardPageBlogPost.ModelTypeAlias))
+        {
+            if (Model.Width == "Centered")
+            {
+            	@:<div id="mid-col" class="col-md-8 col-md-offset-2 col-xs-12">          
+            }
+            else
+            {
+                @:<div id="wide-col" class="col-xs-12">
+            }
+        }
+        else
+        {
+            anchorId = "id=\"pos_" + Model.Id + "\" ";
+            customComponentClasses = Model.CustomComponentClasses;
+        }
+
+        if (Model.RepeaterStyle == "Tabbed")
+        {
+		    <!-- PAGE COMPONENT TABBED -->
+            <div class="spc tabbed @customComponentClasses" role="tabpanel" @Html.Raw(anchorId)>
+                <nav class="tabs">
+                    <ul class="nav nav-tabs" role="tablist">
+                        @foreach (Usn_Sc_AccordionTabItem item in Model.Children<Usn_Sc_AccordionTabItem>())
+                        {
+                            <li role="presentation" @if (tabHeadingCount == 1) { @Html.Raw("class=\"active\"") }><a href="#tabname-@Model.Id-@tabHeadingCount" aria-controls="tabname-@Model.Id-@tabHeadingCount" role="tab" data-toggle="tab">@item.Name</a></li>
+                            tabHeadingCount += 1;
+                        }
+                    </ul>
+                </nav>
+
+                <div class="tab-content">
+                    @foreach (Usn_Sc_AccordionTabItem item in Model.Children<Usn_Sc_AccordionTabItem>())
+                    {
+                        <div id="tabname-@Model.Id-@tabContentCount" role="tabpanel" class="tab-pane  @if(tabContentCount == 1){@Html.Raw("active")}">
+                            @Html.Raw(item.RepeaterText)
+                        </div>
+
+                        tabContentCount += 1;
+                    }
+                </div>
+            </div>
+			<!--// PAGE COMPONENT TABBED -->
+        }
+        else
+        {
+    		<!-- PAGE COMPONENT ACCORDION -->
+            <div class="spc accordion" @Html.Raw(anchorId)>
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                @foreach (Usn_Sc_AccordionTabItem item in Model.Children<Usn_Sc_AccordionTabItem>())
+                {   
+                    <div role="tab" id="heading-@accordionCount">
+                        <p class="heading">
+                            <a role="button" class="collapsed" data-toggle="collapse" data-parent="#accordion" data-target="#collapse-@Model.Id-@accordionCount" aria-expanded="true" aria-controls="collapse-@Model.Id-@accordionCount">
+                                @item.Name<i class="ion-minus"></i><i class="ion-plus"></i>
+                            </a>
+                        </p>
+                    </div>
+                    <div id="collapse-@Model.Id-@accordionCount" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapse-@Model.Id-@accordionCount">
+                        <div class="panel-body">
+                            @Html.Raw(item.RepeaterText)
+                        </div>
+                    </div>       
+                    accordionCount += 1;
+                }
+                </div>
+            </div>
+		    <!--// PAGE COMPONENT ACCORDION -->
+        }
+
+        @* Close div for column width on Advanced Pages *@
+        if (!Model.Parent.Parent.IsDocumentType(UsnstandardPage.ModelTypeAlias) && !Model.Parent.Parent.IsDocumentType(UsnstandardPageBlogPost.ModelTypeAlias))
+        {
+            @:</div>
+        }
+    }
+}

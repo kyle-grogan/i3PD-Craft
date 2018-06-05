@@ -1,0 +1,78 @@
+﻿@inherits UmbracoViewPage<USNNewsletterFormViewModel>
+
+@using USNStarterKit.USNModels;
+@using USNStarterKit.USNHelpers;
+@using USNStarterKit.USNEntities;
+
+@{
+    Usn_Ac_TextSignupSection_AN currentNode = (Usn_Ac_TextSignupSection_AN)Umbraco.TypedContent(Model.CurrentNodeID);
+
+    USNTemplateStyleSettings settings = USNViewTemplateHelper.GetTemplateStyleSettings(currentNode.BackgroundColor, currentNode.ButtonColor);
+
+    string backgroundImageStyle = USNViewTemplateHelper.GetBackgroundImageStyle(currentNode.BackgroundImage, currentNode.BackgroundImageOptions);
+    
+    string firstDivClass = "col-md-6 col-xs-12 pull-left";
+    string secondDivClass = "col-md-4 col-xs-12 pull-right";
+    string formFadeInDirection = "fadeInRight";
+    string textFadeInDirection = "fadeInLeft";
+    string animateClass = String.Empty;
+
+    if (currentNode.TextSectionPosition == "After")
+    {
+        firstDivClass = "col-md-6 col-xs-12 pull-right";
+        secondDivClass = "col-md-4 col-xs-12 pull-left";
+        formFadeInDirection = "fadeInLeft";
+        textFadeInDirection = "fadeInRight";
+    }
+
+    if (currentNode.Animate)
+    {
+        animateClass = "os-animation";
+    }
+
+    <section class="content apc text-with-form @settings.BackGroundStyle @currentNode.CustomComponentClasses" @Html.Raw(backgroundImageStyle) id="pos_@currentNode.Id">
+        <div class="container">
+
+            <!-- ROW -->
+            <div class="row">
+
+                <div class="text-side @firstDivClass @animateClass" data-os-animation="@textFadeInDirection" data-os-animation-delay="0">
+                    <!-- INFO -->
+                    <div class="info">
+                        @if (currentNode.SecondaryHeading.HasValue())
+                        {
+                            @Html.Raw(String.Format("<p class=\"secondary-heading {0}\">{1}</{0}>", settings.SecondaryHeadingStyle, currentNode.SecondaryHeading))
+                        }
+                        @if (currentNode.Heading != null)
+                        {
+                            @Html.Raw(String.Format("<{0} class=\"heading main {1}\">{2}</{0}>", currentNode.Heading.HeadingTag, settings.HeadingStyle, currentNode.Heading.Text))
+                        }
+                        @if (currentNode.Text.HasValue())
+                        {
+                            <div class="text @settings.TextStyle">
+                                @Html.Raw(currentNode.Text)
+                            </div>
+                        }
+                        @{
+                            USNLink link = USNUrlHelper.GetLinkFromRelatedLinks(currentNode.Link);
+
+                            if (link.LinkURL.HasValue())
+                            {
+                                <p class="link"><a class="btn @settings.ButtonStyle" href="@link.LinkURL" @Html.Raw(link.LinkTarget) @Html.Raw(link.LinkTitle)>@link.LinkCaption@Html.Raw(link.LinkIcon)</a></p>
+                            }
+                        }
+                    </div>
+                    <!--// INFO -->
+                </div>
+
+                <div class="form-side @secondDivClass @animateClass" data-os-animation="@formFadeInDirection" data-os-animation-delay="0">
+                    @Html.Partial("USNForms/USN_NewsletterSignup", Model)
+                </div>
+
+            </div>
+            <!--// ROW -->
+
+        </div>
+    </section>
+
+}

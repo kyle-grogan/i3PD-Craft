@@ -1,0 +1,80 @@
+﻿@inherits UmbracoViewPage<UsnblogRss>
+@using USNStarterKit.USNBlog;
+@{
+
+    // get landing page
+    var landing = Model.AncestorOrSelf(UsnblogLandingPage.ModelTypeAlias);;
+    
+    // get all posts
+    IEnumerable<IPublishedContent> posts = USNBlogPostService.Instance.GetPostItems(landing, null,null, null);
+
+    IList<IPublishedContent> publishedContents = posts as IList<IPublishedContent> ?? posts.ToList();
+    DateTime lastPubDate = !publishedContents.Any() ? DateTime.Now : publishedContents.FirstOrDefault().GetPropertyValue<DateTime>("postDate");
+    
+    // get blog url
+    string blogUrl = Request.Url.AbsoluteUri.Replace(Model.Url(), string.Empty).TrimEnd("/".ToCharArray());
+  
+    Response.Clear();
+    Response.ContentType = "text/xml";
+    Response.ContentEncoding = System.Text.Encoding.UTF8;
+    @Html.Raw("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>")
+    <rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+    <channel>
+            <title>@Model.RssTitle</title>
+            <description>@Model.RssDescription</description>
+            <copyright>@Model.RssCopyright @DateTime.Now.Year</copyright>
+            @Html.Raw("<link>")
+            @Html.Raw(blogUrl)
+            @Html.Raw("</link>")
+            <lastBuildDate>@lastPubDate.ToString("ddd, dd MMMM yyyy HH:mm:ss")</lastBuildDate>
+            <pubDate>@lastPubDate.ToString("ddd, dd MMMM yyyy HH:mm:ss")</pubDate>
+
+            @foreach (var p in publishedContents)
+            {
+
+                string postName = string.Empty;
+
+                if (p.HasValue("onPageTitle"))
+                {
+                    postName = p.GetPropertyValue<string>("onPageTitle");
+                }
+                else
+                {
+                    postName = p.Name;
+                }
+
+                string mainText = String.Empty;
+
+                if (p.HasValue("bodyText"))
+                {
+                    mainText = p.GetPropertyValue<string>("bodyText").StripHtml().Trim();
+
+                    if (mainText.Length >= 150)
+                    {
+                        mainText = mainText.Substring(0, 150);
+                    }
+
+                    mainText = mainText + "...";
+                }
+
+                <item>
+                    <title>@postName</title>
+                    <comments>@blogUrl@p.Url</comments>
+					<description><![CDATA[@mainText <a href="@blogUrl@p.Url">@umbraco.library.GetDictionaryItem("USN Blog RSS Continue Reading")</a>]]></description>
+                    @Html.Raw("<link>")
+                    @Html.Raw(blogUrl + p.Url)
+                    @Html.Raw("</link>")
+                    <guid>@blogUrl@p.Url</guid>
+                    <pubDate>@(p.GetPropertyValue<DateTime>("postDate").ToString("ddd, dd MMMM yyyy HH:mm:ss"))</pubDate>
+                </item>
+            }
+        </channel>        
+    </rss>
+}

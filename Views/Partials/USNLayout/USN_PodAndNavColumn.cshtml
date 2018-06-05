@@ -1,0 +1,95 @@
+﻿@inherits UmbracoViewPage<USNStarterKit.USNModels.USNBaseViewModel>
+
+@{
+    UsnglobalSettings globalSettings = (UsnglobalSettings)Model.GlobalSettings;
+    
+    string pageLayout = !Model.Content.HasValue("pageLayout") ? globalSettings.DefaultPageLayout : Model.Content.GetPropertyValue<string>("pageLayout");
+
+    switch (pageLayout)
+    {
+        case "Content left, with sidebar":
+			<div id="right-col" class="col-md-4 col-xs-12 pull-right">                                                     
+               @if (Model.Content.IsDocumentType(UsnblogLandingPage.ModelTypeAlias) || Model.Content.IsDocumentType(UsnstandardPageBlogPost.ModelTypeAlias) || Model.Content.IsDocumentType(UsnblogCategoryPage.ModelTypeAlias))
+               {
+                   @Html.Partial("USNBlog/USN_BlogArchiveNavigation", Model)
+                   @Html.Partial("USNBlog/USN_BlogCategoryNavigation", Model)
+               }
+
+			    <!-- SUB  -->
+			    @Html.Partial("USNNavigation/USN_SubNavigation", Model)
+			    <!--// SUB -->
+			    <!-- PROMO PODS -->
+			    @Html.Partial("USNSiteWidePods/USN_SitewidePods", @Model, new ViewDataDictionary { { "podstyle", "vertical" } })
+			    <!--// PROMO PODS -->
+			</div>
+            break;
+        case "Content right, with sidebar":
+            <div id="left-col" class="col-md-4 col-xs-12 pull-left">
+                @if (Model.Content.IsDocumentType(UsnblogLandingPage.ModelTypeAlias) || Model.Content.IsDocumentType(UsnstandardPageBlogPost.ModelTypeAlias) || Model.Content.IsDocumentType(UsnblogCategoryPage.ModelTypeAlias))
+                {
+                    @Html.Partial("USNBlog/USN_BlogArchiveNavigation", Model)
+                    @Html.Partial("USNBlog/USN_BlogCategoryNavigation", Model)
+                }
+
+                <!-- SUB  -->
+                @Html.Partial("USNNavigation/USN_SubNavigation", Model)
+                <!--// SUB -->
+                <!-- PROMO PODS -->
+                @Html.Partial("USNSiteWidePods/USN_SitewidePods", Model, new ViewDataDictionary { { "podstyle", "vertical" } })
+                <!--// PROMO PODS -->
+            </div>
+            break;
+        case "Content center, pods left, navigation right":
+            <div id="left-col" class="col-md-3 col-md-pull-6 col-xs-12">
+                <!-- SUB  -->
+                @Html.Partial("USNSiteWidePods/USN_SitewidePods", Model, new ViewDataDictionary { { "podstyle", "vertical" } })
+                <!--// SUB -->
+            </div>
+            <div id="right-col" class="col-md-3 col-xs-12">
+                @if (Model.Content.IsDocumentType(UsnblogLandingPage.ModelTypeAlias) || Model.Content.IsDocumentType(UsnstandardPageBlogPost.ModelTypeAlias) || Model.Content.IsDocumentType(UsnblogCategoryPage.ModelTypeAlias))
+                {
+                    @Html.Partial("USNBlog/USN_BlogArchiveNavigation", Model)
+                    @Html.Partial("USNBlog/USN_BlogCategoryNavigation", Model)
+                }
+                <!-- SUB  -->
+                @Html.Partial("USNNavigation/USN_SubNavigation", Model)
+                <!--// SUB -->
+            </div>
+            break;
+        case "Content center, pods right, navigation left":
+            <div id="left-col" class="col-md-3 col-md-pull-6 col-xs-12">
+               @if (Model.Content.IsDocumentType(UsnblogLandingPage.ModelTypeAlias) || Model.Content.IsDocumentType(UsnstandardPageBlogPost.ModelTypeAlias) || Model.Content.IsDocumentType(UsnblogCategoryPage.ModelTypeAlias))
+               {
+                    @Html.Partial("USNBlog/USN_BlogArchiveNavigation", Model)
+                    @Html.Partial("USNBlog/USN_BlogCategoryNavigation", Model)
+                }
+                <!-- SUB  -->
+                @Html.Partial("USNNavigation/USN_SubNavigation", Model, new ViewDataDictionary { { "podstyle", "vertical" } })
+                <!--// SUB -->
+            </div>
+            <div id="right-col" class="col-md-3 col-xs-12">
+                <!-- SUB  -->
+                @Html.Partial("USNSiteWidePods/USN_SitewidePods", Model, new ViewDataDictionary { { "podstyle", "vertical" } })
+                <!--// SUB -->
+            </div>
+            break;
+        case "Content full width":
+            break;
+        default:
+            <div id="right-col" class="col-md-4 col-xs-12 pull-right">
+                @if (Model.Content.IsDocumentType(UsnblogLandingPage.ModelTypeAlias) || Model.Content.IsDocumentType(UsnstandardPageBlogPost.ModelTypeAlias) || Model.Content.IsDocumentType(UsnblogCategoryPage.ModelTypeAlias))
+                {
+                    @Html.Partial("USNBlog/USN_BlogArchiveNavigation", Model)
+                    @Html.Partial("USNBlog/USN_BlogCategoryNavigation", Model)
+                }
+                <!-- SUB  -->
+                @Html.Partial("USNNavigation/USN_SubNavigation", Model)
+                <!--// SUB -->
+                <!-- PROMO PODS -->
+                @Html.Partial("USNSiteWidePods/USN_SitewidePods", Model, new ViewDataDictionary { { "podstyle", "vertical" } })
+                <!--// PROMO PODS -->
+            </div>
+            break;
+    }
+
+}

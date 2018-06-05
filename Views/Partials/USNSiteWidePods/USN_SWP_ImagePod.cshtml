@@ -1,0 +1,74 @@
+﻿@inherits UmbracoViewPage<Usn_Swp_ImagePod>
+
+@using USNStarterKit.USNModels;
+@using USNStarterKit.USNHelpers;
+
+@{
+    if (Model.LightWindowImage != null)
+    {
+        string lightWindow = String.Empty;
+        string title = String.Empty;
+        string footer = String.Empty;
+
+        if (!Model.DisableLightWindow)
+        {
+            lightWindow = " data-toggle=\"lightbox\" data-type=\"image\" ";
+
+            if (Model.LightWindowTitle.HasValue())
+            {
+                title = "data-title=\"" + Model.LightWindowTitle + "\"";
+            }
+
+            if (Model.LightWindowFooter.HasValue())
+            {
+                footer = "data-footer=\"" + Model.LightWindowFooter + "\"";
+            }
+        }
+        
+        string linkUrl = String.Empty;
+        string linkTarget = String.Empty;
+
+        if (Model.DisableLightWindow && Model.ImageLink.HasValue())
+        {
+            USNLink imageLink = USNUrlHelper.GetLinkFromRelatedLinks(Model.ImageLink);
+            
+            if(imageLink.LinkURL.HasValue())
+            { 
+                linkUrl = imageLink.LinkURL;
+                linkTarget = imageLink.LinkTarget;
+            } 
+        }
+        else
+        {
+            linkUrl = Model.LightWindowImage.Url;
+        }
+
+        <div class="item image-pod">
+            <div class="image">
+                @if (linkUrl != String.Empty)
+                {
+                    @:<a href="@linkUrl" @Html.Raw(title) @Html.Raw(footer) target="@linkTarget" @Html.Raw(lightWindow)>
+                }
+                <img class="lazyload" src="@Model.LightWindowImage.GetCropUrl(cropAlias: "400x300", width: 4, height: 3)" data-src="@Model.LightWindowImage.GetCropUrl(cropAlias: "400x300")" alt="@Model.ThumbnailImageAltText">
+                @if (lightWindow != String.Empty)
+                {
+                    <div class="overlayicon ion-arrow-expand c5-text"></div>
+                }
+                else if (linkUrl != String.Empty && linkTarget != String.Empty)
+                {
+                    <div class="overlayicon ion-android-open c5-text"></div>
+                }
+                else if (linkUrl != String.Empty && linkTarget == String.Empty)
+                {
+                    <div class="overlayicon ion-link c5-text"></div>
+                }
+                @if (linkUrl != String.Empty)
+                {
+                    @:</a>
+                }
+            </div>
+        </div>
+
+    }
+
+}

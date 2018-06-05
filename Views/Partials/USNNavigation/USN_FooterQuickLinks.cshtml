@@ -1,0 +1,37 @@
+﻿@inherits UmbracoViewPage<USNStarterKit.USNModels.USNBaseViewModel>
+
+@using Umbraco.Web.Models;
+@using USNStarterKit.USNModels;
+@using USNStarterKit.USNHelpers;
+	
+@{
+    Usnnavigation navigation = (Usnnavigation)Model.Navigation;
+    
+    RelatedLinks footerQuickLinks = navigation.FooterQuickLinks;
+
+    if (navigation.FooterQuickLinksHeading.HasValue() || footerQuickLinks != null)
+    {
+        <nav class="quick-links">
+	    @if (navigation.FooterQuickLinksHeading.HasValue())
+        {
+	        <p class="heading padding-bottom">@navigation.FooterQuickLinksHeading</p>
+        }
+		@if (footerQuickLinks != null)
+        {
+            <ul>
+                @foreach (RelatedLink link in footerQuickLinks)
+                {
+                    USNLink quickLink = USNUrlHelper.GetLinkFromRelatedLink(link);
+
+                    if ((quickLink.InternalNode != null && quickLink.InternalNode.IsVisible()) || (quickLink.LinkURL != String.Empty))
+                    { 
+                        <li>
+                            <a href="@quickLink.LinkURL" @Html.Raw(quickLink.LinkTarget) @Html.Raw(quickLink.LinkTitle)>@quickLink.LinkCaption@Html.Raw(quickLink.LinkIcon)</a>
+                        </li>
+                    }
+                }
+            </ul>
+        }
+		</nav>
+    }
+}

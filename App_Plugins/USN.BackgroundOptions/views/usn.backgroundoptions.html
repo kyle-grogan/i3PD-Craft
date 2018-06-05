@@ -1,0 +1,44 @@
+﻿<div ng-controller="USN.BackgroundOptions.Controller" class="background-colour-options">
+	
+	<div class="row">
+		
+       <div class="col">
+           <div>
+               <label for="style"><strong>Style</strong></label>
+           </div>
+           <div>
+               <select ng-model="model.value.style" id="style">
+                   <option value=""></option>
+                   <option value="Cover">Cover</option>
+                   <option value="Full width">Full width</option>
+                   <option value="Original">Original</option>
+                   <option value="Repeat">Repeat</option>
+                   <option value="Repeat X">Repeat X</option>
+                   <option value="Repeat Y">Repeat Y</option>
+               </select>
+           </div>
+       </div>
+
+       <div class="col">
+           <div>
+               <label for="position"><strong>Position</strong></label>
+           </div>
+           <div>
+               <select ng-model="model.value.position" id="position">
+                   <option value=""></option>
+                   <option value="Center / Top">Center / Top</option>
+                   <option value="Center / Center">Center / Center</option>
+                   <option value="Center / Bottom">Center / Bottom</option>
+                   <option value="Right / Top">Right / Top</option>
+                   <option value="Right / Center">Right / Center</option>
+                   <option value="Right / Bottom">Right / Bottom</option>
+                   <option value="Left / Top">Left / Top</option>
+                   <option value="Left / Center">Left / Center</option>
+                   <option value="Left / Bottom">Left / Bottom</option>
+               </select>
+           </div>
+       </div>
+
+	</div>
+	
+</div>

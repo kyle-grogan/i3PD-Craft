@@ -1,0 +1,140 @@
+﻿@inherits UmbracoViewPage<Usn_Ac_FeaturedBlogPostsSection_AN>
+
+@using Umbraco.Web.Models;
+@using USNStarterKit.USNModels;
+@using USNStarterKit.USNHelpers;
+@using USNStarterKit.USNEntities;
+
+@{
+
+    string animateClass = String.Empty;
+
+    if (Model.Animate)
+    {
+        animateClass = "os-animation";
+    }
+
+    USNTemplateStyleSettings settings = USNViewTemplateHelper.GetTemplateStyleSettings(Model.BackgroundColor, Model.ButtonColor);
+
+    string backgroundImageStyle = USNViewTemplateHelper.GetBackgroundImageStyle(Model.BackgroundImage, Model.BackgroundImageOptions);
+        
+    <section class="content apc featured-blogs @settings.BackGroundStyle @Model.CustomComponentClasses" @Html.Raw(backgroundImageStyle) id="pos_@Model.Id">
+        <div class="container">
+                                
+            @{
+                if (Model.IntroductionHeading != null || Model.IntroductionText.HasValue())
+                {
+                <!-- ROW - OVERVIEW -->
+                    <div class="row overview text-center @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0s">
+                        <div class="col-md-8 col-xs-12">
+                            @if (Model.IntroductionSecondaryHeading.HasValue())
+                            {
+                                @Html.Raw(String.Format("<p class=\"secondary-heading {0}\">{1}</{0}>", settings.SecondaryHeadingStyle, Model.IntroductionSecondaryHeading))
+                            }
+                            @if (Model.IntroductionHeading != null)
+                            {
+                                @Html.Raw(String.Format("<{0} class=\"heading main {1}\">{2}</{0}>", Model.IntroductionHeading.HeadingTag, settings.HeadingStyle, Model.IntroductionHeading.Text))
+                            }
+                            @if (Model.IntroductionText.HasValue())
+                            {
+                                <div class="text @settings.TextStyle">
+                                    @Html.Raw(Model.IntroductionText)
+                                </div>
+                            }
+                        </div>
+                    </div>
+                <!--// ROW - OVERVIEW -->
+                }
+            }
+
+            @{
+                IEnumerable<IPublishedContent> featuredPosts = null;
+
+                if (Model.Posts.HasValue())
+                {
+                    featuredPosts = Model.Posts;
+                }
+
+                if (featuredPosts != null)
+                {
+                    decimal autoRotateSpeed = 0;
+                    string autoRotateAttribute = String.Empty;
+
+                    if (Model.AutoRotateSpeed.HasValue())
+                    {
+                        autoRotateSpeed = Model.AutoRotateSpeed;
+                        if (autoRotateSpeed > 0)
+                        {
+                            autoRotateSpeed = autoRotateSpeed * 1000;
+                            autoRotateAttribute = "data-slick='{\"autoplay\": true, \"autoplaySpeed\": " + autoRotateSpeed + "}'";
+                        }
+                    }
+
+                    <!-- ROW -->
+                    <div class="row">
+
+                        <!-- LISTING -->
+                        <div class="listing blog">
+
+                            <!-- SLIDES -->
+                            <div class="slides" @Html.Raw(autoRotateAttribute)>
+
+
+                                @foreach (var post in featuredPosts)
+                                {
+                                    <!-- ITEM -->
+                                    <div class="item @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0s" itemscope itemtype="http://schema.org/BlogPosting">
+									<div class="inner c3-bg">
+                                        @Html.Partial("USNBlog/USN_BlogListItem", post, new ViewDataDictionary {{"summaryTextLength", 180}, {"displaySummaryText", true}, {"imageWidth", 400}, {"imageHeight", 300} })
+                                    </div>
+                                    </div>
+                                    <!--// ITEM -->
+                                }
+
+                            </div>
+                            <!-- SLIDES -->
+
+                        </div>
+                        <!--// LISTING -->
+
+                    </div>
+                    <!--// ROW -->
+                }
+            }
+
+            @{
+                RelatedLinks outroLinks = Model.OutroLinks;
+
+                if (Model.OutroText.HasValue() || outroLinks != null)
+                {
+					<!-- ROW - OUTRO -->
+                    <div class="row outro text-center @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0.1s">
+                        <div class="col-md-8 col-xs-12">
+                            @if (Model.OutroText.HasValue())
+                            {
+                                <div class="text @settings.TextStyle">
+                                    @Html.Raw(Model.OutroText)
+                                </div>
+                            }
+
+                            @if (outroLinks != null)
+                            {
+                                <p class="link">
+                                    @foreach (RelatedLink link in outroLinks)
+                                    {
+                                        USNLink outroLink = USNUrlHelper.GetLinkFromRelatedLink(link);
+
+                                        <a role="button" class="btn @settings.ButtonStyle" href="@outroLink.LinkURL" @Html.Raw(outroLink.LinkTarget) @Html.Raw(outroLink.LinkTitle)>@outroLink.LinkCaption@Html.Raw(outroLink.LinkIcon)</a>
+                                    }
+                                </p>
+                            }
+
+                        </div>
+                    </div>
+					<!--// ROW - OUTRO -->
+                }
+            }
+        </div>
+    </section>
+
+}

@@ -1,0 +1,19 @@
+﻿@inherits UmbracoViewPage<USNStarterKit.USNModels.USNBaseViewModel>
+
+@using USNStarterKit.USNHelpers;
+
+@{
+    UsnglobalSettings globalSettings = (UsnglobalSettings) Model.GlobalSettings;
+
+    if (globalSettings.Enable)
+    {
+        if (globalSettings.RememberAcceptanceDurationDays > 0)
+        {
+            @Html.Raw("<script>var exdays = " + globalSettings.RememberAcceptanceDurationDays + ";</script>")
+        }
+        else
+        {
+            @Html.Raw("<script>var exdays = 365;</script>")
+        }
+    }
+}

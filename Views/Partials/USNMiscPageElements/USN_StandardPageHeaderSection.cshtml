@@ -1,0 +1,174 @@
+﻿@inherits UmbracoViewPage<IUsn_Cmp_Sp_HeaderSection>
+
+@using USNStarterKit.USNModels;
+@using USNStarterKit.USNHelpers;
+@using USNStarterKit.USNEntities;
+
+@{
+    if (Model.DisplayHeaderImageSection)
+    {
+        <!-- BANNER -->
+        <section class="content apc banner no-padding">
+        @{
+
+            string parallaxClass = String.Empty;
+
+            if (Model.HeaderParallax)
+            {
+                parallaxClass = "parallax";
+            }
+
+            string colorOverlayClass = String.Empty;
+
+            if (Model.AddColorOverlay)
+            {
+                colorOverlayClass = "overlay";
+            }
+
+            string animateClass = String.Empty;
+
+            if (Model.HeaderAnimate)
+            {
+                animateClass = "os-animation";
+            }
+
+            string bannerStyle = "medium";
+            int imgHeight = 550;
+            int imgHeightSmall = 5;
+
+            if (Model.HeaderStyle.HasValue())
+            {
+                switch (Model.HeaderStyle)
+                {
+                    case "Short":
+                        bannerStyle = "short";
+                        imgHeight = parallaxClass != String.Empty ? 1100 : 400;
+                        imgHeightSmall = parallaxClass != String.Empty ? 11 : 4;
+                        break;
+                    case "Medium":
+                        bannerStyle = "medium";
+                        imgHeight = parallaxClass != String.Empty ? 1100 : 550;
+                        imgHeightSmall = parallaxClass != String.Empty ? 11 : 5;
+                        break;
+                    case "Takeover":
+                        bannerStyle = "takeover";
+                        imgHeight = 1100;
+                        imgHeightSmall = 11;
+                        break;
+                    default:
+                        bannerStyle = "medium";
+                        imgHeight = parallaxClass != String.Empty ? 1100 : 550;
+                        imgHeightSmall = parallaxClass != String.Empty ? 11 : 5;
+                        break;
+                }
+            }
+
+            string bgImage = String.Empty;
+            string bgImageSmall = String.Empty;
+
+            if (Model.HeaderImage != null)
+            {
+                bgImage = Model.HeaderImage.GetCropUrl(cropAlias: "1500x" + imgHeight);
+                bgImageSmall = "style=\"background-image:url('" + Model.HeaderImage.GetCropUrl(cropAlias: "1500x" + imgHeight, width: 15, height: imgHeightSmall) + "')\"";
+            }
+
+            USNTemplateStyleSettings settings = USNViewTemplateHelper.GetTemplateStyleSettings(Model.HeaderBackgroundColor, Model.HeaderButtonColor);
+
+            USNLink headerLink = USNUrlHelper.GetLinkFromRelatedLinks(Model.HeaderLink);
+
+            <div class="item @colorOverlayClass @bannerStyle @parallaxClass @settings.BackGroundStyle">
+	                    
+                @if (Model.HeaderImage != null)
+                {
+				<!-- IMAGE -->
+				<div class="image lazyload" @Html.Raw(bgImageSmall) data-bg="@bgImage">
+
+				</div>
+				<!--// IMAGE -->
+                }
+                @if (Model.Video != null)
+                {
+                    <!-- VIDEO -->
+                    <div class="video">
+
+                        <video playsinline autoplay muted loop preload width="640" height="360" class="video-player">
+                            <source src="@Model.Video.Url" type="video/mp4">
+                        </video>
+
+
+                    </div>
+                    <!--// VIDEO -->
+                }
+                @if (Model.HeaderHeading != null || Model.HeaderText.HasValue() || headerLink.LinkURL.HasValue())
+                {
+                    string textAlignment;
+
+                    switch (Model.HeaderTextAlignment)
+                    {
+                        case "Left":
+                            textAlignment = "col-md-8 col-xs-12 text-left";
+                            break;
+                        case "Center":
+                            textAlignment = "col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 text-center";
+                            break;
+                        case "Right":
+                            textAlignment = "col-md-8 col-sm-10 col-xs-12 pull-right text-right";
+                            break;
+                        default:
+                            textAlignment = "col-md-8 col-xs-12 text-left";
+                            break;
+                    }
+
+                    <div class="info">
+                        <div class="container">
+                            <!-- ROW -->
+                            <div class="row">
+
+                                <div class="table">
+				                    <div class="table-cell">
+
+                                        <div class="@textAlignment">
+                                        
+                                            @if (Model.HeaderSecondaryHeading.HasValue())
+                                            {
+                                                @Html.Raw(String.Format("<p class=\"secondary-heading {0} {1}\" data-os-animation=\"fadeInUp\" data-os-animation-delay=\"0.5s\">{2}</{0}>", settings.SecondaryHeadingStyle, animateClass, Model.HeaderSecondaryHeading))
+                                            }
+                                        
+                                            @if (Model.HeaderHeading != null)
+                                            {
+                                                @Html.Raw(String.Format("<{0} class=\"heading main {1} {2}\" data-os-animation=\"fadeInUp\" data-os-animation-delay=\"0.1s\">{3}</{0}>", Model.HeaderHeading.HeadingTag, settings.HeadingStyle, animateClass, Model.HeaderHeading.Text))
+                                            }
+                                            @if (Model.HeaderText.HasValue())
+                                            {
+                                                <div class="text @settings.TextStyle @animateClass" data-os-animation="fadeInUp" data-os-animation-delay="0.2s">
+                                                    @Html.Raw(Model.HeaderText)
+                                                </div>
+                                            }
+                                            @if (headerLink.LinkURL.HasValue())
+                                            {
+                                                <p class="link"><a class="btn @settings.ButtonStyle @animateClass" data-os-animation="fadeInUp" data-os-animation-delay="0.3s" href="@headerLink.LinkURL" @Html.Raw(headerLink.LinkTarget) @Html.Raw(headerLink.LinkTitle)>@headerLink.LinkCaption@Html.Raw(headerLink.LinkIcon)</a></p>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--// ROW -->
+                        </div>
+                    </div>
+
+                    if (Model.HeaderScrollPrompt)
+                    {
+                        <!-- SCROLL PROMPT -->
+                        <div class="scroll-prompt text-center">
+                            <a class="c5-text hidden-lg"><i class="ion-ios-arrow-down"></i></a>
+                            <a class="c5-text hidden-md hidden-sm hidden-xs"><div class="mouse-scroll"></div><span>@umbraco.library.GetDictionaryItem("USN Banner Component Scroll Prompt")</span></a>
+                        </div>
+                        <!--// SCROLL PROMPT -->
+                    }
+                }
+            </div>
+        }
+        </section>
+        <!--// BANNER -->
+    }
+}

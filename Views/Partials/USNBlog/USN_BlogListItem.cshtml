@@ -1,0 +1,74 @@
+﻿@inherits UmbracoViewPage
+
+@{
+    int summaryTextLength = Convert.ToInt32(ViewData["summaryTextLength"]);
+    int imageWidth = Convert.ToInt32(ViewData["imageWidth"]);
+    int imageHeight = Convert.ToInt32(ViewData["imageHeight"]);
+    int imageWidthSmall = imageWidth / 100 == 0 ? 1 : imageWidth / 100;
+    int imageHeightSmall = imageHeight / 100 == 0 ? 1 : imageHeight / 100;
+    bool displaySummaryText = Convert.ToBoolean(ViewData["displaySummaryText"]);
+
+    string introText = String.Empty;
+
+    if (Model.HasValue("pageSummary"))
+    {
+        introText = Model.GetPropertyValue<string>("pageSummary");
+    }
+    else if (displaySummaryText && summaryTextLength > 0 && Model.IsDocumentType(UsnstandardPageBlogPost.ModelTypeAlias) && Model.HasValue("bodyText"))
+    {
+        introText = library.StripHtml(Model.GetPropertyValue<string>("bodyText"));
+
+        if (introText.Length >= summaryTextLength)
+        {
+            introText = introText.Substring(0, summaryTextLength);
+        }
+
+        if (introText.Length > 0)
+        {
+            introText = "<p>" + introText + " ...</p>";
+        }
+    }
+
+    if (Model.GetPropertyValue<Image>("pageListingImage") != null)
+    {
+    <a href="@Model.Url" itemprop="url">
+        <div class="image"><img class="lazyload" src="@(Model.GetPropertyValue<Image>("pageListingImage").GetCropUrl(cropAlias: imageWidth + "x" + imageHeight, width: imageWidthSmall, height: imageHeightSmall))" data-src="@(Model.GetPropertyValue<Image>("pageListingImage").GetCropUrl(cropAlias: imageWidth + "x" + imageHeight))" alt="@(Model.GetPropertyValue<string>("pageListingImageAltText"))" itemprop="image"></div>
+    </a>
+    }
+
+	<!-- WRAP -->
+    <div class="wrap">
+
+	    <!-- META -->
+	    <div class="meta">
+	        <time itemprop="datePublished" datetime="@(Model.GetPropertyValue<DateTime>("postDate").ToString("yyyy-MM-dd"))"><span class="date">@(Model.GetPropertyValue<DateTime>("postDate").ToString("dd MMM yyyy"))</span></time>
+	    </div>
+	    <!--// META -->
+
+		<a href="@Model.Url" itemprop="url">
+		    @{
+
+		        string postName = Model.HasValue("onPageTitle") ? Model.GetPropertyValue<string>("onPageTitle") : Model.Name;
+		    }
+		    <p class="heading" itemprop="name headline">
+		        @postName
+		    </p>
+		</a>
+
+		@if (displaySummaryText && introText != String.Empty)
+		{
+		<div class="info">
+		    <div class="text" itemprop="articleBody">@Html.Raw(introText)</div>   
+		</div>
+		}
+
+	    <!-- META -->
+	    <div class="meta">
+		    @Html.Partial("USNBlog/USN_BlogMeta", Model)
+	    </div>
+	    <!--// META -->
+	
+	</div>
+	<!--// WRAP -->
+
+}

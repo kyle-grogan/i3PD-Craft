@@ -1,0 +1,115 @@
+﻿@inherits UmbracoViewPage<USNStarterKit.USNModels.USNBaseViewModel>
+
+@using USNStarterKit.USNHelpers;
+
+@{
+    UsnglobalSettings globalSettings = (UsnglobalSettings)Model.GlobalSettings;
+
+    if (globalSettings.SearchResultsPage != null && globalSettings.ExamineSearchProviderName.HasValue())
+    {
+        UsnsearchResultsPage searchResultsPage = (UsnsearchResultsPage)Model.Content;
+
+        int pageSize = searchResultsPage.SearchResultsPageSize; // How many items per page
+        int page; // The page we are viewing
+        string originalSearchTerm = String.Empty;
+        string searchTerm = String.Empty;
+
+        if (!String.IsNullOrEmpty(Context.Request.QueryString["search_field"]))
+        {
+            var regex = new System.Text.RegularExpressions.Regex(@"[^\w\s-]");
+
+            originalSearchTerm = Request.QueryString["search_field"].Trim();
+            searchTerm = regex.Replace(originalSearchTerm, "");
+        }
+
+        if (!int.TryParse(Request.QueryString["page"], out page))
+        {
+            page = 1;
+        }
+
+        Examine.Providers.BaseSearchProvider baseSearchProvider = ExamineManager.Instance.SearchProviderCollection[globalSettings.ExamineSearchProviderName];
+        IEnumerable<SearchResult> results;
+        List<IPublishedContent> nodes = new List<IPublishedContent>();
+        int totalNodes = 0;
+        int totalPages;
+
+        if (!String.IsNullOrEmpty(searchTerm))
+        {
+            results = baseSearchProvider.Search(searchTerm,false);
+
+            //create a list of nodes and then remove duplicates
+            foreach (var item in results)
+            {
+                var node = Umbraco.TypedContent(item.Fields["id"]);
+
+                if (node != null)
+                {
+                    //Check if node found has a parent redirect template. If it does we want to find the first parent page.
+                    if (node.GetTemplateAlias() == "USNParentRedirect")
+                    {
+                        node = node.Ancestors().First(x => x.GetTemplateAlias() != "USNParentRedirect");
+                    }
+
+                    nodes.Add(node);
+                }
+            }
+
+            nodes = nodes.GroupBy(x => x.Id).Select(y => y.First()).ToList();
+
+            totalNodes = nodes.Count;
+            totalPages = (int)Math.Ceiling(totalNodes / (double)pageSize);
+
+            if (page > totalPages)
+            {
+                page = totalPages;
+            }
+            else if (page < 1)
+            {
+                page = 1;
+            }
+        }
+
+        if (totalNodes == 0)
+        {
+            <p>@umbraco.library.GetDictionaryItem("USN Search Results Nothing Found")</p>
+			@Html.Partial("USNForms/USN_SearchForm", Model)
+        }
+        else
+        {
+            int pages = (int)Math.Ceiling(totalNodes / (double)pageSize);
+            
+            if (page == 1)
+            {
+                //Please note the dictionary item should have a {0} and {1} placeholder for string formatting.
+                string searchResultsFeedback = umbraco.library.GetDictionaryItem("USN Search Results Feedback");
+                searchResultsFeedback = String.Format(searchResultsFeedback, originalSearchTerm, totalNodes);
+
+                <p>@Html.Raw(searchResultsFeedback)</p>
+				@Html.Partial("USNForms/USN_SearchForm", Model)
+            }
+            <div class="listing search">
+                @foreach (var item in nodes.Skip((page - 1) * pageSize).Take(pageSize))
+                {
+                    <div class="item">
+                        <a href="@item.Url">
+                            <p class="heading">@item.Name</p>
+                        </a>
+                        @if(item.HasValue("metaDescription"))
+                        {
+                            <div class="text">@Html.Raw(umbraco.library.ReplaceLineBreaks(item.GetPropertyValue<string>("metaDescription")))</div>
+                        }
+                        <p class="link">@umbraco.library.GetDictionaryItem("USN Search Results Link Label") <a href="@item.Url">@item.Url</a></p>
+                    </div>
+                }
+            </div>
+
+            if (pages > 1)
+            {
+            <!-- PAGINATION -->
+                @Html.Partial("USNMiscPageElements/USN_Paging", new ViewDataDictionary { { "totalPageCount", pages } })
+            <!--// PAGINATION -->
+            }
+        }
+    }
+}
+

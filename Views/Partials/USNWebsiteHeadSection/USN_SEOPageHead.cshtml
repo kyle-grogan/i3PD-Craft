@@ -1,0 +1,89 @@
+﻿@inherits UmbracoViewPage<USNStarterKit.USNModels.USNBaseViewModel>
+
+@using System.Globalization;
+@using USNStarterKit.USNHelpers;
+
+@{
+    UsnglobalSettings globalSettings = (UsnglobalSettings)Model.GlobalSettings;
+
+    string metaTitle;
+    string openGraphTitle;
+    string openGraphImage = String.Empty;
+    string openGraphDescription = String.Empty;
+
+    var siteName = globalSettings.WebsiteName;
+
+    var canonical = Request.Url.Scheme + "://" + Request.Url.Host + Model.Content.Url;
+
+    if (Model.Content.HasValue("pageTitle"))
+    {
+        metaTitle = Model.Content.GetPropertyValue<string>("pageTitle");
+    }
+    else
+    {
+        metaTitle = Model.Content.Name + " | " + siteName;
+    }
+
+    var metaDescription = Model.Content.GetPropertyValue<string>("metaDescription");
+
+    if (Model.Content.HasValue("openGraphTitle"))
+    {
+        openGraphTitle = Model.Content.GetPropertyValue<string>("openGraphTitle");
+    }
+    else
+    {
+        openGraphTitle = Model.Content.Name + " | " + siteName;
+    }
+
+    if (Model.Content.HasValue("openGraphImage") && Model.Content.GetPropertyValue<IPublishedContent>("openGraphImage") != null)
+    {
+        openGraphImage = Request.Url.Scheme + "://" + Request.Url.Host + Model.Content.GetPropertyValue<IPublishedContent>("openGraphImage").Url;
+    }
+    else if (globalSettings.OpenGraphDefaultImage != null)
+    {
+        openGraphImage = Request.Url.Scheme + "://" + Request.Url.Host + globalSettings.OpenGraphDefaultImage.Url;
+    }
+
+    if (Model.Content.HasValue("openGraphDescription"))
+    {
+        openGraphDescription = Model.Content.GetPropertyValue<string>("openGraphDescription");
+    }
+
+    if (Model.Content.IsDocumentType(UsnblogLandingPage.ModelTypeAlias))
+    {
+        int year = int.TryParse(Request.QueryString["year"], out year) ? year : 0;
+        int month = int.TryParse(Request.QueryString["month"], out month) ? month : 0;
+
+        if (year != 0 && month == 0)
+        {
+            metaTitle = year + " | " + metaTitle + " | " + siteName;
+            openGraphTitle = metaTitle;
+        }
+        else if (year != 0 && month != 0)
+        {
+            metaTitle = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month) + " | " + year + " | " + metaTitle + " | " + siteName;
+            openGraphTitle = metaTitle;
+        }
+
+    }
+    
+    <link rel="canonical" href="@canonical"/>
+    <title>@metaTitle</title>
+    <meta name="description" content="@metaDescription">
+	<meta property="og:type" content="website">
+    <meta property="og:title" content="@openGraphTitle" />
+    <meta property="og:image" content="@openGraphImage" />
+    <meta property="og:url" content="@canonical" />
+    <meta property="og:description" content="@openGraphDescription" />
+    <meta property="og:site_name" content="@siteName" />
+
+    if (Model.Content.GetPropertyValue<bool>("hideFromSearchEngines"))
+    {
+    <meta name="robots" content="noindex">
+    }
+
+    if (Model.Content.IsDocumentType(Usnhomepage.ModelTypeAlias) && globalSettings.GoogleBusinessLink.HasValue())
+    {
+	<link href="@globalSettings.GoogleBusinessLink" rel="publisher" />
+	}
+}

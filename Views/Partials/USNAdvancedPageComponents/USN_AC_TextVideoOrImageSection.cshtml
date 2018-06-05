@@ -1,0 +1,140 @@
+﻿@inherits UmbracoViewPage<Usn_Ac_TextVideoOrImageSection_AN>
+
+@using USNStarterKit.USNModels;
+@using USNStarterKit.USNHelpers;
+@using USNStarterKit.USNEntities;
+
+@{
+    string firstDivClass = "col-md-6 col-xs-12 pull-right";
+    string secondDivClass = "col-md-5 col-xs-12 pull-left";
+
+    string animateClass = String.Empty;
+    string imageFadeInDirection = "fadeInRight";
+
+    if (Model.Animate)
+    {
+        animateClass = "os-animation";
+    }
+
+    bool addSpacing = false;
+    string wideClass = "wide";
+
+    if (Model.AddSpacingAroundImage)
+    {
+        addSpacing = true;
+        wideClass = String.Empty;
+    }
+
+    USNTemplateStyleSettings settings = USNViewTemplateHelper.GetTemplateStyleSettings(Model.BackgroundColor, Model.ButtonColor);
+
+    string backgroundImageStyle = USNViewTemplateHelper.GetBackgroundImageStyle(Model.BackgroundImage, Model.BackgroundImageOptions);
+
+    if (Model.TextSectionPosition == "After")
+    {
+        firstDivClass = "col-md-6 col-xs-12 pull-left";
+        secondDivClass = "col-md-5 col-xs-12 pull-right";
+        imageFadeInDirection = "fadeInLeft";
+    }
+
+    string imageSrc = String.Empty;
+    string imageDataSrc = String.Empty;
+    string title = String.Empty;
+    string footer = String.Empty;
+    string lazyloadClass = String.Empty;
+    USNVideo video = new USNVideo();
+
+    if (Model.Video.HasValue())
+    {
+        string videoUrlOriginal = Model.Video;
+
+        if (Model.LightWindowTitle.HasValue())
+        {
+            title = "data-title=\"" + Model.LightWindowTitle + "\"";
+        }
+
+        if (Model.LightWindowFooter.HasValue())
+        {
+            footer = "data-footer=\"" + Model.LightWindowFooter + "\"";
+        }
+
+        video = USNVideoHelper.GetVideoInfo(videoUrlOriginal);
+        imageSrc = video.VideoImage;
+    }
+
+    if (Model.Image != null)
+    {
+        imageSrc = Model.Image.GetCropUrl(cropAlias: "800x600", width: 8, height: 6);
+        imageDataSrc = Model.Image.GetCropUrl(cropAlias: "800x600");
+        lazyloadClass = "class=\"lazyload\"";
+    }
+
+
+    @:<section class="content apc text-with-image-or-video @wideClass @settings.BackGroundStyle @Model.CustomComponentClasses" @Html.Raw(backgroundImageStyle) id="pos_@Model.Id">
+
+        if (addSpacing)
+        {
+            @:<div class="container"><div class="row">
+        }
+
+        <div class="@firstDivClass @animateClass" data-os-animation="@imageFadeInDirection" data-os-animation-delay="0">
+            @if (imageSrc != String.Empty)
+            {
+                <div class="image video">
+                    @if (video.VideoURLModified != String.Empty)
+                    {
+                        @:<a href="@video.VideoURLModified" @Html.Raw(title) @Html.Raw(footer) data-toggle="lightbox" @Html.Raw(video.VideoDataRemote)>
+                    }
+
+                    <img @Html.Raw(lazyloadClass) alt="@Model.ImageAltText" src="@imageSrc" data-src="@imageDataSrc">
+
+                    @if (video.VideoURLModified != String.Empty)
+                    {
+                        @:<div class="overlayicon ion-ios-play c5-text"></div></a>
+                    }
+                </div>
+            }
+        </div>
+
+        if (!addSpacing)
+        {
+            @:<div class="container"><div class="row">
+        }
+
+        <div class="item @secondDivClass @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0">
+            <!-- INFO -->
+            <div class="info">
+
+                @if (Model.SecondaryHeading.HasValue())
+                {
+                    @Html.Raw(String.Format("<p class=\"secondary-heading {0}\">{1}</{0}>", settings.SecondaryHeadingStyle, Model.SecondaryHeading))
+                }
+
+                @if (Model.Heading != null)
+                {
+                    @Html.Raw(String.Format("<{0} class=\"heading main {1}\">{2}</{0}>", Model.Heading.HeadingTag, settings.HeadingStyle, Model.Heading.Text))
+                }
+                @if (Model.Text.HasValue())
+                {
+                    <div class="text @settings.TextStyle">
+                        @Html.Raw(Model.Text)
+                    </div>
+                }
+                @{
+                    USNLink link = USNUrlHelper.GetLinkFromRelatedLinks(Model.Link);
+
+                    if (link.LinkURL.HasValue())
+                    {
+                        <p class="link"><a class="btn @settings.ButtonStyle" href="@link.LinkURL" @Html.Raw(link.LinkTarget) @Html.Raw(link.LinkTitle)>@link.LinkCaption@Html.Raw(link.LinkIcon)</a></p>
+                    }
+                }
+
+            </div>
+            <!--// INFO -->
+        </div>
+
+        @:</div></div>
+
+
+    @:</section>
+
+}

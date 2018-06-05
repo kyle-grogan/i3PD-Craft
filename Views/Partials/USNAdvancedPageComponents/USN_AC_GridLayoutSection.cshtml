@@ -1,0 +1,25 @@
+﻿@inherits UmbracoViewPage<Usn_Ac_GridLayoutSection_AN>
+
+@using USNStarterKit.USNHelpers;
+@using USNStarterKit.USNEntities;
+
+@{
+    USNTemplateStyleSettings settings = USNViewTemplateHelper.GetTemplateStyleSettings(Model.BackgroundColor);
+
+    string backgroundImageStyle = USNViewTemplateHelper.GetBackgroundImageStyle(Model.BackgroundImage, Model.BackgroundImageOptions);
+    
+    string animateClass = String.Empty;
+
+    if (Model.Animate)
+    {
+        animateClass = "os-animation";
+    }
+
+    <section class="content apc umb-grid @settings.BackGroundStyle @Model.CustomComponentClasses" @Html.Raw(backgroundImageStyle) id="pos_@Model.Id">		
+        <div class="@animateClass" data-os-animation="fadeIn" data-os-animation-delay="0">
+	
+            @Html.GetGridHtml(Model, "grid", "Bootstrap3")
+
+        </div>
+    </section>
+}

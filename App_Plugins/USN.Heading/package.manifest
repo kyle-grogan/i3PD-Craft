@@ -1,0 +1,14 @@
+﻿{
+    propertyEditors:[
+        {
+            alias: "USN.Heading",
+            name: "USN Heading",
+            editor: {
+                view: "~/App_Plugins/USN.Heading/views/usn.heading.html"
+            }
+        }
+    ],
+	javascript: [
+		"~/App_Plugins/USN.Heading/js/usn.heading.js"
+	]
+}

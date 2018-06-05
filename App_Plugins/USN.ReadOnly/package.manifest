@@ -1,0 +1,14 @@
+﻿{
+    propertyEditors:[
+        {
+            alias: "USN.ReadOnly",
+            name: "USN ReadOnly",
+            editor: {
+                view: "~/App_Plugins/USN.ReadOnly/views/usn.readonly.html"
+            }
+        }
+    ],
+	javascript: [
+		"~/App_Plugins/USN.ReadOnly/js/usn.readonly.js"
+	]
+}

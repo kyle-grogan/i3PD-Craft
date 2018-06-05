@@ -1,0 +1,64 @@
+﻿@inherits UmbracoViewPage<Usn_Sc_Alert_AN>
+
+@{
+    string anchorId = string.Empty;
+
+    string alertClass;
+
+
+    string alertColour = Model.AlertColour;
+
+    switch (alertColour)
+    {
+        case "d9edf7":
+            alertClass = "alert-info";
+            break;
+        case "dff0d8":
+            alertClass = "alert-success";
+            break;
+        case "fcf8e3":
+            alertClass = "alert-warning";
+            break;
+        case "f2dede":
+            alertClass = "alert-danger";
+            break;
+        default:
+            alertClass = "alert-info";
+            break;
+    }
+
+    @* Add div for column width on Advanced Pages *@
+    if (!Model.Parent.Parent.IsDocumentType(UsnstandardPage.ModelTypeAlias) && !Model.Parent.Parent.IsDocumentType(UsnstandardPageBlogPost.ModelTypeAlias))
+    {
+        if (Model.Width == "Centered")
+        {
+            @:<div id="mid-col" class="col-md-8 col-md-offset-2 col-xs-12">
+        }
+        else
+        {
+            @:<div id="wide-col" class="col-xs-12">
+        }
+    }
+    else
+    {
+        anchorId = "id=\"pos_" + Model.Id + "\" ";
+    }
+
+    <!-- PAGE COMPONENT ALERT -->
+    <div class="spc alert @alertClass alert-dismissible fade in" role="alert" @Html.Raw(anchorId)> 
+        @if (!Model.HideCloseOption)
+        {
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        }
+        <div class="info">@Html.Raw(Model.AlertText)</div>
+    </div>
+    <!--// PAGE COMPONENT ALERT -->
+
+    @* Close div for column width on Advanced Pages *@
+    if (!Model.Parent.Parent.IsDocumentType(UsnstandardPage.ModelTypeAlias) && !Model.Parent.Parent.IsDocumentType(UsnstandardPageBlogPost.ModelTypeAlias))
+    {
+        @:</div>
+    }
+}

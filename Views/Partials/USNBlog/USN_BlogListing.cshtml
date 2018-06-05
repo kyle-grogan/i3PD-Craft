@@ -1,0 +1,68 @@
+﻿@inherits UmbracoViewPage<USNStarterKit.USNModels.USNBlogListingViewModel>
+
+@{
+    int summaryTextLength = 0;
+
+    if (Model.BlogLandingPage.HasValue("blogSummaryTextCharacterCount"))
+    {
+        summaryTextLength = Model.BlogLandingPage.GetPropertyValue<int>("blogSummaryTextCharacterCount");
+    }
+        
+    //Only display blog page content on first page
+    if (Model.SearchResults.Paging.CurrentPage == 1 && Model.SelectedYear == -1)
+    {
+        <!-- IMAGE -->
+        @Html.Partial("USNMiscPageElements/USN_MainImage", (IUsn_Cmp_Sp_Content) Model.CurrentPage)
+        <!--// IMAGE -->
+        @Umbraco.Field("bodyText")
+    }
+        
+    if (!Model.SearchResults.BlogPostsList.Any())
+    {
+        <p>@umbraco.library.GetDictionaryItem("USN Blog Nothing Found")</p>
+    }
+    else
+    {
+        string itemClass = "col-xs-12";
+        bool displaySummaryText = true;
+        int imageWidth = 1200;
+        int imageHeight = 600;
+        
+        if(Model.BlogLandingPage.GetPropertyValue<string>("blogListingLayout") == "Grid")
+        {
+            itemClass = "col-sm-6 col-xs-12";
+            displaySummaryText = false;
+            imageWidth = 400;
+            imageHeight = 300;
+        }
+        
+        <!-- LISTING -->
+        <div class="listing blog">
+            <div class="row">
+                @{
+                    List<IPublishedContent> blogItems = Model.SearchResults.BlogPostsList.ToList();
+
+                    foreach (IPublishedContent item in blogItems)
+                    {
+                        <!-- ITEM -->
+                        <div class="item @itemClass" itemscope itemtype="http://schema.org/BlogPosting">
+						<div class="inner c3-bg">
+                            @Html.Partial("USNBlog/USN_BlogListItem", item, new ViewDataDictionary { { "summaryTextLength", summaryTextLength }, { "displaySummaryText", displaySummaryText }, { "imageWidth", imageWidth }, { "imageHeight", imageHeight } })
+                        </div>
+                        </div>
+                        <!--// ITEM -->
+                    }
+                }
+            </div>
+        </div>
+        <!--// LISTING -->
+
+        if (Model.SearchResults.Paging.TotalPageCount > 1)
+        {
+            <!-- PAGINATION -->
+            @Html.Partial("USNMiscPageElements/USN_Paging", new ViewDataDictionary { { "totalPageCount", Model.SearchResults.Paging.TotalPageCount } })
+            <!--// PAGINATION -->
+        }
+    }
+
+}
