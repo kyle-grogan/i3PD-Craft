@@ -1,0 +1,23 @@
+{
+  "ItemKey": "USN New Window Icon",
+  "ParentId": "0f73cfcc-5ded-425e-bb3f-b937814e5664",
+  "Translations": [
+    {
+      "Key": "72c44e7f-0114-4be9-9f82-4f8df08dc5fc",
+      "Value": "<i class=\"ion-android-open after\"></i>",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/72c44e7f01144be99f824f8df08dc5fc",
+  "Udi": "umb://dictionary-item/72c44e7f01144be99f824f8df08dc5fc",
+  "Dependencies": [
+    {
+      "Udi": "umb://dictionary-item/0f73cfcc5ded425ebb3fb937814e5664",
+      "Ordering": true,
+      "Mode": 1
+    }
+  ],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
