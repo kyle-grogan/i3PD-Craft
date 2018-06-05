@@ -1,0 +1,17 @@
+{
+  "ItemKey": "USN Contact Form",
+  "ParentId": null,
+  "Translations": [
+    {
+      "Key": "491b3f31-b02b-444c-895e-451ad5b04fc2",
+      "Value": "THIS IS JUST A CONTAINER TO MANAGE RELATED DICTIONARY ITEMS",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/491b3f31b02b444c895e451ad5b04fc2",
+  "Udi": "umb://dictionary-item/491b3f31b02b444c895e451ad5b04fc2",
+  "Dependencies": [],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
