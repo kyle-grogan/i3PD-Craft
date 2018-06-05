@@ -1,0 +1,23 @@
+{
+  "ItemKey": "USN Contact Telephone",
+  "ParentId": "014b103d-a43a-430d-b1c5-481a48264001",
+  "Translations": [
+    {
+      "Key": "e81c4784-189c-4b0d-9e01-437257f60e07",
+      "Value": "Tel.",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/e81c4784189c4b0d9e01437257f60e07",
+  "Udi": "umb://dictionary-item/e81c4784189c4b0d9e01437257f60e07",
+  "Dependencies": [
+    {
+      "Udi": "umb://dictionary-item/014b103da43a430db1c5481a48264001",
+      "Ordering": true,
+      "Mode": 1
+    }
+  ],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
