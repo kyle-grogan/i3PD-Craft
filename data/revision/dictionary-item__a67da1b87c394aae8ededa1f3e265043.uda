@@ -1,0 +1,23 @@
+{
+  "ItemKey": "USN Form Message Label",
+  "ParentId": "1391e0d2-ed64-4558-89f8-268f7f46e353",
+  "Translations": [
+    {
+      "Key": "a67da1b8-7c39-4aae-8ede-da1f3e265043",
+      "Value": "Message",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/a67da1b87c394aae8ededa1f3e265043",
+  "Udi": "umb://dictionary-item/a67da1b87c394aae8ededa1f3e265043",
+  "Dependencies": [
+    {
+      "Udi": "umb://dictionary-item/1391e0d2ed64455889f8268f7f46e353",
+      "Ordering": true,
+      "Mode": 1
+    }
+  ],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
