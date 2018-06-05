@@ -1,0 +1,23 @@
+{
+  "ItemKey": "USN Members Navigation Login",
+  "ParentId": "f89a8275-33d2-4818-b6a8-47a9a09c465a",
+  "Translations": [
+    {
+      "Key": "2b7f9761-225e-42ea-867c-aa4cfddc49d0",
+      "Value": "Login",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/2b7f9761225e42ea867caa4cfddc49d0",
+  "Udi": "umb://dictionary-item/2b7f9761225e42ea867caa4cfddc49d0",
+  "Dependencies": [
+    {
+      "Udi": "umb://dictionary-item/f89a827533d24818b6a847a9a09c465a",
+      "Ordering": true,
+      "Mode": 1
+    }
+  ],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
