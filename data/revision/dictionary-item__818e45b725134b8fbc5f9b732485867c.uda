@@ -1,0 +1,23 @@
+{
+  "ItemKey": "USN Search Results Link Label",
+  "ParentId": "f0803f90-dcf4-4665-ba3f-95e853650db8",
+  "Translations": [
+    {
+      "Key": "818e45b7-2513-4b8f-bc5f-9b732485867c",
+      "Value": "Location:",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/818e45b725134b8fbc5f9b732485867c",
+  "Udi": "umb://dictionary-item/818e45b725134b8fbc5f9b732485867c",
+  "Dependencies": [
+    {
+      "Udi": "umb://dictionary-item/f0803f90dcf44665ba3f95e853650db8",
+      "Ordering": true,
+      "Mode": 1
+    }
+  ],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
