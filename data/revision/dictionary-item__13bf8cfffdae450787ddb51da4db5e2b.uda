@@ -1,0 +1,23 @@
+{
+  "ItemKey": "USN Window Section Component Play Video",
+  "ParentId": "88e01010-09df-4d64-bfa3-7b1f2b6e8637",
+  "Translations": [
+    {
+      "Key": "13bf8cff-fdae-4507-87dd-b51da4db5e2b",
+      "Value": "Play video",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/13bf8cfffdae450787ddb51da4db5e2b",
+  "Udi": "umb://dictionary-item/13bf8cfffdae450787ddb51da4db5e2b",
+  "Dependencies": [
+    {
+      "Udi": "umb://dictionary-item/88e0101009df4d64bfa37b1f2b6e8637",
+      "Ordering": true,
+      "Mode": 1
+    }
+  ],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
