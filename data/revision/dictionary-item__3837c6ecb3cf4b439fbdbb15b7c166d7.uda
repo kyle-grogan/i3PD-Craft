@@ -1,0 +1,23 @@
+{
+  "ItemKey": "USN Blog Meta On",
+  "ParentId": "7a6d0e05-7c26-4c30-8efa-d52afb65fefa",
+  "Translations": [
+    {
+      "Key": "3837c6ec-b3cf-4b43-9fbd-bb15b7c166d7",
+      "Value": "on",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/3837c6ecb3cf4b439fbdbb15b7c166d7",
+  "Udi": "umb://dictionary-item/3837c6ecb3cf4b439fbdbb15b7c166d7",
+  "Dependencies": [
+    {
+      "Udi": "umb://dictionary-item/7a6d0e057c264c308efad52afb65fefa",
+      "Ordering": true,
+      "Mode": 1
+    }
+  ],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
