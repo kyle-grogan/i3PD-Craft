@@ -1,0 +1,17 @@
+{
+  "ItemKey": "USN Miscellaneous",
+  "ParentId": null,
+  "Translations": [
+    {
+      "Key": "0f73cfcc-5ded-425e-bb3f-b937814e5664",
+      "Value": "THIS IS JUST A CONTAINER TO MANAGE RELATED DICTIONARY ITEMS",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/0f73cfcc5ded425ebb3fb937814e5664",
+  "Udi": "umb://dictionary-item/0f73cfcc5ded425ebb3fb937814e5664",
+  "Dependencies": [],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
