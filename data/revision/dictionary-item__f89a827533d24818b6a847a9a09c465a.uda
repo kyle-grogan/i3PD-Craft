@@ -1,0 +1,17 @@
+{
+  "ItemKey": "USN Members Navigation",
+  "ParentId": null,
+  "Translations": [
+    {
+      "Key": "f89a8275-33d2-4818-b6a8-47a9a09c465a",
+      "Value": "THIS IS JUST A CONTAINER TO MANAGE RELATED DICTIONARY ITEMS",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/f89a827533d24818b6a847a9a09c465a",
+  "Udi": "umb://dictionary-item/f89a827533d24818b6a847a9a09c465a",
+  "Dependencies": [],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
