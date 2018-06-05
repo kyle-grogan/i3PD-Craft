@@ -1,0 +1,17 @@
+{
+  "ItemKey": "USN Newsletter Form",
+  "ParentId": null,
+  "Translations": [
+    {
+      "Key": "e293b805-f833-41cc-b44b-44c1bd5763fb",
+      "Value": "THIS IS JUST A CONTAINER TO MANAGE RELATED DICTIONARY ITEMS",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/e293b805f83341ccb44b44c1bd5763fb",
+  "Udi": "umb://dictionary-item/e293b805f83341ccb44b44c1bd5763fb",
+  "Dependencies": [],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
