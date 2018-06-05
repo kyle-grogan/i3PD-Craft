@@ -1,0 +1,23 @@
+{
+  "ItemKey": "USN Members Navigation Default Heading",
+  "ParentId": "f89a8275-33d2-4818-b6a8-47a9a09c465a",
+  "Translations": [
+    {
+      "Key": "1fd0d9fb-fe26-4cea-bc57-282b0c8f471d",
+      "Value": "Members Area",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/1fd0d9fbfe264ceabc57282b0c8f471d",
+  "Udi": "umb://dictionary-item/1fd0d9fbfe264ceabc57282b0c8f471d",
+  "Dependencies": [
+    {
+      "Udi": "umb://dictionary-item/f89a827533d24818b6a847a9a09c465a",
+      "Ordering": true,
+      "Mode": 1
+    }
+  ],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
