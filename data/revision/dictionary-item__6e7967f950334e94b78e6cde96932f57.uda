@@ -1,0 +1,23 @@
+{
+  "ItemKey": "USN Search Results Feedback",
+  "ParentId": "f0803f90-dcf4-4665-ba3f-95e853650db8",
+  "Translations": [
+    {
+      "Key": "6e7967f9-5033-4e94-b78e-6cde96932f57",
+      "Value": "Your search for the phrase <span class=\"label c1-bg c5-text\">{0}</span>  returned <strong>{1}</strong> results.",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/6e7967f950334e94b78e6cde96932f57",
+  "Udi": "umb://dictionary-item/6e7967f950334e94b78e6cde96932f57",
+  "Dependencies": [
+    {
+      "Udi": "umb://dictionary-item/f0803f90dcf44665ba3f95e853650db8",
+      "Ordering": true,
+      "Mode": 1
+    }
+  ],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
