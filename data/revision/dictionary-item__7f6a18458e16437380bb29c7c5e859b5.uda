@@ -1,0 +1,23 @@
+{
+  "ItemKey": "USN Contact Form Mail Send Error",
+  "ParentId": "491b3f31-b02b-444c-895e-451ad5b04fc2",
+  "Translations": [
+    {
+      "Key": "7f6a1845-8e16-4373-80bb-29c7c5e859b5",
+      "Value": "There was an error sending your contact details.",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/7f6a18458e16437380bb29c7c5e859b5",
+  "Udi": "umb://dictionary-item/7f6a18458e16437380bb29c7c5e859b5",
+  "Dependencies": [
+    {
+      "Udi": "umb://dictionary-item/491b3f31b02b444c895e451ad5b04fc2",
+      "Ordering": true,
+      "Mode": 1
+    }
+  ],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
