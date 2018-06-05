@@ -1,0 +1,23 @@
+{
+  "ItemKey": "USN Contact Form Sending Message",
+  "ParentId": "491b3f31-b02b-444c-895e-451ad5b04fc2",
+  "Translations": [
+    {
+      "Key": "301818c8-4834-450b-83cd-8f99eb8a884b",
+      "Value": "Your message is being sent, please wait.",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/301818c84834450b83cd8f99eb8a884b",
+  "Udi": "umb://dictionary-item/301818c84834450b83cd8f99eb8a884b",
+  "Dependencies": [
+    {
+      "Udi": "umb://dictionary-item/491b3f31b02b444c895e451ad5b04fc2",
+      "Ordering": true,
+      "Mode": 1
+    }
+  ],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
