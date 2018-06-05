@@ -1,0 +1,23 @@
+{
+  "ItemKey": "USN Close",
+  "ParentId": "fb6d3611-5101-4d26-8618-b1c7a7c8d0cb",
+  "Translations": [
+    {
+      "Key": "5010463e-aada-4b5b-8ab4-1a0e4c0ca2c6",
+      "Value": "Close",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/5010463eaada4b5b8ab41a0e4c0ca2c6",
+  "Udi": "umb://dictionary-item/5010463eaada4b5b8ab41a0e4c0ca2c6",
+  "Dependencies": [
+    {
+      "Udi": "umb://dictionary-item/fb6d361151014d268618b1c7a7c8d0cb",
+      "Ordering": true,
+      "Mode": 1
+    }
+  ],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
