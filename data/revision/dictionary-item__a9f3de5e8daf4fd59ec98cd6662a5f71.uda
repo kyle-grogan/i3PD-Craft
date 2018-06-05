@@ -1,0 +1,23 @@
+{
+  "ItemKey": "USN Form Telephone Label",
+  "ParentId": "1391e0d2-ed64-4558-89f8-268f7f46e353",
+  "Translations": [
+    {
+      "Key": "a9f3de5e-8daf-4fd5-9ec9-8cd6662a5f71",
+      "Value": "Telephone",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/a9f3de5e8daf4fd59ec98cd6662a5f71",
+  "Udi": "umb://dictionary-item/a9f3de5e8daf4fd59ec98cd6662a5f71",
+  "Dependencies": [
+    {
+      "Udi": "umb://dictionary-item/1391e0d2ed64455889f8268f7f46e353",
+      "Ordering": true,
+      "Mode": 1
+    }
+  ],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
