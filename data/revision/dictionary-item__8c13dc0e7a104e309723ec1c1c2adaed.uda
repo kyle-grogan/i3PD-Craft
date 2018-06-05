@@ -1,0 +1,23 @@
+{
+  "ItemKey": "USN Form Newsletter Signup Label",
+  "ParentId": "1391e0d2-ed64-4558-89f8-268f7f46e353",
+  "Translations": [
+    {
+      "Key": "8c13dc0e-7a10-4e30-9723-ec1c1c2adaed",
+      "Value": "Tick the box to sign up to our newsletter",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/8c13dc0e7a104e309723ec1c1c2adaed",
+  "Udi": "umb://dictionary-item/8c13dc0e7a104e309723ec1c1c2adaed",
+  "Dependencies": [
+    {
+      "Udi": "umb://dictionary-item/1391e0d2ed64455889f8268f7f46e353",
+      "Ordering": true,
+      "Mode": 1
+    }
+  ],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
