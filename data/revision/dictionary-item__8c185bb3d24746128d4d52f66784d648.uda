@@ -1,0 +1,23 @@
+{
+  "ItemKey": "USN Form Email Address Label",
+  "ParentId": "1391e0d2-ed64-4558-89f8-268f7f46e353",
+  "Translations": [
+    {
+      "Key": "8c185bb3-d247-4612-8d4d-52f66784d648",
+      "Value": "Email address",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/8c185bb3d24746128d4d52f66784d648",
+  "Udi": "umb://dictionary-item/8c185bb3d24746128d4d52f66784d648",
+  "Dependencies": [
+    {
+      "Udi": "umb://dictionary-item/1391e0d2ed64455889f8268f7f46e353",
+      "Ordering": true,
+      "Mode": 1
+    }
+  ],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
