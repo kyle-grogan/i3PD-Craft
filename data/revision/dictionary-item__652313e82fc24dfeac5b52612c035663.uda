@@ -1,0 +1,23 @@
+{
+  "ItemKey": "USN Blog Nothing Found",
+  "ParentId": "7a6d0e05-7c26-4c30-8efa-d52afb65fefa",
+  "Translations": [
+    {
+      "Key": "652313e8-2fc2-4dfe-ac5b-52612c035663",
+      "Value": "No articles were found.",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/652313e82fc24dfeac5b52612c035663",
+  "Udi": "umb://dictionary-item/652313e82fc24dfeac5b52612c035663",
+  "Dependencies": [
+    {
+      "Udi": "umb://dictionary-item/7a6d0e057c264c308efad52afb65fefa",
+      "Ordering": true,
+      "Mode": 1
+    }
+  ],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
