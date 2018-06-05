@@ -1,0 +1,17 @@
+{
+  "ItemKey": "USN Search",
+  "ParentId": null,
+  "Translations": [
+    {
+      "Key": "f0803f90-dcf4-4665-ba3f-95e853650db8",
+      "Value": "THIS IS JUST A CONTAINER TO MANAGE RELATED DICTIONARY ITEMS",
+      "LanguageIsoCode": "en-US"
+    }
+  ],
+  "Name": "umb://dictionary-item/f0803f90dcf44665ba3f95e853650db8",
+  "Udi": "umb://dictionary-item/f0803f90dcf44665ba3f95e853650db8",
+  "Dependencies": [],
+  "Alias": null,
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.DictionaryItemArtifact",
+  "__version": "2.0.14"
+}
