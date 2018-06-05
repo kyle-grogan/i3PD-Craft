@@ -1,0 +1,16 @@
+{
+  "File": "umb://template-file/USNParentRedirect.cshtml",
+  "Master": null,
+  "Udi": "umb://template/fe4691bda9ec426f9630c9e1163bb8d4",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/USNParentRedirect.cshtml",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "USN Parent Redirect",
+  "Alias": "USNParentRedirect",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.TemplateArtifact",
+  "__version": "2.0.14"
+}

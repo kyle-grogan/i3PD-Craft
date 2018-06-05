@@ -1,0 +1,79 @@
+﻿@inherits UmbracoViewPage<USNStarterKit.USNModels.USNBaseViewModel>
+@{
+    Layout = "USNMaster.cshtml";
+}
+
+@Html.Partial("USNMiscPageElements/USN_StandardPageHeaderSection", Model)
+
+<!-- CONTENT -->
+<section class="content">
+
+    <!-- CONTAINER -->
+    <div class="container">
+					
+        @Html.Partial("USNMiscPageElements/USN_StandardPageTitle", Model)
+		
+	    <!-- ROW -->
+	    <div class="row">
+			
+		    <!-- CONTENT COL -->
+		    <div @Html.Partial("USNLayout/USN_ContentColumnStyle", Model)>
+		
+			    <!-- IMAGE -->
+			    @Html.Partial("USNMiscPageElements/USN_MainImage",Model)
+			    <!--// IMAGE -->
+	       
+			    @Html.Raw(Model.Content.GetPropertyValue<string>("bodyText"))
+		
+			    @Html.Partial("USNListings/USN_SearchResults",Model)
+				
+		    </div>
+		    <!--// CONTENT COL -->
+			
+		    @Html.Partial("USNLayout/USN_PodAndNavColumn", Model)
+				
+	    </div>
+	    <!--// ROW -->
+
+    </div>
+    <!--// CONTAINER -->
+
+</section>	
+<!--// CONTENT -->
+
+@Html.Partial("USNSiteWidePods/USN_SitewidePods", Model, new ViewDataDictionary { { "podstyle", "horizontal" } })
+		
+@section BodyTag
+{
+    @{
+        string headerClass = String.Empty;
+
+        if (Model.Content.GetPropertyValue<bool>("hideWebsiteHeaderSection"))
+        {
+            headerClass = "no-header";
+        }
+
+        if (Model.Content.GetPropertyValue<bool>("hideWebsiteFooterSection"))
+        {
+            headerClass = headerClass + " no-footer";
+        }
+
+        UsnglobalSettings globalSettings = (UsnglobalSettings)Model.GlobalSettings;
+
+        string fixedWidth = String.Empty;
+
+        if (globalSettings.FixedWidth)
+        {
+            fixedWidth = "fixed-width";
+        }
+
+        string customBodyClass = String.Empty;
+
+        if (Model.Content.HasValue("customBodyClasses"))
+        {
+            customBodyClass = Model.Content.GetPropertyValue<string>("customBodyClasses");
+        }
+    }
+
+    @Html.Raw(" class=\"standard-page " + headerClass + " " + fixedWidth + " " + customBodyClass + "\"")
+}

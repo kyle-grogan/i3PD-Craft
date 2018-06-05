@@ -1,0 +1,16 @@
+{
+  "File": "umb://template-file/USNHomeRedirect.cshtml",
+  "Master": null,
+  "Udi": "umb://template/ac85fda3c2584660bab5362fa1e745fe",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/USNHomeRedirect.cshtml",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "USN Home Redirect",
+  "Alias": "USNHomeRedirect",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.TemplateArtifact",
+  "__version": "2.0.14"
+}

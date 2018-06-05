@@ -1,0 +1,16 @@
+{
+  "File": "umb://template-file/USNAdvancedPage.cshtml",
+  "Master": null,
+  "Udi": "umb://template/ab613adad4f04329a80e62bacbf46111",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/USNAdvancedPage.cshtml",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "USN Advanced Page",
+  "Alias": "USNAdvancedPage",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.TemplateArtifact",
+  "__version": "2.0.14"
+}

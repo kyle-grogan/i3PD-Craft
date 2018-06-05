@@ -1,0 +1,16 @@
+{
+  "File": "umb://template-file/USNAdvancedPageBlogPost.cshtml",
+  "Master": null,
+  "Udi": "umb://template/a848fd1eab2f4a138c43e46a3656300b",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/USNAdvancedPageBlogPost.cshtml",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "USN Advanced Page Blog Post",
+  "Alias": "USNAdvancedPageBlogPost",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.TemplateArtifact",
+  "__version": "2.0.14"
+}

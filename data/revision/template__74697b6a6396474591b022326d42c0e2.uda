@@ -1,0 +1,16 @@
+{
+  "File": "umb://template-file/USNSitemapPage.cshtml",
+  "Master": null,
+  "Udi": "umb://template/74697b6a6396474591b022326d42c0e2",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/USNSitemapPage.cshtml",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "USN Sitemap Page",
+  "Alias": "USNSitemapPage",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.TemplateArtifact",
+  "__version": "2.0.14"
+}

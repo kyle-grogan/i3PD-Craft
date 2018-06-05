@@ -1,0 +1,180 @@
+﻿@inherits UmbracoViewPage<USNStarterKit.USNModels.USNBaseViewModel>
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="description" content='@Umbraco.Field("metaDescription")'>
+    @Html.Partial("USNWebsiteHeadSection/USN_SEOPageHead", Model)
+
+    <!-- WEB FONT -->
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto+Condensed:700,700i|Roboto+Slab|Roboto:400,400i,700,700i" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+    <link rel="stylesheet" href="~/css/plugins.css">
+    <link rel="stylesheet" href="~/css/base.css">
+    <link rel="stylesheet" href="~/css/palette.css">
+    <link rel="stylesheet" href="~/css/layout.css">
+	
+    <!-- INTERNAL STYLES -->
+    @Html.Partial("USNWebsiteHeadSection/USN_InternalStyles", Model)
+
+    <!-- SCRIPTS -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <script src="~/scripts/bootstrap.js"></script>
+    <script src="~/scripts/plugins.js"></script>
+    <script src="~/scripts/application.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+	<!--[if IE]>
+	<link rel="stylesheet" href="~/css/ie.css">
+	<![endif]-->
+
+	
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ICONS -->
+    @Html.Partial("USNWebsiteHeadSection/USN_Icons", Model)
+
+    @RenderSection("Head", false)
+    
+    @Html.Partial("USNMiscPageElements/USN_CookieDurationVariable", Model)
+
+    @Html.Partial("USNWebsiteHeadSection/USN_HeaderScripts", Model)
+
+</head>
+<body @RenderSection("BodyTag", false)>
+    @Html.Partial("USNMiscPageElements/USN_AfterOpeningBodyScripts", Model)
+    <p id="skip"><a href="#content">Skip to the content</a></p>
+    <!-- SITE -->
+    <div id="site">
+        @if(!Model.Content.GetPropertyValue<bool>("hideWebsiteHeaderSection"))
+        {
+        <!-- HEADER -->
+        <header>
+            <div class="container-fluid">
+				<!-- ROW -->
+                <div class="row">
+                    <!-- LOGO -->
+                    @Html.Partial("USNWebsiteHeadSection/USN_WebsiteLogo", Model)
+                    <!--// LOGO -->
+                    <!-- EXPAND -->
+                    <a class="expand">
+                        <em>
+                            <span class="open-expand">@umbraco.library.GetDictionaryItem("USN Menu")</span>
+                            <span class="close-expand">@umbraco.library.GetDictionaryItem("USN Close")</span>
+                        </em>
+                        <span class="line top"></span>
+                        <span class="line mid"></span>
+                        <span class="line bottom"></span>
+                    </a>
+                    <!--// EXPAND -->
+	
+                    @Html.Partial("USNNavigation/USN_CTA", Model)
+
+                    <!-- NAVIGATION -->
+                    <div class="navigation">
+
+                        <!-- REVEAL -->
+                        <div class="reveal">
+
+                            @Html.Partial("USNNavigation/USN_MainNavigation", Model)
+
+                            @Html.Partial("USNForms/USN_SearchForm", Model)
+
+                            @Html.Partial("USNNavigation/USN_SecondaryNavigation", Model)
+
+                        </div>
+                        <!--// REVEAL -->
+                    </div>
+                    <!--// NAVIGATION -->
+                </div>
+				<!--// ROW -->
+            </div>
+        </header>
+        <!--// HEADER -->
+        }
+        
+        <div id="content">
+            @RenderBody()
+        </div>    
+
+        <!-- OUTRO STRIP -->
+        @Html.Partial("USNMiscPageElements/USN_OutroStripSection", Model, new ViewDataDictionary { { "globalSettings", Model.GlobalSettings } })
+        <!--// OUTRO STRIP -->
+
+        @if(!Model.Content.GetPropertyValue<bool>("hideWebsiteFooterSection"))
+        {
+        <!-- FOOTER -->
+        <footer class="text-center">
+
+	        <!-- SOCIAL -->
+	        @Html.Partial("USNNavigation/USN_SocialLinks", Model)
+	        <!--// SOCIAL -->
+  	
+  			<div class="inner">
+  	
+  		        <!-- QUICK LINKS -->
+  	          	@Html.Partial("USNNavigation/USN_FooterQuickLinks", Model)
+  		        <!--// QUICK LINKS -->
+  	
+  		        <!-- COMPANY DETAILS -->
+  	          	@Html.Partial("USNMiscPageElements/USN_ContactInformation", Model)
+  		        <!--// COMPANY DETAILS -->
+  
+  	          	<nav class="footer">
+					<ul>
+					    <li class="copyright"><div>&copy; @DateTime.Now.ToString("yyyy") USN Craft Theme</div></li>
+					    @Html.Partial("USNNavigation/USN_FooterNavigation", Model)
+					    <li class="site-credit">
+					        <div>a premium Umbraco theme from</div>
+					        <a target="_blank" title="Link will open in a new window/tab" href="http://www.uskinned.net"><span>uSkinned</span></a>
+					    </li>
+					</ul>
+  	          	</nav>
+
+  	      </div>
+
+        </footer>
+        <!--// FOOTER -->
+
+        <!-- BREADCRUMB -->
+        @Html.Partial("USNNavigation/USN_Breadcrumb", Model)
+        <!--// BREADCRUMB -->
+
+        }	
+        <!-- BACK TO TOP -->
+        <span id="top-link-block">
+            <a href="#top" onclick="$('html,body').animate({scrollTop:0},'slow');return false;">
+                <i class="ion-chevron-up"></i>
+            </a>
+        </span>
+        <!--// BACK TO TOP -->
+    </div>
+    <!--// SITE -->
+    
+    @Html.Partial("USNMiscPageElements/USN_CookiePolicy", Model)
+
+@RenderSection("FooterScripts", false)
+    @Html.Partial("USNMiscPageElements/USN_BeforeClosingBodyScripts", Model)
+</body>
+</html>

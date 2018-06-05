@@ -1,0 +1,16 @@
+{
+  "File": "umb://template-file/USNBlogLandingPage.cshtml",
+  "Master": null,
+  "Udi": "umb://template/c1da4a5c64d748169e69d71a356363f7",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/USNBlogLandingPage.cshtml",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "USN Blog Landing Page",
+  "Alias": "USNBlogLandingPage",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.TemplateArtifact",
+  "__version": "2.0.14"
+}

@@ -1,0 +1,16 @@
+{
+  "File": "umb://template-file/USNStandardPageBlogPost.cshtml",
+  "Master": null,
+  "Udi": "umb://template/218b41a674644535bdf218278aefef20",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/USNStandardPageBlogPost.cshtml",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "USN Standard Page Blog Post",
+  "Alias": "USNStandardPageBlogPost",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.TemplateArtifact",
+  "__version": "2.0.14"
+}

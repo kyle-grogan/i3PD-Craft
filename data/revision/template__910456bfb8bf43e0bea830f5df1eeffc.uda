@@ -1,0 +1,16 @@
+{
+  "File": "umb://template-file/USNSearchResultsPage.cshtml",
+  "Master": null,
+  "Udi": "umb://template/910456bfb8bf43e0bea830f5df1eeffc",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/USNSearchResultsPage.cshtml",
+      "Ordering": true,
+      "Mode": 0
+    }
+  ],
+  "Name": "USN Search Results Page",
+  "Alias": "USNSearchResultsPage",
+  "__type": "Umbraco.Deploy,Umbraco.Deploy.Artifacts.TemplateArtifact",
+  "__version": "2.0.14"
+}

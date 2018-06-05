@@ -1,0 +1,88 @@
+﻿@inherits UmbracoViewPage<USNStarterKit.USNModels.USNBaseViewModel>
+@{
+    Layout = "USNMaster.cshtml";
+}
+
+@Html.Partial("USNAdvancedPageComponents/USN_AdvancedPageComponents", Model)	
+
+<!-- CONTENT -->
+<section class="content apc standard-components">
+    <div class="container">
+
+        <!-- ROW -->
+        <div class="row">
+
+            <!-- MID COL -->
+            <div id="mid-col" class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+
+                <!-- META -->
+				<div class="spc">
+					<div class="meta">
+               	 		@Html.Partial("USNBlog/USN_BlogMeta", Model)
+			   		</div>
+				</div>
+                <!--// META -->
+
+                <!-- AUTHOR BIO -->
+                @Html.Partial("USNBlog/USN_BlogAuthorship", Model)
+                <!--// AUTHOR BIO -->
+
+                <!-- PAGINATION  -->
+                @Html.Partial("USNBlog/USN_BlogPostPreviousNext", Model)
+                <!--// PAGINATION -->
+
+                <!-- COMMENTS -->
+                @Html.Partial("USNBlog/USN_BlogComments", Model)
+                <!--// COMMENTS -->
+
+            </div>
+            <!--// MID COL -->
+
+        </div>
+        <!--// ROW -->
+
+    </div>
+</section>
+<!--// CONTENT -->
+
+@Html.Partial("USNSiteWidePods/USN_SitewidePods", Model, new ViewDataDictionary { { "podstyle", "horizontal" }, { "pagetype", "advanced" } })
+	
+@section BodyTag
+{
+    @{
+        string headerClass = String.Empty;
+
+        if (Model.Content.GetPropertyValue<bool>("hideWebsiteHeaderSection"))
+        {
+            headerClass = "no-header";
+        }
+
+        if (Model.Content.GetPropertyValue<bool>("hideWebsiteFooterSection"))
+        {
+            headerClass = headerClass + " no-footer";
+        }
+
+        UsnglobalSettings globalSettings = (UsnglobalSettings)Model.GlobalSettings;
+
+        string fixedWidth = String.Empty;
+
+        if (globalSettings.FixedWidth)
+        {
+            fixedWidth = "fixed-width";
+        }
+
+        string customBodyClass = String.Empty;
+
+        if (Model.Content.HasValue("customBodyClasses"))
+        {
+            customBodyClass = Model.Content.GetPropertyValue<string>("customBodyClasses");
+        }
+    }
+
+    @Html.Raw(" class=\"advanced-page " + headerClass + " " + fixedWidth + " " + customBodyClass + "\"")
+}
+
+@section FooterScripts
+{
+    @Html.Partial("USNBlog/USN_BlogDisqusCommentCountScript", Model)
+}

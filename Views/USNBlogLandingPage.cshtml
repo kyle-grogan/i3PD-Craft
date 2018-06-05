@@ -1,0 +1,79 @@
+﻿@inherits UmbracoViewPage<USNStarterKit.USNModels.USNBaseViewModel>
+@{
+    Layout = "USNMaster.cshtml";
+}
+
+@Html.Partial("USNMiscPageElements/USN_StandardPageHeaderSection", Model)
+
+<!-- CONTENT -->
+<section class="content">
+
+    <!-- CONTAINER -->
+    <div class="container">
+					
+        @Html.Partial("USNMiscPageElements/USN_StandardPageTitle", Model)
+		
+	    <!-- ROW -->
+	    <div class="row">
+			
+		    <!-- CONTENT COL -->
+		    <div @Html.Partial("USNLayout/USN_ContentColumnStyle", Model)>
+
+                @Html.Action("index", "USNBlogSearchSurface", new { GlobalSettings = Model.GlobalSettings })
+
+            </div>
+            <!--// CONTENT COL -->
+            @Html.Partial("USNLayout/USN_PodAndNavColumn", Model)
+
+            
+				
+	    </div>
+	    <!--// ROW -->
+		
+    </div>
+    <!--// CONTAINER -->
+
+</section>	
+<!--// CONTENT -->
+
+@Html.Partial("USNSiteWidePods/USN_SitewidePods", Model, new ViewDataDictionary { { "podstyle", "horizontal" } })
+
+@section BodyTag
+{
+    @{
+        string headerClass = String.Empty;
+
+        if (Model.Content.GetPropertyValue<bool>("hideWebsiteHeaderSection"))
+        {
+            headerClass = "no-header";
+        }
+
+        if (Model.Content.GetPropertyValue<bool>("hideWebsiteFooterSection"))
+        {
+            headerClass = headerClass + " no-footer";
+        }
+
+        UsnglobalSettings globalSettings = (UsnglobalSettings)Model.GlobalSettings;
+
+        string fixedWidth = String.Empty;
+
+        if (globalSettings.FixedWidth)
+        {
+            fixedWidth = "fixed-width";
+        }
+
+        string customBodyClass = String.Empty;
+
+        if (Model.Content.HasValue("customBodyClasses"))
+        {
+            customBodyClass = Model.Content.GetPropertyValue<string>("customBodyClasses");
+        }
+    }
+
+    @Html.Raw(" class=\"standard-page " + headerClass + " " + fixedWidth + " " + customBodyClass + "\"")
+}
+
+@section FooterScripts
+{
+    @Html.Partial("USNBlog/USN_BlogDisqusCommentCountScript", Model)
+}

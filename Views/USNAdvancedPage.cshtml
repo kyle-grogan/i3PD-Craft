@@ -1,0 +1,43 @@
+﻿@inherits UmbracoViewPage<USNStarterKit.USNModels.USNBaseViewModel>
+@{
+    Layout = "USNMaster.cshtml";
+}
+
+@Html.Partial("USNAdvancedPageComponents/USN_AdvancedPageComponents", Model)	
+
+@Html.Partial("USNSiteWidePods/USN_SitewidePods", @Model, new ViewDataDictionary { { "podstyle", "horizontal" }, { "pagetype", "advanced" } })
+	
+@section BodyTag
+{
+    @{
+        string headerClass = String.Empty;
+
+        if (Model.Content.GetPropertyValue<bool>("hideWebsiteHeaderSection"))
+        {
+            headerClass = "no-header";
+        }
+
+        if (Model.Content.GetPropertyValue<bool>("hideWebsiteFooterSection"))
+        {
+            headerClass = headerClass + " no-footer";
+        }
+
+        UsnglobalSettings globalSettings = (UsnglobalSettings)Model.GlobalSettings;
+
+        string fixedWidth = String.Empty;
+
+        if (globalSettings.FixedWidth)
+        {
+            fixedWidth = "fixed-width";
+        }
+
+        string customBodyClass = String.Empty;
+        
+        if(Model.Content.HasValue("customBodyClasses"))
+        {
+            customBodyClass = Model.Content.GetPropertyValue<string>("customBodyClasses");
+        }
+    }
+
+    @Html.Raw(" class=\"advanced-page " + headerClass + " " + fixedWidth + " " + customBodyClass + "\"")
+}
